@@ -85,20 +85,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction-à-vscode-et-conda-pour-la-géomatique" class="level1">
 <h1>Introduction à VSCode et Conda pour la géomatique</h1>
-<p><strong>Durée</strong> : 90 minutes <strong>Niveau</strong> : Intermédiaire <strong>Formateur</strong> : Thierry Laurent St-Pierre <strong>Date</strong> : Octobre 2025</p>
+<section id="thierry-laurent-st-pierre" class="level4">
+<h4 class="anchored" data-anchor-id="thierry-laurent-st-pierre">Thierry Laurent St-Pierre</h4>
+</section>
+<section id="octobre-2025" class="level4">
+<h4 class="anchored" data-anchor-id="octobre-2025">Octobre 2025</h4>
 <hr>
+</section>
 <section id="table-des-matières" class="level2">
 <h2 class="anchored" data-anchor-id="table-des-matières">Table des matières</h2>
 <ul>
 <li><a href="#1-introduction">1. Introduction</a></li>
-<li><a href="#2-conda---gestion-des-environnements-40-min">2. Conda - Gestion des environnements (40 min)</a>
+<li><a href="#2-conda---gestion-des-environnements">2. Conda - Gestion des environnements</a>
 <ul>
 <li><a href="#21-théorie-et-contexte">2.1 Théorie et contexte</a></li>
 <li><a href="#22-installation-guidée">2.2 Installation guidée</a></li>
 <li><a href="#23-création-denvironnements">2.3 Création d’environnements</a></li>
-<li><a href="#24-stack-géospatial-essentiels">2.4 Stack géospatial essentiels</a></li>
+<li><a href="#24-librairies-géospatiales-essentielles">2.4 Librairies géospatiales essentielles</a></li>
 </ul></li>
-<li><a href="#3-vscode---éditeur-pour-géomatique-45-min">3. VSCode - Éditeur pour géomatique (45 min)</a>
+<li><a href="#3-vscode---éditeur-pour-géomatique">3. VSCode - Éditeur pour géomatique</a>
 <ul>
 <li><a href="#31-prise-en-main-de-linterface">3.1 Prise en main de l’interface</a></li>
 <li><a href="#32-extensions-essentielles">3.2 Extensions essentielles</a></li>
@@ -114,12 +119,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
 <section id="contexte" class="level3">
 <h3 class="anchored" data-anchor-id="contexte">Contexte</h3>
-<p>Vous travaillez en <strong>géomatique</strong> et avez besoin de : - Installer des packages complexes (GDAL, GeoPandas, Rasterio) - Maintenir plusieurs projets avec des dépendances différentes - Collaborer efficacement avec d’autres chercheurs - Documenter et reproduire vos analyses</p>
+<p>Vous travaillez en <strong>géomatique</strong> et avez besoin de : - Installer des librairies complexes (GDAL, GeoPandas, Rasterio) - Maintenir plusieurs projets avec des dépendances différentes - Collaborer efficacement avec d’autres chercheurs - Documenter et reproduire vos analyses</p>
 <p><strong>Conda</strong> et <strong>VSCode</strong> sont deux outils complémentaires qui répondent à ces besoins.</p>
 </section>
 <section id="pourquoi-conda" class="level3">
 <h3 class="anchored" data-anchor-id="pourquoi-conda">Pourquoi Conda ?</h3>
-<p><strong>Python natif</strong> est livré sans gestion d’environnements qui sont fiable. Les packages spécialisés (GDAL, Proj) requièrent une compilation correcte des dépendances.</p>
+<p><strong>Python natif</strong> est livré sans gestion d’environnements qui sont fiable. Les librairies spécialisées (GDAL, Proj) requièrent une compilation correcte des dépendances.</p>
 <p><strong>Conda</strong> : - Isole les environnements par projet - Gère les dépendances C (GDAL, PROJ) - Rend vos projets <strong>reproductibles</strong> - Fonctionne sur Windows, macOS, Linux</p>
 </section>
 <section id="pourquoi-vscode" class="level3">
@@ -128,8 +133,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 </section>
-<section id="conda---gestion-des-environnements-40-min" class="level2">
-<h2 class="anchored" data-anchor-id="conda---gestion-des-environnements-40-min">2. Conda - Gestion des environnements (40 min)</h2>
+<section id="conda---gestion-des-environnements" class="level2">
+<h2 class="anchored" data-anchor-id="conda---gestion-des-environnements">2. Conda - Gestion des environnements</h2>
 <section id="théorie-et-contexte" class="level3">
 <h3 class="anchored" data-anchor-id="théorie-et-contexte">2.1 Théorie et contexte</h3>
 <section id="le-problème-que-conda-résout" class="level4">
@@ -137,9 +142,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Vous avez probablement rencontré cette situation frustante : vous installez <code>pip install gdal</code> pour un projet de géomatique, et vous recevez une erreur du type :</p>
 <pre><code>ERROR: Could not find a version that satisfies the requirement GDAL
 ERROR: Could not build wheels for GDAL</code></pre>
-<p>Ou pire, l’installation réussit, mais GDAL ne trouve pas la bibliothèque <code>PROJ</code> au moment de l’exécution. Pourquoi ? Parce que <strong>GDAL n’est pas qu’un package Python</strong>. C’est une collection de outils géospatiaux écrits en C/C++ (GDAL, GEOS, PROJ, TIFF, etc.) qui ont besoin d’être compilées correctement et de fonctionner ensemble.</p>
+<p>Ou pire, l’installation réussit, mais GDAL ne trouve pas la bibliothèque <code>PROJ</code> au moment de l’exécution. Pourquoi ? Parce que <strong>GDAL n’est pas qu’une librairie Python</strong>. C’est une collection de outils géospatiaux écrits en C/C++ (GDAL, GEOS, PROJ, TIFF, etc.) qui ont besoin d’être compilées correctement et de fonctionner ensemble.</p>
 <p><strong>Python seul (avec pip) ne peut pas gérer ces dépendances C.</strong> C’est le rôle de <strong>Conda</strong>.</p>
-<p><strong>Note technique</strong> : pip peut installer facilement certaines bibliothèques (PyTorch, seaborn) car elles fournissent des <strong>wheels</strong> (<code>.whl</code>) — des packages Python pré-compilés sur PyPI. GDAL et Rasterio ne fournissent PAS de wheels pour Windows, forçant pip à compiler depuis le code source, ce qui échoue fréquemment.</p>
+<p><strong>Note technique</strong> : pip peut installer facilement certaines bibliothèques (PyTorch, seaborn) car elles fournissent des <strong>wheels</strong> (<code>.whl</code>) — des librairies Python pré-compilées sur PyPI. GDAL et Rasterio ne fournissent PAS de wheels pour Windows, forçant pip à compiler depuis le code source, ce qui échoue fréquemment.</p>
 </section>
 <section id="quest-ce-que-conda" class="level4">
 <h4 class="anchored" data-anchor-id="quest-ce-que-conda">Qu’est-ce que Conda ?</h4>
@@ -148,7 +153,7 @@ ERROR: Could not build wheels for GDAL</code></pre>
 <section id="anaconda-vs-miniforge-quel-choisir" class="level4">
 <h4 class="anchored" data-anchor-id="anaconda-vs-miniforge-quel-choisir">Anaconda vs Miniforge : Quel choisir ?</h4>
 <p>Avant de choisir votre gestionnaire, il faut comprendre qu’Anaconda et Miniforge sont deux <strong>distributions</strong> de Conda (il en existe d’autres : Miniconda, Mambaforge, etc.).</p>
-<p><strong>Anaconda</strong> est la distribution “complète” : elle installe ~250 packages pré-compilés (NumPy, Pandas, Matplotlib, etc.) d’emblée. C’est comme recevoir un couteau suisse avec 40 outils alors que vous n’en utiliserez que 3.</p>
+<p><strong>Anaconda</strong> est la distribution “complète” : elle installe ~250 librairies pré-compilées (NumPy, Pandas, Matplotlib, etc.) d’emblée. C’est comme recevoir un couteau suisse avec 40 outils alors que vous n’en utiliserez que 3.</p>
 <p><strong>Miniforge</strong> est la distribution “minimale” : elle installe seulement Conda et laisse vous installer ce dont vous avez besoin. Plus léger, plus rapide, et plus flexible.</p>
 <table class="caption-top table">
 <colgroup>
@@ -170,9 +175,9 @@ ERROR: Could not build wheels for GDAL</code></pre>
 <td>~150 MB</td>
 </tr>
 <tr class="even">
-<td><strong>Packages pre-installés</strong></td>
+<td><strong>Librairies pré-installées</strong></td>
 <td>~250 (NumPy, Pandas, etc.)</td>
-<td>Aucun</td>
+<td>Aucune</td>
 </tr>
 <tr class="odd">
 <td><strong>Temps installation</strong></td>
@@ -201,27 +206,27 @@ ERROR: Could not build wheels for GDAL</code></pre>
 </section>
 <section id="le-rôle-crucial-de-conda-forge" class="level4">
 <h4 class="anchored" data-anchor-id="le-rôle-crucial-de-conda-forge">Le rôle crucial de <code>conda-forge</code></h4>
-<p>Conda utilise des <strong>canaux</strong> (channels) pour télécharger les packages. Pensez à un canal comme une source/dépôt de packages.</p>
-<p><strong>Canal <code>defaults</code></strong> (fourni par Anaconda Inc.) - Packages maintenus par l’équipe Anaconda - Mise à jour lente (focus sécurité) - Problème : GDAL et géospatial souvent obsolètes</p>
-<p><strong>Canal <code>conda-forge</code></strong> (maintenu par la communauté) - ~20,000 packages maintenus par des scientifiques et développeurs - Mise à jour rapide (nouvelles versions de GDAL disponibles rapidement) - Idéal pour géomatique et science des données - 100% gratuit et transparent (toutes les versions disponible sur GitHub)</p>
+<p>Conda utilise des <strong>canaux</strong> (channels) pour télécharger les librairies. Pensez à un canal comme une source/dépôt de librairies.</p>
+<p><strong>Canal <code>defaults</code></strong> (fourni par Anaconda Inc.) - Librairies maintenues par l’équipe Anaconda - Mise à jour lente (focus sécurité) - Problème : GDAL et géospatial souvent obsolètes</p>
+<p><strong>Canal <code>conda-forge</code></strong> (maintenu par la communauté) - ~20,000 librairies maintenues par des scientifiques et développeurs - Mise à jour rapide (nouvelles versions de GDAL disponibles rapidement) - Idéal pour géomatique et science des données - 100% gratuit et transparent (toutes les versions disponible sur GitHub)</p>
 <p><strong>Exemple concret</strong> :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec Miniforge (conda-forge est déjà le canal par défaut) :</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install gdal                    <span class="co"># ✓ Fonctionne (utilise conda-forge)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge gdal     <span class="co"># ✓ Fonctionne aussi (explicite)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install gdal                    <span class="co"># [OK] Fonctionne (utilise conda-forge)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge gdal     <span class="co"># [OK] Fonctionne aussi (explicite)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec Anaconda (canal defaults par défaut) :</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install gdal                    <span class="co"># ✗ Version obsolète du canal defaults</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge gdal     <span class="co"># ✓ Version à jour de conda-forge</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install gdal                    <span class="co"># [!] Version obsolète du canal defaults</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge gdal     <span class="co"># [OK] Version à jour de conda-forge</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="alternatives-à-conda-quand-les-utiliser" class="level4">
 <h4 class="anchored" data-anchor-id="alternatives-à-conda-quand-les-utiliser">Alternatives à Conda : Quand les utiliser ?</h4>
-<p>Vous avez d’autres outils pour gérer les packages Python. Voici comment les utiliser :</p>
+<p>Vous avez d’autres outils pour gérer les librairies Python. Voici comment les utiliser :</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 28%">
-<col style="width: 23%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 26%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -240,8 +245,8 @@ ERROR: Could not build wheels for GDAL</code></pre>
 </tr>
 <tr class="even">
 <td><strong>Pip</strong></td>
-<td>Installer packages Python uniquement</td>
-<td>Packages simples (seaborn, pandas)</td>
+<td>Installer librairies Python uniquement</td>
+<td>Librairies simples (seaborn, pandas)</td>
 <td>Ne compile pas dépendances C</td>
 </tr>
 <tr class="odd">
@@ -269,8 +274,8 @@ ERROR: Could not build wheels for GDAL</code></pre>
 <section id="pourquoi-isoler-les-environnements" class="level4">
 <h4 class="anchored" data-anchor-id="pourquoi-isoler-les-environnements">Pourquoi isoler les environnements ?</h4>
 <p>Vous avez plusieurs projets de recherche sur lesquels vous travaillez ? Chacun a probablement besoin de versions différentes des mêmes librairies.</p>
-<p><strong>Scénario réaliste</strong> : - <strong>Projet A</strong> : Cartographie de zones protégées (GeoPandas 0.12, GDAL 3.6) - <strong>Projet B</strong> : Classification d’images satellites avec apprentissage automatique comme Random Forest (GeoPandas 0.14, GDAL 3.8, TensorFlow)</p>
-<p>Naïvement, vous pourriez installer tous les packages globalement. Mais quand vous installez GeoPandas 0.14 pour le Projet B, cela casse les dépendances du Projet A (qui attend 0.12).</p>
+<p><strong>Scénario réaliste</strong> : - <strong>Projet A</strong> : Cartographie de zones protégées (GeoPandas 0.12, GDAL 3.6) - <strong>Projet B</strong> : Classification d’images satellites avec Random Forest (GeoPandas 0.14, GDAL 3.8, scikit-learn, rasterio)</p>
+<p>Naïvement, vous pourriez installer toutes les librairies globalement. Mais quand vous installez GeoPandas 0.14 pour le Projet B, cela casse les dépendances du Projet A (qui attend 0.12).</p>
 <p><strong>Avec Conda</strong>, chaque projet a son propre “environnement virtuel” avec ses propres versions :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Passer du Projet A au Projet B</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate projet-a        <span class="co"># Vous utilisez GeoPandas 0.12</span></span>
@@ -301,6 +306,7 @@ ERROR: Could not build wheels for GDAL</code></pre>
 <li>Laisser chemin par défaut (ex: <code>C:\Users\YourName\miniforge3</code>)</li>
 <li><strong>IMPORTANT</strong> : Cocher “Register Miniforge3 as my default Python”</li>
 </ul>
+<p><img src="images/miniforge-install-options.png" class="img-fluid" alt="Options d’installation Miniforge3"> <em>Figure 1 : Options d’installation - Cochez “Register Miniforge3 as the system Python 3.12” pour permettre à VSCode et autres programmes de détecter automatiquement Miniforge</em></p>
 <p><strong>macOS/Linux :</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> Miniforge3-MacOSX-x86_64.sh</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Suivre les prompts</span></span>
@@ -349,22 +355,23 @@ ERROR: Could not build wheels for GDAL</code></pre>
 #
 base                  *  C:\Users\YourName\miniforge3
 geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
+<p><img src="images/conda-commands.gif" class="img-fluid" alt="Démonstration des commandes conda essentielles"> <em>Figure 2 : Démonstration des commandes conda - Installation des librairies avec mamba, inspection avec conda list, et activation d’environnement. L’astérisque (*) indique l’environnement actif.</em></p>
 <hr>
 </section>
 </section>
-<section id="stack-géospatial-essentiels" class="level3">
-<h3 class="anchored" data-anchor-id="stack-géospatial-essentiels">2.4 Stack géospatial essentiels</h3>
-<section id="pourquoi-certains-packages-plutôt-que-dautres" class="level4">
-<h4 class="anchored" data-anchor-id="pourquoi-certains-packages-plutôt-que-dautres">Pourquoi certains packages plutôt que d’autres ?</h4>
-<p>Maintenant que vous avez un environnement Conda isolé, vous devez l’équiper des outils appropriés pour la géomatique. Mais quels packages choisir parmi les ~20,000 disponibles sur conda-forge ?</p>
-<p>La réponse dépend de vos besoins spécifiques. En géomatique, vous travaillez généralement avec deux types de données :</p>
-<p><strong>Données vectorielles</strong> (points, lignes, polygones) - Exemple : limites administratives, routes, bâtiments - Package clé : <strong>GeoPandas</strong></p>
-<p><strong>Données raster</strong> (grilles de pixels, images satellites) - Exemple : images Sentinel-2, modèles d’élévation, cartes climatiques - Packages clés : <strong>GDAL</strong>, <strong>Rasterio</strong></p>
-<p>Pour les visualiser et explorer vos résultats, vous avez aussi besoin de packages de data science générale (NumPy, Pandas, Matplotlib) et d’outils interactifs (Jupyter, Folium).</p>
+<section id="librairies-géospatiales-essentielles" class="level3">
+<h3 class="anchored" data-anchor-id="librairies-géospatiales-essentielles">2.4 Librairies géospatiales essentielles</h3>
+<section id="pourquoi-certaines-librairies-plutôt-que-dautres" class="level4">
+<h4 class="anchored" data-anchor-id="pourquoi-certaines-librairies-plutôt-que-dautres">Pourquoi certaines librairies plutôt que d’autres ?</h4>
+<p>Maintenant que vous avez un environnement Conda isolé, vous devez l’équiper des outils appropriés pour la géomatique. Mais quelles librairies choisir parmi les ~20,000 disponibles sur conda-forge ?</p>
+<p>La réponse dépend de vos besoins selon le projet. En géomatique, vous travaillez généralement avec deux types de données :</p>
+<p><strong>Données vectorielles</strong> (points, lignes, polygones) - Exemple : limites administratives, routes, bâtiments - Librairie clé : <strong>GeoPandas</strong></p>
+<p><strong>Données raster</strong> (grilles de pixels, images satellites) - Exemple : images Sentinel-2, modèles d’élévation, cartes climatiques - Librairies clés : <strong>GDAL</strong>, <strong>Rasterio</strong></p>
+<p>Pour les visualiser et explorer vos résultats, vous avez aussi besoin de librairies de data science générale (NumPy, Pandas, Matplotlib) et d’outils interactifs (Jupyter, Folium).</p>
 </section>
-<section id="installation-du-stack-géospatial-complet" class="level4">
-<h4 class="anchored" data-anchor-id="installation-du-stack-géospatial-complet">Installation du stack géospatial complet</h4>
-<p>Activez votre environnement et installez tous les packages d’un seul coup :</p>
+<section id="installation-des-librairies-géospatiales-complètes" class="level4">
+<h4 class="anchored" data-anchor-id="installation-des-librairies-géospatiales-complètes">Installation des librairies géospatiales complètes</h4>
+<p>Activez votre environnement et installez toutes les librairies d’un seul coup :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate geo-env</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge <span class="dt">\</span></span>
@@ -378,23 +385,23 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  numpy <span class="dt">\</span></span>
 <span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  pandas <span class="dt">\</span></span>
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  scipy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Note importante</strong> : Si vous utilisez <strong>Miniforge</strong> (recommandé dans ce cours), le <code>-c conda-forge</code> est <strong>optionnel</strong> car conda-forge est déjà le canal par défaut. Vous pouvez donc écrire simplement <code>conda install geopandas gdal rasterio ...</code>. Nous le gardons dans les exemples pour être explicite et rester compatible avec Anaconda.</p>
-<p><strong>Note performance</strong> : <code>conda</code> prendra ~2-5 minutes pour résoudre les dépendances et compiler. C’est normal (voir 2.1 pour comprendre pourquoi). Utilisez <code>mamba</code> si vous êtes impatient :</p>
+<p><strong>Note importante</strong> : Si vous utilisez <strong>Miniforge</strong> (recommandé dans ce cours), le <code>-c conda-forge</code> est <strong>optionnel</strong> car conda-forge est déjà le canal par défaut. Vous pouvez donc écrire simplement <code>conda install geopandas gdal rasterio ...</code>.</p>
+<p><strong>Note performance</strong> : <code>conda</code> prendra ~2-5 minutes pour résoudre les dépendances et compiler. C’est normal (voir 2.1 pour comprendre pourquoi). Utilisez <code>mamba</code> si vous êtes impatient comme moi 😅 :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternative ultra-rapide (10x plus rapide)</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> conda-forge geopandas gdal rasterio folium jupyter jupyterlab matplotlib numpy pandas scipy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install geopandas gdal rasterio folium jupyter jupyterlab matplotlib numpy pandas scipy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="packages-clés-expliqués-en-détail" class="level4">
-<h4 class="anchored" data-anchor-id="packages-clés-expliqués-en-détail">Packages clés expliqués en détail</h4>
+<section id="librairies-clés-expliquées-en-détail" class="level4">
+<h4 class="anchored" data-anchor-id="librairies-clés-expliquées-en-détail">Librairies clés expliquées en détail</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 23%">
-<col style="width: 28%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Package</th>
+<th>Librairie</th>
 <th>Catégorie</th>
 <th>Utilité</th>
 <th>Exemple d’usage</th>
@@ -460,7 +467,7 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 </section>
 <section id="vérifier-linstallation" class="level4">
 <h4 class="anchored" data-anchor-id="vérifier-linstallation">Vérifier l’installation</h4>
-<p>Après l’installation, testez que tous les packages sont accessibles :</p>
+<p>Après l’installation, testez que toutes les librairies sont accessibles :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import geopandas; print(f'GeoPandas {geopandas.__version__}')"</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import rasterio; print(f'Rasterio {rasterio.__version__}')"</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import gdal; print(f'GDAL {gdal.__version__}')"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -471,6 +478,9 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <p><strong>Le problème</strong> : Vous finissez votre projet en mai 2025 avec GDAL 3.8.0. Votre collègue clone votre code en décembre 2025, installe les librairies en novembre 2025 (versions plus récentes), et soudain votre code ne fonctionne plus. Conflit de versions!</p>
 <p><strong>La solution</strong> : Exportez votre environnement exact dans un fichier <code>environment.yml</code> qui “gèle” les versions :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p><strong>Note importante</strong> : Le fichier <code>environment.yml</code> sera créé dans le répertoire courant de votre terminal. Assurez-vous d’être à la racine de votre projet avant d’exécuter cette commande. Vérifiez votre emplacement avec <code>pwd</code> (PowerShell) ou <code>cd</code> (Windows).</p>
+</blockquote>
 <p>Contenu du fichier généré :</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name</span><span class="kw">:</span><span class="at"> geo-env</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">channels</span><span class="kw">:</span></span>
@@ -517,9 +527,192 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <hr>
 </section>
 </section>
+<section id="commandes-essentielles-pour-le-quotidien" class="level3">
+<h3 class="anchored" data-anchor-id="commandes-essentielles-pour-le-quotidien">2.5 Commandes essentielles pour le quotidien</h3>
+<section id="inspecter-vos-environnements" class="level4">
+<h4 class="anchored" data-anchor-id="inspecter-vos-environnements">Inspecter vos environnements</h4>
+<p>Ces commandes vous permettent de savoir <strong>où vous êtes</strong> et <strong>ce que vous avez</strong> installé :</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Résultat</th>
+<th>Quand l’utiliser</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>conda env list</code></td>
+<td>Liste tous vos environnements</td>
+<td>Voir quels projets existent</td>
+</tr>
+<tr class="even">
+<td><code>conda list</code></td>
+<td>Librairies dans l’environnement actif</td>
+<td>Vérifier versions installées</td>
+</tr>
+<tr class="odd">
+<td><code>conda list gdal</code></td>
+<td>Info sur une librairie spécifique</td>
+<td>Vérifier si GDAL est installé et sa version</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple pratique</strong> :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérifier quel environnement est actif</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env list</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># → Celui avec * est actif</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lister toutes les librairies installées</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Chercher une librairie spécifique</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> list gdal</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># → gdal  3.8.0  py311h1234567_0  conda-forge</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
 </section>
-<section id="vscode---éditeur-de-code" class="level2">
-<h2 class="anchored" data-anchor-id="vscode---éditeur-de-code">3. VSCode - Éditeur de code</h2>
+<section id="nettoyer-lespace-disque" class="level4">
+<h4 class="anchored" data-anchor-id="nettoyer-lespace-disque">Nettoyer l’espace disque</h4>
+<p><strong>Problème courant</strong> : Le cache Conda grandit rapidement (+ 5 GB après quelques mois d’utilisation). Les environnements de test s’accumulent et remplissent votre disque.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 26%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Effet</th>
+<th>Quand l’utiliser</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>conda clean --all --dry-run</code></td>
+<td>Voir ce qui sera supprimé (sans supprimer)</td>
+<td>Avant de nettoyer</td>
+</tr>
+<tr class="even">
+<td><code>conda clean --all</code></td>
+<td>Supprimer cache et librairies inutilisées</td>
+<td>Une fois par mois</td>
+</tr>
+<tr class="odd">
+<td><code>conda remove -n old-env --all</code></td>
+<td>Supprimer complètement un environnement</td>
+<td>Projet terminé</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemple pratique</strong> :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir combien d'espace vous pouvez récupérer</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> clean <span class="at">--all</span> <span class="at">--dry-run</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultat typique :</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Will remove 47 tarball(s), 8.5 GB</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Will remove 12 librairie(s), 2.1 GB</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Si &gt; 5 GB, nettoyer :</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> clean <span class="at">--all</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Supprimer un vieil environnement de test</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> remove <span class="at">-n</span> test-env <span class="at">--all</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="exporter-pour-reproductibilité" class="level4">
+<h4 class="anchored" data-anchor-id="exporter-pour-reproductibilité">Exporter pour reproductibilité</h4>
+<p><strong>Règle d’or</strong> : Toujours exporter <code>environment.yml</code> avant de committer sur Git.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Commande</th>
+<th>Résultat</th>
+<th>Avantage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>conda env export &gt; environment.yml</code></td>
+<td>Fichier avec <strong>toutes</strong> les dépendances (100+ lignes)</td>
+<td>Reproductibilité exacte</td>
+</tr>
+<tr class="even">
+<td><code>conda env export --from-history &gt; environment.yml</code></td>
+<td>Fichier avec seulement librairies <strong>explicitement installées</strong> (10-15 lignes)</td>
+<td>Lisible et maintenable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommandation</strong> : Utilisez <code>--from-history</code> pour un fichier propre et lisible.</p>
+<p><strong>Exemple pratique</strong> :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Activer votre environnement</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate geo-env</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Exporter (version lisible recommandée)</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="at">--from-history</span> <span class="op">&gt;</span> environment.yml</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Résultat : fichier concis</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># name: geo-env</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># channels:</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   - conda-forge</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># dependencies:</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co">#   - python=3.11</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co">#   - geopandas</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co">#   - gdal</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co">#   - rasterio</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co">#   - jupyter</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Committer ce fichier sur Git</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add environment.yml</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Ajouter environment.yml pour reproductibilité"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="erreurs-courantes-à-éviter" class="level4">
+<h4 class="anchored" data-anchor-id="erreurs-courantes-à-éviter">Erreurs courantes à éviter</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 54%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Mauvaise pratique</th>
+<th>Bonne pratique</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>conda install geopandas</code> dans <code>(base)</code></td>
+<td>Créer un nouvel environnement dédié</td>
+</tr>
+<tr class="even">
+<td>Supprimer le dossier <code>miniforge3/</code> manuellement</td>
+<td>Utiliser <code>conda remove -n env --all</code></td>
+</tr>
+<tr class="odd">
+<td>Mélanger <code>pip install</code> et <code>conda install</code> sans ordre</td>
+<td>Toujours <code>conda</code> en premier, <code>pip</code> ensuite si nécessaire</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Pourquoi ne jamais toucher à <code>(base)</code> ?</strong> Si vous cassez l’environnement base, vous cassez Conda lui-même et devrez réinstaller Miniforge.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="vscode---éditeur-pour-géomatique" class="level2">
+<h2 class="anchored" data-anchor-id="vscode---éditeur-pour-géomatique">3. VSCode - Éditeur pour géomatique</h2>
 <section id="prise-en-main-de-linterface" class="level3">
 <h3 class="anchored" data-anchor-id="prise-en-main-de-linterface">3.1 Prise en main de l’interface</h3>
 <section id="télécharger-et-installer-vscode" class="level4">
@@ -635,8 +828,8 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <pre><code>./env/Scripts/python.exe (geo-env)</code></pre></li>
 </ol>
 <p>Vérifier avec Python :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Succès !"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Succès !"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 </section>
@@ -649,26 +842,26 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 </section>
 <section id="vérifier-que-conda-est-actif" class="level4">
 <h4 class="anchored" data-anchor-id="vérifier-que-conda-est-actif">Vérifier que Conda est actif</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="activer-votre-environnement" class="level4">
 <h4 class="anchored" data-anchor-id="activer-votre-environnement">Activer votre environnement</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate geo-env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate geo-env</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous verrez :</p>
 <pre><code>(geo-env) C:\Users\YourName\project &gt;</code></pre>
 </section>
 <section id="lancer-python-interactif" class="level4">
 <h4 class="anchored" data-anchor-id="lancer-python-interactif">Lancer Python interactif</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> rasterio</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Prêt pour la géomatique."</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>Prêt pour la géomatique.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> rasterio</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Prêt pour la géomatique."</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>Prêt pour la géomatique.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Quitter avec <code>exit()</code> ou Ctrl+D.</p>
 </section>
 <section id="lancer-un-jupyter-notebook" class="level4">
 <h4 class="anchored" data-anchor-id="lancer-un-jupyter-notebook">Lancer un Jupyter Notebook</h4>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ou dans VSCode directement : 1. Créer fichier <code>analyse.ipynb</code> 2. Cliquer <strong>Select Kernel</strong> 3. Choisir <code>geo-env</code> 4. Commencer à coder !</p>
 <hr>
 </section>
@@ -678,7 +871,7 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <section id="pourquoi-git-est-indispensable-pour-la-science-des-données" class="level4">
 <h4 class="anchored" data-anchor-id="pourquoi-git-est-indispensable-pour-la-science-des-données">Pourquoi Git est indispensable pour la science des données</h4>
 <p>Vous avez finalisé une analyse de classification d’images satellites il y a trois mois. Aujourd’hui, votre directeur vous demande : “Pouvez-vous refaire cette analyse avec les données mises à jour de décembre ?”</p>
-<p>Vous trouvez votre code, mais vous n’êtes plus certain : - Quel était votre environment.yml exact ? (packages et versions) - Avez-vous modifié l’algorithme après la publication ? (quelle version final ?) - Qui a fait quel changement au code ? (traçabilité) - Pouvez-vous revenir à une version antérieure rapidement ?</p>
+<p>Vous trouvez votre code, mais vous n’êtes plus certain : - Quel était votre environment.yml exact ? (librairies et versions) - Avez-vous modifié l’algorithme après la publication ? (quelle version final ?) - Qui a fait quel changement au code ? (traçabilité) - Pouvez-vous revenir à une version antérieure rapidement ?</p>
 <p><strong>Git résout tous ces problèmes.</strong> C’est un <strong>système de contrôle des versions</strong> qui enregistre chaque changement apporté à votre code, avec qui a fait le changement, quand, et pourquoi.</p>
 </section>
 <section id="au-delà-de-la-traçabilité-collaboration-et-reproductibilité" class="level4">
@@ -690,12 +883,12 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <section id="initialiser-git-dans-votre-projet" class="level4">
 <h4 class="anchored" data-anchor-id="initialiser-git-dans-votre-projet">Initialiser Git dans votre projet</h4>
 <p>Dans le terminal VSCode (avec <code>geo-env</code> actif) :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialiser repository Git</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurer votre identité (une seule fois)</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Votre Nom Complet"</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"votre.email@uqtr.ca"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialiser repository Git</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurer votre identité (une seule fois)</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Votre Nom Complet"</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"votre.email@uqtr.ca"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ces commandes créent un dossier <code>.git</code> caché qui track tous les changements.</p>
 </section>
 <section id="ajouter-et-committer-vos-fichiers" class="level4">
@@ -709,29 +902,29 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <li>Cliquer le bouton de commit pour créer le commit</li>
 </ol>
 <p><strong>Via terminal</strong> (plus contrôle) :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir état du repo</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter tous les fichiers modifiés</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un commit avec message explicite</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Ajouter analyse NDVI avec calcul de statistiques"</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir historique des commits</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir état du repo</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter tous les fichiers modifiés</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un commit avec message explicite</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Ajouter analyse NDVI avec calcul de statistiques"</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir historique des commits</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="messages-de-commit-clairs-une-bonne-pratique" class="level4">
 <h4 class="anchored" data-anchor-id="messages-de-commit-clairs-une-bonne-pratique">Messages de commit clairs : une bonne pratique</h4>
 <p>Un bon message de commit explique le <strong>POURQUOI</strong>, pas le quoi :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mauvais</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"modif"</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"fix bug"</span></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bon</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Implémenter calcul NDVI pour images Sentinel-2"</span></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Corriger reprojection WGS84 (issue #12)"</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Ajouter visualisation Folium pour résultats cartographiques"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mauvais</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"modif"</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"fix bug"</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bon</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Implémenter calcul NDVI pour images Sentinel-2"</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Corriger reprojection WGS84 (issue #12)"</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Ajouter visualisation Folium pour résultats cartographiques"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="connecter-votre-repo-local-à-github-sauvegarde-collaboration" class="level4">
 <h4 class="anchored" data-anchor-id="connecter-votre-repo-local-à-github-sauvegarde-collaboration">Connecter votre repo local à GitHub (sauvegarde + collaboration)</h4>
@@ -750,14 +943,14 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 </ol>
 <p><strong>Étape 2</strong> : Connecter votre repo local à GitHub</p>
 <p>GitHub vous affichera les commandes. Copiez-les dans VSCode terminal :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter GitHub comme "remote"</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/votrecompte/mon-projet-geo.git</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Renommer branche par défaut en "main"</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pousser votre code vers GitHub</span></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter GitHub comme "remote"</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/votrecompte/mon-projet-geo.git</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Renommer branche par défaut en "main"</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pousser votre code vers GitHub</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Votre code est maintenant sauvegardé et visible sur GitHub.</p>
 </section>
 <section id="workflow-git-résumé" class="level4">
@@ -776,7 +969,7 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <p>Or, ces trois outils fonctionnent mieux <strong>ensemble</strong> qu’en silos. Voici pourquoi :</p>
 <p>Imaginez que vous terminez une analyse d’indice de végétation (NDVI) en mai 2025 en utilisant : - <code>environment.yml</code> avec GDAL 3.8.0, Rasterio 1.3.5, NumPy 1.26.0 - Script Python <code>analyse_ndvi.py</code> que vous avez itéré 15 fois - Un collègue qui clone votre repo en octobre 2025</p>
 <p><strong>Sans Git + environment.yml</strong> : Votre collègue clone le code, mais : - Quel était l’environnement exact ? (quelles versions ?) - Qui a modifié quoi et pourquoi ? (git log montre un historique vide) - Le code fonctionne différemment en octobre vs mai (GDAL a changé)</p>
-<p><strong>Avec Git + environment.yml + VSCode</strong> : Votre collègue : - Voit <code>environment.yml</code> et reproduit exactement votre environnement (<code>conda env create -f environment.yml</code>) - Voit <code>git log</code> et understand chaque étape : “Sept 12: Corriger extraction bandes -&gt; Oct 5: Ajouter masquage nuages” - Le code fonctionne à l’identique en octobre car les packages sont gelés - VSCode détecte automatiquement l’environnement correct grâce aux configuration Conda intégrées</p>
+<p><strong>Avec Git + environment.yml + VSCode</strong> : Votre collègue : - Voit <code>environment.yml</code> et reproduit exactement votre environnement (<code>conda env create -f environment.yml</code>) - Voit <code>git log</code> et understand chaque étape : “Sept 12: Corriger extraction bandes -&gt; Oct 5: Ajouter masquage nuages” - Le code fonctionne à l’identique en octobre car les librairies sont gelées - VSCode détecte automatiquement l’environnement correct grâce aux configuration Conda intégrées</p>
 <p>Cet exemple montre un <strong>triple bénéfice</strong> qui émerge seulement en combinaison.</p>
 <hr>
 </section>
@@ -786,30 +979,30 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <section id="étape-1-préparer-lenvironnement-isolé-conda" class="level5">
 <h5 class="anchored" data-anchor-id="étape-1-préparer-lenvironnement-isolé-conda"><strong>Étape 1 : Préparer l’environnement isolé (Conda)</strong></h5>
 <p>Vous créez un dossier projet avec structure claire :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal Windows ou PowerShell</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure minimale</span></span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> donnees scripts resultats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal Windows ou PowerShell</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure minimale</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> donnees scripts resultats</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Créer l’environnement Conda spécifique au projet :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> ndvi-project python=3.11 <span class="at">-y</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-project</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> ndvi-project python=3.11 <span class="at">-y</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-project</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous devriez voir <code>(ndvi-project)</code> au début de votre invite.</p>
-<p>Installer les packages géospatiaux depuis conda-forge :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge geopandas rasterio gdal numpy pandas scipy jupyter <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Installer les librairies géospatiales depuis conda-forge :</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge geopandas rasterio gdal numpy pandas scipy jupyter <span class="at">-y</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Rappel</strong> : Avec Miniforge, le <code>-c conda-forge</code> est optionnel (voir section 2.4). Nous le gardons ici pour clarté.</p>
-<p><strong>Point de validation</strong> : Tous les packages s’installent sans erreur. Vous voyez <code>Preparing transaction: done</code>.</p>
+<p><strong>Point de validation</strong> : Toutes les librairies s’installent sans erreur. Vous voyez <code>Preparing transaction: done</code>.</p>
 <p>Geler l’environnement pour reproductibilité :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Ceci crée un fichier <code>environment.yml</code> qui capture <strong>exactement</strong> les versions. Ce fichier sera sauvegardé sur GitHub.</p>
 <hr>
 </section>
 <section id="étape-2-ouvrir-le-projet-dans-vscode" class="level5">
 <h5 class="anchored" data-anchor-id="étape-2-ouvrir-le-projet-dans-vscode"><strong>Étape 2 : Ouvrir le projet dans VSCode</strong></h5>
 <p>Depuis le terminal activé, lancez VSCode :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toujours dans le dossier ndvi-region-test avec (ndvi-project) actif</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toujours dans le dossier ndvi-region-test avec (ndvi-project) actif</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>VSCode ouvre et scanne le dossier. Configurez l’interprète Python :</p>
 <ol type="1">
 <li><strong>Ctrl+Shift+P</strong> → <code>Python: Select Interpreter</code></li>
@@ -826,97 +1019,97 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 <h5 class="anchored" data-anchor-id="étape-3-créer-et-tester-le-script-danalyse-vscode"><strong>Étape 3 : Créer et tester le script d’analyse (VSCode)</strong></h5>
 <p>Créer un fichier <code>scripts/analyse_ndvi.py</code> dans l’explorateur VSCode.</p>
 <p>Copier ce code d’analyse complet :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analyse NDVI pour région test</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co">Charge un raster NDVI et calcule statistiques + couverture</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.transform <span class="im">import</span> from_bounds</span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuration chemins</span></span>
-<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> Path(<span class="st">"donnees"</span>)</span>
-<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> Path(<span class="st">"resultats"</span>)</span>
-<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer dossiers s'ils n'existent pas</span></span>
-<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>data_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a>output_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fichier exemple</span></span>
-<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> data_dir <span class="op">/</span> <span class="st">"ndvi_test.tif"</span></span>
-<span id="cb41-21"><a href="#cb41-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-22"><a href="#cb41-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer raster fictif pour démo (remplacer par vraies données)</span></span>
-<span id="cb41-23"><a href="#cb41-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> ndvi_file.exists():</span>
-<span id="cb41-24"><a href="#cb41-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Fichier ndvi_test.tif non trouvé. Créons un raster de démo..."</span>)</span>
-<span id="cb41-25"><a href="#cb41-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-26"><a href="#cb41-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Données NDVI fictives</span></span>
-<span id="cb41-27"><a href="#cb41-27" aria-hidden="true" tabindex="-1"></a>    ndvi_data <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.8</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>)).astype(np.float32)</span>
-<span id="cb41-28"><a href="#cb41-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métadonnées exemple (région Montréal)</span></span>
-<span id="cb41-30"><a href="#cb41-30" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> (<span class="op">-</span><span class="fl">73.5</span>, <span class="fl">45.0</span>, <span class="op">-</span><span class="fl">72.5</span>, <span class="fl">46.0</span>)</span>
-<span id="cb41-31"><a href="#cb41-31" aria-hidden="true" tabindex="-1"></a>    transform <span class="op">=</span> from_bounds(<span class="op">*</span>bounds, <span class="dv">512</span>, <span class="dv">512</span>)</span>
-<span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Écrire raster</span></span>
-<span id="cb41-34"><a href="#cb41-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(</span>
-<span id="cb41-35"><a href="#cb41-35" aria-hidden="true" tabindex="-1"></a>        ndvi_file, <span class="st">'w'</span>,</span>
-<span id="cb41-36"><a href="#cb41-36" aria-hidden="true" tabindex="-1"></a>        driver<span class="op">=</span><span class="st">'GTiff'</span>,</span>
-<span id="cb41-37"><a href="#cb41-37" aria-hidden="true" tabindex="-1"></a>        height<span class="op">=</span><span class="dv">512</span>, width<span class="op">=</span><span class="dv">512</span>,</span>
-<span id="cb41-38"><a href="#cb41-38" aria-hidden="true" tabindex="-1"></a>        count<span class="op">=</span><span class="dv">1</span>, dtype<span class="op">=</span>ndvi_data.dtype,</span>
-<span id="cb41-39"><a href="#cb41-39" aria-hidden="true" tabindex="-1"></a>        crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
-<span id="cb41-40"><a href="#cb41-40" aria-hidden="true" tabindex="-1"></a>        transform<span class="op">=</span>transform</span>
-<span id="cb41-41"><a href="#cb41-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="im">as</span> dst:</span>
-<span id="cb41-42"><a href="#cb41-42" aria-hidden="true" tabindex="-1"></a>        dst.write(ndvi_data, <span class="dv">1</span>)</span>
-<span id="cb41-43"><a href="#cb41-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-44"><a href="#cb41-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Raster créé: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-45"><a href="#cb41-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-46"><a href="#cb41-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger et analyser</span></span>
-<span id="cb41-47"><a href="#cb41-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== ANALYSE NDVI RÉGION TEST ==="</span>)</span>
-<span id="cb41-48"><a href="#cb41-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb41-49"><a href="#cb41-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-50"><a href="#cb41-50" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
-<span id="cb41-51"><a href="#cb41-51" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
-<span id="cb41-52"><a href="#cb41-52" aria-hidden="true" tabindex="-1"></a>    profile <span class="op">=</span> src.profile</span>
-<span id="cb41-53"><a href="#cb41-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-54"><a href="#cb41-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Statistiques de base</span></span>
-<span id="cb41-55"><a href="#cb41-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">STATISTIQUES"</span>)</span>
-<span id="cb41-56"><a href="#cb41-56" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Dimensions: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> pixels"</span>)</span>
-<span id="cb41-57"><a href="#cb41-57" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Min NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb41-58"><a href="#cb41-58" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Max NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb41-59"><a href="#cb41-59" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Moyenne NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb41-60"><a href="#cb41-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Écart-type: </span><span class="sc">{</span>ndvi<span class="sc">.</span>std()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb41-61"><a href="#cb41-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-62"><a href="#cb41-62" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classification couverture</span></span>
-<span id="cb41-63"><a href="#cb41-63" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">CLASSIFICATION COUVERTURE"</span>)</span>
-<span id="cb41-64"><a href="#cb41-64" aria-hidden="true" tabindex="-1"></a>    eau <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&lt;</span> <span class="op">-</span><span class="fl">0.1</span>)</span>
-<span id="cb41-65"><a href="#cb41-65" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> np.<span class="bu">sum</span>((ndvi <span class="op">&gt;=</span> <span class="op">-</span><span class="fl">0.1</span>) <span class="op">&amp;</span> (ndvi <span class="op">&lt;</span> <span class="fl">0.2</span>))</span>
-<span id="cb41-66"><a href="#cb41-66" aria-hidden="true" tabindex="-1"></a>    vegetation <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&gt;=</span> <span class="fl">0.2</span>)</span>
-<span id="cb41-67"><a href="#cb41-67" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> ndvi.size</span>
-<span id="cb41-68"><a href="#cb41-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-69"><a href="#cb41-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
-<span id="cb41-70"><a href="#cb41-70" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Sol nu: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
-<span id="cb41-71"><a href="#cb41-71" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
-<span id="cb41-72"><a href="#cb41-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-73"><a href="#cb41-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sauvegarder rapport</span></span>
-<span id="cb41-74"><a href="#cb41-74" aria-hidden="true" tabindex="-1"></a>    report_file <span class="op">=</span> output_dir <span class="op">/</span> <span class="st">"rapport_ndvi.txt"</span></span>
-<span id="cb41-75"><a href="#cb41-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(report_file, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
-<span id="cb41-76"><a href="#cb41-76" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">"RAPPORT ANALYSE NDVI - RÉGION TEST</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb41-77"><a href="#cb41-77" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)</span>
-<span id="cb41-78"><a href="#cb41-78" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"Date analyse: 2025-09-30</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-79"><a href="#cb41-79" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"Fichier source: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span>)</span>
-<span id="cb41-80"><a href="#cb41-80" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"STATISTIQUES</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-81"><a href="#cb41-81" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Min: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-82"><a href="#cb41-82" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Max: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-83"><a href="#cb41-83" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Moyenne: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ch">\n\n</span><span class="ss">"</span>)</span>
-<span id="cb41-84"><a href="#cb41-84" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"COUVERTURE</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-85"><a href="#cb41-85" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-86"><a href="#cb41-86" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Sol: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-87"><a href="#cb41-87" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">"</span>)</span>
-<span id="cb41-88"><a href="#cb41-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-89"><a href="#cb41-89" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Rapport sauvegardé: </span><span class="sc">{</span>report_file<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb41-90"><a href="#cb41-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-91"><a href="#cb41-91" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Analyse terminée !"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analyse NDVI pour région test</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co">Charge un raster NDVI et calcule statistiques + couverture</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.transform <span class="im">import</span> from_bounds</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuration chemins</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> Path(<span class="st">"donnees"</span>)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> Path(<span class="st">"resultats"</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer dossiers s'ils n'existent pas</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>data_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>output_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fichier exemple</span></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> data_dir <span class="op">/</span> <span class="st">"ndvi_test.tif"</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer raster fictif pour démo (remplacer par vraies données)</span></span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> ndvi_file.exists():</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Fichier ndvi_test.tif non trouvé. Créons un raster de démo..."</span>)</span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Données NDVI fictives</span></span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>    ndvi_data <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.8</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>)).astype(np.float32)</span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métadonnées exemple (région Montréal)</span></span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> (<span class="op">-</span><span class="fl">73.5</span>, <span class="fl">45.0</span>, <span class="op">-</span><span class="fl">72.5</span>, <span class="fl">46.0</span>)</span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>    transform <span class="op">=</span> from_bounds(<span class="op">*</span>bounds, <span class="dv">512</span>, <span class="dv">512</span>)</span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Écrire raster</span></span>
+<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(</span>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>        ndvi_file, <span class="st">'w'</span>,</span>
+<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a>        driver<span class="op">=</span><span class="st">'GTiff'</span>,</span>
+<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a>        height<span class="op">=</span><span class="dv">512</span>, width<span class="op">=</span><span class="dv">512</span>,</span>
+<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a>        count<span class="op">=</span><span class="dv">1</span>, dtype<span class="op">=</span>ndvi_data.dtype,</span>
+<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a>        crs<span class="op">=</span><span class="st">'EPSG:4326'</span>,</span>
+<span id="cb44-40"><a href="#cb44-40" aria-hidden="true" tabindex="-1"></a>        transform<span class="op">=</span>transform</span>
+<span id="cb44-41"><a href="#cb44-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="im">as</span> dst:</span>
+<span id="cb44-42"><a href="#cb44-42" aria-hidden="true" tabindex="-1"></a>        dst.write(ndvi_data, <span class="dv">1</span>)</span>
+<span id="cb44-43"><a href="#cb44-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Raster créé: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb44-45"><a href="#cb44-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-46"><a href="#cb44-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger et analyser</span></span>
+<span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">=== ANALYSE NDVI RÉGION TEST ==="</span>)</span>
+<span id="cb44-48"><a href="#cb44-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb44-49"><a href="#cb44-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-50"><a href="#cb44-50" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
+<span id="cb44-51"><a href="#cb44-51" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
+<span id="cb44-52"><a href="#cb44-52" aria-hidden="true" tabindex="-1"></a>    profile <span class="op">=</span> src.profile</span>
+<span id="cb44-53"><a href="#cb44-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-54"><a href="#cb44-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Statistiques de base</span></span>
+<span id="cb44-55"><a href="#cb44-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">STATISTIQUES"</span>)</span>
+<span id="cb44-56"><a href="#cb44-56" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Dimensions: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> pixels"</span>)</span>
+<span id="cb44-57"><a href="#cb44-57" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Min NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb44-58"><a href="#cb44-58" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Max NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb44-59"><a href="#cb44-59" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Moyenne NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb44-60"><a href="#cb44-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Écart-type: </span><span class="sc">{</span>ndvi<span class="sc">.</span>std()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb44-61"><a href="#cb44-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-62"><a href="#cb44-62" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classification couverture</span></span>
+<span id="cb44-63"><a href="#cb44-63" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">CLASSIFICATION COUVERTURE"</span>)</span>
+<span id="cb44-64"><a href="#cb44-64" aria-hidden="true" tabindex="-1"></a>    eau <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&lt;</span> <span class="op">-</span><span class="fl">0.1</span>)</span>
+<span id="cb44-65"><a href="#cb44-65" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> np.<span class="bu">sum</span>((ndvi <span class="op">&gt;=</span> <span class="op">-</span><span class="fl">0.1</span>) <span class="op">&amp;</span> (ndvi <span class="op">&lt;</span> <span class="fl">0.2</span>))</span>
+<span id="cb44-66"><a href="#cb44-66" aria-hidden="true" tabindex="-1"></a>    vegetation <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&gt;=</span> <span class="fl">0.2</span>)</span>
+<span id="cb44-67"><a href="#cb44-67" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> ndvi.size</span>
+<span id="cb44-68"><a href="#cb44-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-69"><a href="#cb44-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
+<span id="cb44-70"><a href="#cb44-70" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Sol nu: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
+<span id="cb44-71"><a href="#cb44-71" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
+<span id="cb44-72"><a href="#cb44-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-73"><a href="#cb44-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sauvegarder rapport</span></span>
+<span id="cb44-74"><a href="#cb44-74" aria-hidden="true" tabindex="-1"></a>    report_file <span class="op">=</span> output_dir <span class="op">/</span> <span class="st">"rapport_ndvi.txt"</span></span>
+<span id="cb44-75"><a href="#cb44-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(report_file, <span class="st">'w'</span>) <span class="im">as</span> f:</span>
+<span id="cb44-76"><a href="#cb44-76" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">"RAPPORT ANALYSE NDVI - RÉGION TEST</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb44-77"><a href="#cb44-77" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">"="</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n\n</span><span class="st">"</span>)</span>
+<span id="cb44-78"><a href="#cb44-78" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"Date analyse: 2025-09-30</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-79"><a href="#cb44-79" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"Fichier source: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span>)</span>
+<span id="cb44-80"><a href="#cb44-80" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"STATISTIQUES</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-81"><a href="#cb44-81" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Min: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-82"><a href="#cb44-82" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Max: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-83"><a href="#cb44-83" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Moyenne: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ch">\n\n</span><span class="ss">"</span>)</span>
+<span id="cb44-84"><a href="#cb44-84" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"COUVERTURE</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-85"><a href="#cb44-85" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-86"><a href="#cb44-86" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Sol: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-87"><a href="#cb44-87" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f"  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb44-88"><a href="#cb44-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-89"><a href="#cb44-89" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Rapport sauvegardé: </span><span class="sc">{</span>report_file<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb44-90"><a href="#cb44-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-91"><a href="#cb44-91" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Analyse terminée !"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Exécuter le script : <strong>F5</strong> ou Terminal <code>python scripts/analyse_ndvi.py</code></p>
 <p><strong>Point de validation</strong> : Vous voyez en output :</p>
 <pre><code>=== ANALYSE NDVI RÉGION TEST ===
@@ -944,36 +1137,36 @@ Analyse terminée !</code></pre>
 <h5 class="anchored" data-anchor-id="étape-4-explorer-et-visualiser-vscode-jupyter"><strong>Étape 4 : Explorer et visualiser (VSCode + Jupyter)</strong></h5>
 <p>Créer un notebook <code>exploration.ipynb</code> dans le dossier racine (VSCode détecte l’extension <code>.ipynb</code> et active Jupyter).</p>
 <p>Cellule 1 (import et chargement) :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> Path(<span class="st">"donnees/ndvi_test.tif"</span>)</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> src.bounds</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"NDVI shape: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Valeurs: [</span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.2f}</span><span class="ss">, </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2f}</span><span class="ss">]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> Path(<span class="st">"donnees/ndvi_test.tif"</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> src.bounds</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"NDVI shape: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Valeurs: [</span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.2f}</span><span class="ss">, </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2f}</span><span class="ss">]"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cellule 2 (visualiser distribution) :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>plt.hist(ndvi.flatten(), bins<span class="op">=</span><span class="dv">50</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>, color<span class="op">=</span><span class="st">'steelblue'</span>)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Valeur NDVI"</span>)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Fréquence (pixels)"</span>)</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution NDVI - Région test"</span>)</span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>plt.hist(ndvi.flatten(), bins<span class="op">=</span><span class="dv">50</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>, color<span class="op">=</span><span class="st">'steelblue'</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Valeur NDVI"</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Fréquence (pixels)"</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Distribution NDVI - Région test"</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Cellule 3 (visualiser carte) :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> ax.imshow(ndvi, cmap<span class="op">=</span><span class="st">'RdYlGn'</span>, vmin<span class="op">=-</span><span class="fl">0.3</span>, vmax<span class="op">=</span><span class="fl">0.8</span>, extent<span class="op">=</span>[bounds.left, bounds.right, bounds.bottom, bounds.top])</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(im, ax<span class="op">=</span>ax, label<span class="op">=</span><span class="st">'NDVI'</span>)</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Carte NDVI - Région test (Mercator)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Longitude"</span>)</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Latitude"</span>)</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> ax.imshow(ndvi, cmap<span class="op">=</span><span class="st">'RdYlGn'</span>, vmin<span class="op">=-</span><span class="fl">0.3</span>, vmax<span class="op">=</span><span class="fl">0.8</span>, extent<span class="op">=</span>[bounds.left, bounds.right, bounds.bottom, bounds.top])</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(im, ax<span class="op">=</span>ax, label<span class="op">=</span><span class="st">'NDVI'</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Carte NDVI - Région test (Mercator)"</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Longitude"</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Latitude"</span>)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Exécuter chaque cellule avec <strong>Shift+Enter</strong>.</p>
 <p><strong>Point de validation</strong> : - Cellule 1 affiche dimensions (512, 512) et gamme NDVI - Cellule 2 montre histogramme avec distribution normale - Cellule 3 montre carte colorée avec dégradés rouge (eau/sol) → vert (végétation)</p>
 <p>Le notebook démontre que l’exploration interactive fonctionne. Vous avez maintenant : - Script reproductible (<code>analyse_ndvi.py</code>) - Exploration interactive (<code>exploration.ipynb</code>) - Rapport sauvegardé (<code>resultats/rapport_ndvi.txt</code>)</p>
@@ -983,9 +1176,9 @@ Analyse terminée !</code></pre>
 <h5 class="anchored" data-anchor-id="étape-5-tracer-les-changements-git"><strong>Étape 5 : Tracer les changements (Git)</strong></h5>
 <p>À ce stade, vous avez des fichiers à sauvegarder et tracer.</p>
 <p>Initialiser Git <strong>une fois par projet</strong> :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.name <span class="st">"Votre Nom"</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.email <span class="st">"votre.email@uqtr.ca"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.name <span class="st">"Votre Nom"</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.email <span class="st">"votre.email@uqtr.ca"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Créer <code>.gitignore</code> pour exclure fichiers inutiles (créer à la racine) :</p>
 <pre><code># Python
 __pycache__/
@@ -1003,17 +1196,17 @@ resultats/*.tif
 .vscode/
 .idea/</code></pre>
 <p>Ajouter tous les fichiers importants et committer :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add scripts/ exploration.ipynb environment.yml .gitignore README.md</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Implémenter analyse NDVI avec classification couverture</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="st">- Créer script analyse_ndvi.py pour calcul stats et couverture végétale</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="st">- Ajouter notebook d'exploration avec visualisations matplotlib</span></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="st">- Geler environment.yml pour reproductibilité (GDAL 3.8, Rasterio 1.3)</span></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="st">- Documenter structure projet dans README"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add scripts/ exploration.ipynb environment.yml .gitignore README.md</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Implémenter analyse NDVI avec classification couverture</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="st">- Créer script analyse_ndvi.py pour calcul stats et couverture végétale</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="st">- Ajouter notebook d'exploration avec visualisations matplotlib</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="st">- Geler environment.yml pour reproductibilité (GDAL 3.8, Rasterio 1.3)</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="st">- Documenter structure projet dans README"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Point de validation</strong> : Vous voyez :</p>
 <pre><code>4 files changed, 287 insertions(+)</code></pre>
 <p>Vérifier l’historique :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Vous devez voir votre commit :</p>
 <pre><code>a3f7d8e Implémenter analyse NDVI avec classification couverture</code></pre>
 <hr>
@@ -1033,9 +1226,9 @@ resultats/*.tif
 <li><strong>Connecter repo local à GitHub</strong></li>
 </ol>
 <p>Copier les commandes que GitHub affiche. Dans VSCode terminal :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Point de validation</strong> : - GitHub affiche votre repo avec tous les fichiers - Vous voyez le commit et le message complet - <code>environment.yml</code> est visible et lisible - <code>scripts/analyse_ndvi.py</code> contient votre code avec numéros de ligne - Notebook <code>exploration.ipynb</code> est affiché avec rendu des cellules</p>
 <hr>
 </section>
@@ -1085,12 +1278,12 @@ resultats/*.tif
 </tbody>
 </table>
 <p><strong>L’intégration</strong> : Ces quatre éléments (environment.yml + VSCode + Git + GitHub) forment un <strong>système cohérent</strong>. Quand un collègue clone votre repo :</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ndvi-region-test</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-region-test</span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="co"># VSCode ouvre et détecte automatiquement l'environnement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ndvi-region-test</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-region-test</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co"># VSCode ouvre et détecte automatiquement l'environnement</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>En moins de 2 minutes, votre collègue a : - Votre code exact - Votre environnement exact - L’historique exact des changements - VSCode configuré correctement</p>
 <p><strong>Ceci est impossible avec seulement Conda</strong>, seulement <strong>VSCode</strong>, ou seulement <strong>Git</strong> isolément. C’est la <strong>combinaison</strong> qui crée la magie.</p>
 <hr>
@@ -1102,7 +1295,7 @@ resultats/*.tif
 <section id="fichiers-ressources" class="level3">
 <h3 class="anchored" data-anchor-id="fichiers-ressources">Fichiers ressources</h3>
 <ul>
-<li><a href="../resources/environment.yml"><strong>environment.yml</strong></a> - Stack geospatial pré-configurée</li>
+<li><a href="../resources/environment.yml"><strong>environment.yml</strong></a> - Librairies géospatiales pré-configurées</li>
 <li><a href="../resources/settings.json"><strong>settings.json</strong></a> - Configuration VSCode optimale</li>
 <li><a href="../resources/extensions-recommandees.md"><strong>extensions-recommandees.md</strong></a> - Extensions détaillées</li>
 </ul>
