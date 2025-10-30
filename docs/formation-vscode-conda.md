@@ -1,18 +1,20 @@
 # Introduction à VSCode et Conda pour la géomatique
 
-**Durée** : 90 minutes **Niveau** : Intermédiaire **Formateur** : Thierry Laurent St-Pierre **Date** : Octobre 2025
+#### Thierry Laurent St-Pierre
+
+#### Octobre 2025
 
 ------------------------------------------------------------------------
 
 ## Table des matières
 
 -   [1. Introduction](#1-introduction)
--   [2. Conda - Gestion des environnements (40 min)](#2-conda---gestion-des-environnements-40-min)
+-   [2. Conda - Gestion des environnements](#2-conda---gestion-des-environnements)
     -   [2.1 Théorie et contexte](#21-théorie-et-contexte)
     -   [2.2 Installation guidée](#22-installation-guidée)
     -   [2.3 Création d'environnements](#23-création-denvironnements)
-    -   [2.4 Stack géospatial essentiels](#24-stack-géospatial-essentiels)
--   [3. VSCode - Éditeur pour géomatique (45 min)](#3-vscode---éditeur-pour-géomatique-45-min)
+    -   [2.4 Librairies géospatiales essentielles](#24-librairies-géospatiales-essentielles)
+-   [3. VSCode - Éditeur pour géomatique](#3-vscode---éditeur-pour-géomatique)
     -   [3.1 Prise en main de l'interface](#31-prise-en-main-de-linterface)
     -   [3.2 Extensions essentielles](#32-extensions-essentielles)
     -   [3.3 Terminal intégré et Conda](#33-terminal-intégré-et-conda)
@@ -26,13 +28,13 @@
 
 ### Contexte
 
-Vous travaillez en **géomatique** et avez besoin de : - Installer des packages complexes (GDAL, GeoPandas, Rasterio) - Maintenir plusieurs projets avec des dépendances différentes - Collaborer efficacement avec d'autres chercheurs - Documenter et reproduire vos analyses
+Vous travaillez en **géomatique** et avez besoin de : - Installer des librairies complexes (GDAL, GeoPandas, Rasterio) - Maintenir plusieurs projets avec des dépendances différentes - Collaborer efficacement avec d'autres chercheurs - Documenter et reproduire vos analyses
 
 **Conda** et **VSCode** sont deux outils complémentaires qui répondent à ces besoins.
 
 ### Pourquoi Conda ?
 
-**Python natif** est livré sans gestion d'environnements qui sont fiable. Les packages spécialisés (GDAL, Proj) requièrent une compilation correcte des dépendances.
+**Python natif** est livré sans gestion d'environnements qui sont fiable. Les librairies spécialisées (GDAL, Proj) requièrent une compilation correcte des dépendances.
 
 **Conda** : - Isole les environnements par projet - Gère les dépendances C (GDAL, PROJ) - Rend vos projets **reproductibles** - Fonctionne sur Windows, macOS, Linux
 
@@ -42,7 +44,7 @@ Vous travaillez en **géomatique** et avez besoin de : - Installer des packages 
 
 ------------------------------------------------------------------------
 
-## 2. Conda - Gestion des environnements (40 min)
+## 2. Conda - Gestion des environnements
 
 ### 2.1 Théorie et contexte
 
@@ -55,11 +57,11 @@ ERROR: Could not find a version that satisfies the requirement GDAL
 ERROR: Could not build wheels for GDAL
 ```
 
-Ou pire, l'installation réussit, mais GDAL ne trouve pas la bibliothèque `PROJ` au moment de l'exécution. Pourquoi ? Parce que **GDAL n'est pas qu'un package Python**. C'est une collection de outils géospatiaux écrits en C/C++ (GDAL, GEOS, PROJ, TIFF, etc.) qui ont besoin d'être compilées correctement et de fonctionner ensemble.
+Ou pire, l'installation réussit, mais GDAL ne trouve pas la bibliothèque `PROJ` au moment de l'exécution. Pourquoi ? Parce que **GDAL n'est pas qu'une librairie Python**. C'est une collection de outils géospatiaux écrits en C/C++ (GDAL, GEOS, PROJ, TIFF, etc.) qui ont besoin d'être compilées correctement et de fonctionner ensemble.
 
 **Python seul (avec pip) ne peut pas gérer ces dépendances C.** C'est le rôle de **Conda**.
 
-**Note technique** : pip peut installer facilement certaines bibliothèques (PyTorch, seaborn) car elles fournissent des **wheels** (`.whl`) — des packages Python pré-compilés sur PyPI. GDAL et Rasterio ne fournissent PAS de wheels pour Windows, forçant pip à compiler depuis le code source, ce qui échoue fréquemment.
+**Note technique** : pip peut installer facilement certaines bibliothèques (PyTorch, seaborn) car elles fournissent des **wheels** (`.whl`) — des librairies Python pré-compilées sur PyPI. GDAL et Rasterio ne fournissent PAS de wheels pour Windows, forçant pip à compiler depuis le code source, ce qui échoue fréquemment.
 
 #### Qu'est-ce que Conda ?
 
@@ -69,14 +71,14 @@ Conda est un **gestionnaire de paquets et d'environnements** qui : - Télécharg
 
 Avant de choisir votre gestionnaire, il faut comprendre qu'Anaconda et Miniforge sont deux **distributions** de Conda (il en existe d'autres : Miniconda, Mambaforge, etc.).
 
-**Anaconda** est la distribution "complète" : elle installe \~250 packages pré-compilés (NumPy, Pandas, Matplotlib, etc.) d'emblée. C'est comme recevoir un couteau suisse avec 40 outils alors que vous n'en utiliserez que 3.
+**Anaconda** est la distribution "complète" : elle installe \~250 librairies pré-compilées (NumPy, Pandas, Matplotlib, etc.) d'emblée. C'est comme recevoir un couteau suisse avec 40 outils alors que vous n'en utiliserez que 3.
 
 **Miniforge** est la distribution "minimale" : elle installe seulement Conda et laisse vous installer ce dont vous avez besoin. Plus léger, plus rapide, et plus flexible.
 
 | Aspect | Anaconda | Miniforge |
 |--------------------|-------------------------|---------------------------|
 | **Taille installation** | \~3 GB | \~150 MB |
-| **Packages pre-installés** | \~250 (NumPy, Pandas, etc.) | Aucun |
+| **Librairies pré-installées** | \~250 (NumPy, Pandas, etc.) | Aucune |
 | **Temps installation** | \~10-15 minutes | \~2-3 minutes |
 | **License** | Commerciale (payante pour pro) | Open Source (100% libre) |
 | **Canal par défaut** | `defaults` (Anaconda Inc.) | `conda-forge` (communautaire) |
@@ -88,32 +90,32 @@ Pourquoi ? Parce que pour la géomatique et l'analyse de données spatiales, vou
 
 #### Le rôle crucial de `conda-forge`
 
-Conda utilise des **canaux** (channels) pour télécharger les packages. Pensez à un canal comme une source/dépôt de packages.
+Conda utilise des **canaux** (channels) pour télécharger les librairies. Pensez à un canal comme une source/dépôt de librairies.
 
-**Canal `defaults`** (fourni par Anaconda Inc.) - Packages maintenus par l'équipe Anaconda - Mise à jour lente (focus sécurité) - Problème : GDAL et géospatial souvent obsolètes
+**Canal `defaults`** (fourni par Anaconda Inc.) - Librairies maintenues par l'équipe Anaconda - Mise à jour lente (focus sécurité) - Problème : GDAL et géospatial souvent obsolètes
 
-**Canal `conda-forge`** (maintenu par la communauté) - \~20,000 packages maintenus par des scientifiques et développeurs - Mise à jour rapide (nouvelles versions de GDAL disponibles rapidement) - Idéal pour géomatique et science des données - 100% gratuit et transparent (toutes les versions disponible sur GitHub)
+**Canal `conda-forge`** (maintenu par la communauté) - \~20,000 librairies maintenues par des scientifiques et développeurs - Mise à jour rapide (nouvelles versions de GDAL disponibles rapidement) - Idéal pour géomatique et science des données - 100% gratuit et transparent (toutes les versions disponible sur GitHub)
 
 **Exemple concret** :
 
 ``` bash
 # Avec Miniforge (conda-forge est déjà le canal par défaut) :
-conda install gdal                    # ✓ Fonctionne (utilise conda-forge)
-conda install -c conda-forge gdal     # ✓ Fonctionne aussi (explicite)
+conda install gdal                    # [OK] Fonctionne (utilise conda-forge)
+conda install -c conda-forge gdal     # [OK] Fonctionne aussi (explicite)
 
 # Avec Anaconda (canal defaults par défaut) :
-conda install gdal                    # ✗ Version obsolète du canal defaults
-conda install -c conda-forge gdal     # ✓ Version à jour de conda-forge
+conda install gdal                    # [!] Version obsolète du canal defaults
+conda install -c conda-forge gdal     # [OK] Version à jour de conda-forge
 ```
 
 #### Alternatives à Conda : Quand les utiliser ?
 
-Vous avez d'autres outils pour gérer les packages Python. Voici comment les utiliser :
+Vous avez d'autres outils pour gérer les librairies Python. Voici comment les utiliser :
 
 | Outil | Utilité | Quand l'utiliser | Limitation |
-|-----------------|-----------------|--------------------|-----------------|
+|------------------|------------------|-------------------|------------------|
 | **Conda** | Gestion complète (Python + dépendances C) | **Toujours pour géomatique** | \- |
-| **Pip** | Installer packages Python uniquement | Packages simples (seaborn, pandas) | Ne compile pas dépendances C |
+| **Pip** | Installer librairies Python uniquement | Librairies simples (seaborn, pandas) | Ne compile pas dépendances C |
 | **Mamba** | Remplaçant ultra-rapide de Conda | Conda trop lent ? Installez mamba | Encore jeune (moins stable) |
 | **uv** | Alternative moderne à pip | Projets Python pur (sans dépendances C) | Récent, communauté petite |
 | **VENV** | Environnements Python seulement | Jamais pour géomatique | Pas de dépendances C |
@@ -124,9 +126,9 @@ Vous avez d'autres outils pour gérer les packages Python. Voici comment les uti
 
 Vous avez plusieurs projets de recherche sur lesquels vous travaillez ? Chacun a probablement besoin de versions différentes des mêmes librairies.
 
-**Scénario réaliste** : - **Projet A** : Cartographie de zones protégées (GeoPandas 0.12, GDAL 3.6) - **Projet B** : Classification d'images satellites avec apprentissage automatique comme Random Forest (GeoPandas 0.14, GDAL 3.8, TensorFlow)
+**Scénario réaliste** : - **Projet A** : Cartographie de zones protégées (GeoPandas 0.12, GDAL 3.6) - **Projet B** : Classification d'images satellites avec Random Forest (GeoPandas 0.14, GDAL 3.8, scikit-learn, rasterio)
 
-Naïvement, vous pourriez installer tous les packages globalement. Mais quand vous installez GeoPandas 0.14 pour le Projet B, cela casse les dépendances du Projet A (qui attend 0.12).
+Naïvement, vous pourriez installer toutes les librairies globalement. Mais quand vous installez GeoPandas 0.14 pour le Projet B, cela casse les dépendances du Projet A (qui attend 0.12).
 
 **Avec Conda**, chaque projet a son propre "environnement virtuel" avec ses propres versions :
 
@@ -158,6 +160,8 @@ conda deactivate              # Revenir à l'environnement base
 -   Accepter la license
 -   Laisser chemin par défaut (ex: `C:\Users\YourName\miniforge3`)
 -   **IMPORTANT** : Cocher "Register Miniforge3 as my default Python"
+
+![Options d'installation Miniforge3](images/miniforge-install-options.png) *Figure 1 : Options d'installation - Cochez "Register Miniforge3 as the system Python 3.12" pour permettre à VSCode et autres programmes de détecter automatiquement Miniforge*
 
 **macOS/Linux :**
 
@@ -236,25 +240,27 @@ base                  *  C:\Users\YourName\miniforge3
 geo-env                  C:\Users\YourName\miniforge3\envs\geo-env
 ```
 
+![Démonstration des commandes conda essentielles](images/conda-commands.gif) *Figure 2 : Démonstration des commandes conda - Installation des librairies avec mamba, inspection avec conda list, et activation d'environnement. L'astérisque (\*) indique l'environnement actif.*
+
 ------------------------------------------------------------------------
 
-### 2.4 Stack géospatial essentiels
+### 2.4 Librairies géospatiales essentielles
 
-#### Pourquoi certains packages plutôt que d'autres ?
+#### Pourquoi certaines librairies plutôt que d'autres ?
 
-Maintenant que vous avez un environnement Conda isolé, vous devez l'équiper des outils appropriés pour la géomatique. Mais quels packages choisir parmi les \~20,000 disponibles sur conda-forge ?
+Maintenant que vous avez un environnement Conda isolé, vous devez l'équiper des outils appropriés pour la géomatique. Mais quelles librairies choisir parmi les \~20,000 disponibles sur conda-forge ?
 
-La réponse dépend de vos besoins spécifiques. En géomatique, vous travaillez généralement avec deux types de données :
+La réponse dépend de vos besoins selon le projet. En géomatique, vous travaillez généralement avec deux types de données :
 
-**Données vectorielles** (points, lignes, polygones) - Exemple : limites administratives, routes, bâtiments - Package clé : **GeoPandas**
+**Données vectorielles** (points, lignes, polygones) - Exemple : limites administratives, routes, bâtiments - Librairie clé : **GeoPandas**
 
-**Données raster** (grilles de pixels, images satellites) - Exemple : images Sentinel-2, modèles d'élévation, cartes climatiques - Packages clés : **GDAL**, **Rasterio**
+**Données raster** (grilles de pixels, images satellites) - Exemple : images Sentinel-2, modèles d'élévation, cartes climatiques - Librairies clés : **GDAL**, **Rasterio**
 
-Pour les visualiser et explorer vos résultats, vous avez aussi besoin de packages de data science générale (NumPy, Pandas, Matplotlib) et d'outils interactifs (Jupyter, Folium).
+Pour les visualiser et explorer vos résultats, vous avez aussi besoin de librairies de data science générale (NumPy, Pandas, Matplotlib) et d'outils interactifs (Jupyter, Folium).
 
-#### Installation du stack géospatial complet
+#### Installation des librairies géospatiales complètes
 
-Activez votre environnement et installez tous les packages d'un seul coup :
+Activez votre environnement et installez toutes les librairies d'un seul coup :
 
 ``` bash
 conda activate geo-env
@@ -272,19 +278,19 @@ conda install -c conda-forge \
   scipy
 ```
 
-**Note importante** : Si vous utilisez **Miniforge** (recommandé dans ce cours), le `-c conda-forge` est **optionnel** car conda-forge est déjà le canal par défaut. Vous pouvez donc écrire simplement `conda install geopandas gdal rasterio ...`. Nous le gardons dans les exemples pour être explicite et rester compatible avec Anaconda.
+**Note importante** : Si vous utilisez **Miniforge** (recommandé dans ce cours), le `-c conda-forge` est **optionnel** car conda-forge est déjà le canal par défaut. Vous pouvez donc écrire simplement `conda install geopandas gdal rasterio ...`.
 
-**Note performance** : `conda` prendra \~2-5 minutes pour résoudre les dépendances et compiler. C'est normal (voir 2.1 pour comprendre pourquoi). Utilisez `mamba` si vous êtes impatient :
+**Note performance** : `conda` prendra \~2-5 minutes pour résoudre les dépendances et compiler. C'est normal (voir 2.1 pour comprendre pourquoi). Utilisez `mamba` si vous êtes impatient comme moi 😅 :
 
 ``` bash
 # Alternative ultra-rapide (10x plus rapide)
-mamba install -c conda-forge geopandas gdal rasterio folium jupyter jupyterlab matplotlib numpy pandas scipy
+mamba install geopandas gdal rasterio folium jupyter jupyterlab matplotlib numpy pandas scipy
 ```
 
-#### Packages clés expliqués en détail
+#### Librairies clés expliquées en détail
 
-| Package | Catégorie | Utilité | Exemple d'usage |
-|-----------------|-----------------|-----------------|--------------------|
+| Librairie | Catégorie | Utilité | Exemple d'usage |
+|------------------|------------------|------------------|-------------------|
 | **GeoPandas** | Données spatiales | DataFrames avec géométries spatiales (points, lignes, polygones). Interface Python pour données vectorielles. | Charger une shapefile de zones protégées, calculer surfaces, fusionner polygones |
 | **GDAL/OGR** | Drivers géospatials | Lecture/écriture de formats raster et vecteur. Transformations de projections. Sous-jacent à GeoPandas et Rasterio. | Convertir GeoTIFF en NetCDF, reprojeter en WGS84 |
 | **Rasterio** | Données raster | Interface moderne et pythonique pour manipuler données raster. Plus simple que GDAL direct. | Lire bandes d'une image satellite Sentinel-2, calculer NDVI |
@@ -297,7 +303,7 @@ mamba install -c conda-forge geopandas gdal rasterio folium jupyter jupyterlab m
 
 #### Vérifier l'installation
 
-Après l'installation, testez que tous les packages sont accessibles :
+Après l'installation, testez que toutes les librairies sont accessibles :
 
 ``` bash
 python -c "import geopandas; print(f'GeoPandas {geopandas.__version__}')"
@@ -316,6 +322,8 @@ Vous devriez voir des numéros de version (ex: `GeoPandas 0.14.0`). Si vous rece
 ``` bash
 conda env export > environment.yml
 ```
+
+> **Note importante** : Le fichier `environment.yml` sera créé dans le répertoire courant de votre terminal. Assurez-vous d'être à la racine de votre projet avant d'exécuter cette commande. Vérifiez votre emplacement avec `pwd` (PowerShell) ou `cd` (Windows).
 
 Contenu du fichier généré :
 
@@ -375,7 +383,115 @@ Cela accélère l'installation car conda connaît déjà les versions recherché
 
 ------------------------------------------------------------------------
 
-## 3. VSCode - Éditeur de code 
+### 2.5 Commandes essentielles pour le quotidien
+
+#### Inspecter vos environnements
+
+Ces commandes vous permettent de savoir **où vous êtes** et **ce que vous avez** installé :
+
+| Commande | Résultat | Quand l'utiliser |
+|-------------------|-------------------|----------------------------------|
+| `conda env list` | Liste tous vos environnements | Voir quels projets existent |
+| `conda list` | Librairies dans l'environnement actif | Vérifier versions installées |
+| `conda list gdal` | Info sur une librairie spécifique | Vérifier si GDAL est installé et sa version |
+
+**Exemple pratique** :
+
+``` bash
+# Vérifier quel environnement est actif
+conda env list
+# → Celui avec * est actif
+
+# Lister toutes les librairies installées
+conda list
+
+# Chercher une librairie spécifique
+conda list gdal
+# → gdal  3.8.0  py311h1234567_0  conda-forge
+```
+
+------------------------------------------------------------------------
+
+#### Nettoyer l'espace disque
+
+**Problème courant** : Le cache Conda grandit rapidement (+ 5 GB après quelques mois d'utilisation). Les environnements de test s'accumulent et remplissent votre disque.
+
+| Commande | Effet | Quand l'utiliser |
+|--------------------|-------------------|----------------------------------|
+| `conda clean --all --dry-run` | Voir ce qui sera supprimé (sans supprimer) | Avant de nettoyer |
+| `conda clean --all` | Supprimer cache et librairies inutilisées | Une fois par mois |
+| `conda remove -n old-env --all` | Supprimer complètement un environnement | Projet terminé |
+
+**Exemple pratique** :
+
+``` bash
+# Voir combien d'espace vous pouvez récupérer
+conda clean --all --dry-run
+
+# Résultat typique :
+# Will remove 47 tarball(s), 8.5 GB
+# Will remove 12 librairie(s), 2.1 GB
+
+# Si > 5 GB, nettoyer :
+conda clean --all
+
+# Supprimer un vieil environnement de test
+conda remove -n test-env --all
+```
+
+------------------------------------------------------------------------
+
+#### Exporter pour reproductibilité
+
+**Règle d'or** : Toujours exporter `environment.yml` avant de committer sur Git.
+
+| Commande | Résultat | Avantage |
+|------------------------|------------------------|------------------------|
+| `conda env export > environment.yml` | Fichier avec **toutes** les dépendances (100+ lignes) | Reproductibilité exacte |
+| `conda env export --from-history > environment.yml` | Fichier avec seulement librairies **explicitement installées** (10-15 lignes) | Lisible et maintenable |
+
+**Recommandation** : Utilisez `--from-history` pour un fichier propre et lisible.
+
+**Exemple pratique** :
+
+``` bash
+# Activer votre environnement
+conda activate geo-env
+
+# Exporter (version lisible recommandée)
+conda env export --from-history > environment.yml
+
+# Résultat : fichier concis
+# name: geo-env
+# channels:
+#   - conda-forge
+# dependencies:
+#   - python=3.11
+#   - geopandas
+#   - gdal
+#   - rasterio
+#   - jupyter
+
+# Committer ce fichier sur Git
+git add environment.yml
+git commit -m "Ajouter environment.yml pour reproductibilité"
+```
+
+------------------------------------------------------------------------
+
+#### Erreurs courantes à éviter
+
+| Mauvaise pratique | Bonne pratique |
+|---------------------------------------|---------------------------------|
+| `conda install geopandas` dans `(base)` | Créer un nouvel environnement dédié |
+| Supprimer le dossier `miniforge3/` manuellement | Utiliser `conda remove -n env --all` |
+| Mélanger `pip install` et `conda install` sans ordre | Toujours `conda` en premier, `pip` ensuite si nécessaire |
+
+**Pourquoi ne jamais toucher à `(base)` ?** Si vous cassez l'environnement base, vous cassez Conda lui-même et devrez réinstaller Miniforge.
+
+------------------------------------------------------------------------
+
+## 3. VSCode - Éditeur pour géomatique
 
 ### 3.1 Prise en main de l'interface
 
@@ -525,7 +641,7 @@ Ou dans VSCode directement : 1. Créer fichier `analyse.ipynb` 2. Cliquer **Sele
 
 Vous avez finalisé une analyse de classification d'images satellites il y a trois mois. Aujourd'hui, votre directeur vous demande : "Pouvez-vous refaire cette analyse avec les données mises à jour de décembre ?"
 
-Vous trouvez votre code, mais vous n'êtes plus certain : - Quel était votre environment.yml exact ? (packages et versions) - Avez-vous modifié l'algorithme après la publication ? (quelle version final ?) - Qui a fait quel changement au code ? (traçabilité) - Pouvez-vous revenir à une version antérieure rapidement ?
+Vous trouvez votre code, mais vous n'êtes plus certain : - Quel était votre environment.yml exact ? (librairies et versions) - Avez-vous modifié l'algorithme après la publication ? (quelle version final ?) - Qui a fait quel changement au code ? (traçabilité) - Pouvez-vous revenir à une version antérieure rapidement ?
 
 **Git résout tous ces problèmes.** C'est un **système de contrôle des versions** qui enregistre chaque changement apporté à votre code, avec qui a fait le changement, quand, et pourquoi.
 
@@ -646,7 +762,7 @@ Imaginez que vous terminez une analyse d'indice de végétation (NDVI) en mai 20
 
 **Sans Git + environment.yml** : Votre collègue clone le code, mais : - Quel était l'environnement exact ? (quelles versions ?) - Qui a modifié quoi et pourquoi ? (git log montre un historique vide) - Le code fonctionne différemment en octobre vs mai (GDAL a changé)
 
-**Avec Git + environment.yml + VSCode** : Votre collègue : - Voit `environment.yml` et reproduit exactement votre environnement (`conda env create -f environment.yml`) - Voit `git log` et understand chaque étape : "Sept 12: Corriger extraction bandes -\> Oct 5: Ajouter masquage nuages" - Le code fonctionne à l'identique en octobre car les packages sont gelés - VSCode détecte automatiquement l'environnement correct grâce aux configuration Conda intégrées
+**Avec Git + environment.yml + VSCode** : Votre collègue : - Voit `environment.yml` et reproduit exactement votre environnement (`conda env create -f environment.yml`) - Voit `git log` et understand chaque étape : "Sept 12: Corriger extraction bandes -\> Oct 5: Ajouter masquage nuages" - Le code fonctionne à l'identique en octobre car les librairies sont gelées - VSCode détecte automatiquement l'environnement correct grâce aux configuration Conda intégrées
 
 Cet exemple montre un **triple bénéfice** qui émerge seulement en combinaison.
 
@@ -678,7 +794,7 @@ conda activate ndvi-project
 
 Vous devriez voir `(ndvi-project)` au début de votre invite.
 
-Installer les packages géospatiaux depuis conda-forge :
+Installer les librairies géospatiales depuis conda-forge :
 
 ``` bash
 conda install -c conda-forge geopandas rasterio gdal numpy pandas scipy jupyter -y
@@ -686,7 +802,7 @@ conda install -c conda-forge geopandas rasterio gdal numpy pandas scipy jupyter 
 
 **Rappel** : Avec Miniforge, le `-c conda-forge` est optionnel (voir section 2.4). Nous le gardons ici pour clarté.
 
-**Point de validation** : Tous les packages s'installent sans erreur. Vous voyez `Preparing transaction: done`.
+**Point de validation** : Toutes les librairies s'installent sans erreur. Vous voyez `Preparing transaction: done`.
 
 Geler l'environnement pour reproductibilité :
 
@@ -1028,7 +1144,7 @@ En moins de 2 minutes, votre collègue a : - Votre code exact - Votre environnem
 
 ### Fichiers ressources
 
--   [**environment.yml**](../resources/environment.yml) - Stack geospatial pré-configurée
+-   [**environment.yml**](../resources/environment.yml) - Librairies géospatiales pré-configurées
 -   [**settings.json**](../resources/settings.json) - Configuration VSCode optimale
 -   [**extensions-recommandees.md**](../resources/extensions-recommandees.md) - Extensions détaillées
 
