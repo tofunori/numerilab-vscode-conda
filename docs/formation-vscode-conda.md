@@ -1,4 +1,4 @@
-# Introduction à VSCode et Conda pour la géomatique
+# Introduction à VSCode et Conda
 
 #### Thierry Laurent St-Pierre
 
@@ -390,7 +390,7 @@ Cela accélère l'installation car conda connaît déjà les versions recherché
 Ces commandes vous permettent de savoir **où vous êtes** et **ce que vous avez** installé :
 
 | Commande | Résultat | Quand l'utiliser |
-|-------------------|-------------------|----------------------------------|
+|-------------------|-------------------|---------------------------------|
 | `conda env list` | Liste tous vos environnements | Voir quels projets existent |
 | `conda list` | Librairies dans l'environnement actif | Vérifier versions installées |
 | `conda list gdal` | Info sur une librairie spécifique | Vérifier si GDAL est installé et sa version |
@@ -417,7 +417,7 @@ conda list gdal
 **Problème courant** : Le cache Conda grandit rapidement (+ 5 GB après quelques mois d'utilisation). Les environnements de test s'accumulent et remplissent votre disque.
 
 | Commande | Effet | Quand l'utiliser |
-|--------------------|-------------------|----------------------------------|
+|--------------------|-------------------|---------------------------------|
 | `conda clean --all --dry-run` | Voir ce qui sera supprimé (sans supprimer) | Avant de nettoyer |
 | `conda clean --all` | Supprimer cache et librairies inutilisées | Une fois par mois |
 | `conda remove -n old-env --all` | Supprimer complètement un environnement | Projet terminé |
@@ -487,7 +487,7 @@ git commit -m "Ajouter environment.yml pour reproductibilité"
 | Supprimer le dossier `miniforge3/` manuellement | Utiliser `conda remove -n env --all` |
 | Mélanger `pip install` et `conda install` sans ordre | Toujours `conda` en premier, `pip` ensuite si nécessaire |
 
-**Pourquoi ne jamais toucher à `(base)` ?** Si vous cassez l'environnement base, vous cassez Conda lui-même et devrez réinstaller Miniforge.
+**Pourquoi ne jamais toucher à `(base)` ?** Si vous cassez l'environnement de base, vous cassez Conda lui-même et devrez réinstaller Miniforge.
 
 ------------------------------------------------------------------------
 
@@ -505,28 +505,20 @@ git commit -m "Ajouter environment.yml pour reproductibilité"
 
 1.  Ouvrir VSCode
 2.  **File** → **Open Folder**
-3.  Sélectionner votre dossier de projet géomatique
+3.  Sélectionner votre dossier de projet
 4.  Cliquer **Select Folder**
 
 #### Les panneaux principaux
 
-```         
-┌─────────────────────────────────────────────┐
-│ File Edit View Run Debug ... Help           │ Menu bar
-├──┬──────────────────────────────────────────┤
-│  │                                          │
-│ 1│          3. Éditeur principal            │
-│  │   (fichiers .py, .md, .json)             │
-│  │                                          │
-│  ├──────────────────────────────────────────┤
-│  │ 4. Terminal intégré                      │
-└──┴──────────────────────────────────────────┘
+![Interface VSCode](images/vscode-layout.png)
 
-1. Sidebar gauche (Explorateur, Search, Extensions, etc.)
-2. Panneau Explorateur (list fichiers)
-3. Éditeur principal (code)
-4. Terminal (intégré)
-```
+*Figure 2 : Interface VSCode en action - À gauche : Explorer avec arborescence de fichiers du projet. Centre : Éditeur principal affichant du code R. Bas : Panel avec onglets (Problems, Output, Terminal) - notez l'environnement Conda `(base)` actif dans le terminal. Haut : Menu et barre d'onglets pour naviguer entre fichiers ouverts.*
+
+**Zones principales :**
+- **Sidebar gauche** : Explorer, Search, Source Control, Extensions
+- **Éditeur central** : Zone de code avec coloration syntaxique
+- **Panel inférieur** : Terminal, Problems, Output, Debug Console
+- **Status Bar** (bas) : Informations sur le fichier, Git, et interpréteur Python
 
 #### Les sections du Sidebar
 
@@ -711,7 +703,7 @@ git commit -m "Ajouter visualisation Folium pour résultats cartographiques"
 
 #### Connecter votre repo local à GitHub (sauvegarde + collaboration)
 
-Jusqu'à présent, votre repo existe seulement sur votre ordinateur. GitHub permet de : - **Sauvegarder** sur le cloud (pas de perte si disque dur crash) - **Partager** avec collègues - **Collaborer** via Pull Requests
+Jusqu'à présent, votre repo existe seulement sur votre ordinateur. GitHub permet de : - **Sauvegarder** sur le cloud (pas de perte si le disque dur crash) - **Partager** avec collègues - **Collaborer** via Pull Requests
 
 **Étape 1** : Créer repository sur GitHub
 
