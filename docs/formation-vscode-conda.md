@@ -1,8 +1,10 @@
-# Introduction à VSCode et Conda
+# Environnements Python avec Conda : installation, utilisation et intégration dans VSCode
 
 #### Thierry Laurent St-Pierre
 
 #### Octobre 2025
+
+**Dépôt GitHub** : [https://github.com/tofunori/numerilab-vscode-conda](https://github.com/tofunori/numerilab-vscode-conda)
 
 ------------------------------------------------------------------------
 
@@ -19,7 +21,7 @@
     -   [3.2 Extensions essentielles](#32-extensions-essentielles)
     -   [3.3 Terminal intégré et Conda](#33-terminal-intégré-et-conda)
     -   [3.4 Git et GitHub](#34-git-et-github)
-    -   [3.5 Workflow complet](#35-workflow-complet)
+    -   [3.5 Démarche complète](#35-démarche-complète)
 -   [4. Ressources et annexes](#4-ressources-et-annexes)
 
 ------------------------------------------------------------------------
@@ -313,6 +315,8 @@ python -c "import gdal; print(f'GDAL {gdal.__version__}')"
 
 Vous devriez voir des numéros de version (ex: `GeoPandas 0.14.0`). Si vous recevez `ModuleNotFoundError`, relancez le terminal ou vérifiez que vous avez bien activé `geo-env`.
 
+**Validation complète** : Pour tester votre environnement, consultez le notebook [01a-validation-rapide.ipynb](../exemples/01a-validation-rapide.ipynb) (section 3.3 pour l'exécution).
+
 #### Environnements reproductibles avec environment.yml
 
 **Le problème** : Vous finissez votre projet en mai 2025 avec GDAL 3.8.0. Votre collègue clone votre code en décembre 2025, installe les librairies en novembre 2025 (versions plus récentes), et soudain votre code ne fonctionne plus. Conflit de versions!
@@ -390,7 +394,7 @@ Cela accélère l'installation car conda connaît déjà les versions recherché
 Ces commandes vous permettent de savoir **où vous êtes** et **ce que vous avez** installé :
 
 | Commande | Résultat | Quand l'utiliser |
-|-------------------|-------------------|---------------------------------|
+|--------------------|--------------------|--------------------------------|
 | `conda env list` | Liste tous vos environnements | Voir quels projets existent |
 | `conda list` | Librairies dans l'environnement actif | Vérifier versions installées |
 | `conda list gdal` | Info sur une librairie spécifique | Vérifier si GDAL est installé et sa version |
@@ -514,11 +518,7 @@ git commit -m "Ajouter environment.yml pour reproductibilité"
 
 *Figure 2 : Interface VSCode en action - À gauche : Explorer avec arborescence de fichiers du projet. Centre : Éditeur principal affichant du code R. Bas : Panel avec onglets (Problems, Output, Terminal) - notez l'environnement Conda `(base)` actif dans le terminal. Haut : Menu et barre d'onglets pour naviguer entre fichiers ouverts.*
 
-**Zones principales :**
-- **Sidebar gauche** : Explorer, Search, Source Control, Extensions
-- **Éditeur central** : Zone de code avec coloration syntaxique
-- **Panel inférieur** : Terminal, Problems, Output, Debug Console
-- **Status Bar** (bas) : Informations sur le fichier, Git, et interpréteur Python
+**Zones principales :** - **Sidebar gauche** : Explorer, Search, Source Control, Extensions - **Éditeur central** : Zone de code avec coloration syntaxique - **Panel inférieur** : Terminal, Problems, Output, Debug Console - **Status Bar** (bas) : Informations sur le fichier, Git, et interpréteur Python
 
 #### Les sections du Sidebar
 
@@ -536,13 +536,13 @@ Cliquer l'icône pour naviguer :
 
 #### Top 5 extensions pour géomatique
 
-| Extension      | Utilité                            | Installer            |
-|----------------|------------------------------------|----------------------|
-| **Python**     | Support complet Python (Microsoft) | Obligatoire          |
-| **Jupyter**    | Notebooks interactifs              | Fortement recommandé |
-| **Pylance**    | Autocomplétion avancée             | Recommandé           |
-| **GitLens**    | Git visualization améliorée        | Recommandé           |
-| **GDAL Tools** | Syntax highlighting GDAL           | Optionnel            |
+| Extension         | Utilité                            | Installer            |
+|-------------------|--------------------------------|---------------------|
+| **Python**        | Support complet Python (Microsoft) | Obligatoire          |
+| **Jupyter**       | Notebooks interactifs              | Fortement recommandé |
+| **Pylance**       | Autocomplétion avancée             | Recommandé           |
+| **GitLens**       | Git visualization améliorée        | Recommandé           |
+| **Data Wrangler** | Exploration visuelle pandas        | Recommandé           |
 
 #### Installer une extension
 
@@ -624,6 +624,8 @@ jupyter notebook
 ```
 
 Ou dans VSCode directement : 1. Créer fichier `analyse.ipynb` 2. Cliquer **Select Kernel** 3. Choisir `geo-env` 4. Commencer à coder !
+
+**Validation rapide** : Pour tester votre environnement, ouvrez le notebook [01a-validation-rapide.ipynb](../exemples/01a-validation-rapide.ipynb) (2-3 minutes). Pour un exemple avancé avec données Sentinel-2 réelles, consultez [01b-exemple-sentinel2-avance.ipynb](../exemples/01b-exemple-sentinel2-avance.ipynb) (10-15 minutes).
 
 ------------------------------------------------------------------------
 
@@ -732,7 +734,7 @@ git push -u origin main
 
 Votre code est maintenant sauvegardé et visible sur GitHub.
 
-#### Workflow Git résumé
+#### Séquence Git résumée
 
 ```         
 Code modifié → git add . → git commit -m "message" → git push
@@ -742,7 +744,7 @@ Code modifié → git add . → git commit -m "message" → git push
 
 ------------------------------------------------------------------------
 
-### 3.5 Workflow complet : intégration des trois couches
+### 3.5 Démarche complète : intégration des trois couches
 
 #### Pourquoi cette séquence de trois outils ?
 
@@ -762,7 +764,7 @@ Cet exemple montre un **triple bénéfice** qui émerge seulement en combinaison
 
 #### Scénario réaliste : de zéro à livrable publiable
 
-Vous démarrez un **nouveau projet de cartographie NDVI** fin septembre 2025 sur une région test. Voici le workflow complet de ce projet (estimé 45 minutes).
+Vous démarrez un **nouveau projet de cartographie NDVI** fin septembre 2025 sur une région test. Voici la démarche complète de ce projet (estimé 45 minutes).
 
 ##### **Étape 1 : Préparer l'environnement isolé (Conda)**
 
@@ -1106,7 +1108,7 @@ git push -u origin main
 
 ------------------------------------------------------------------------
 
-#### Workflow résumé : les trois couches en action
+#### Résumé des trois couches en action
 
 | Couche | Outil | Rôle | Artefact |
 |------------------|------------------|------------------|-------------------|
@@ -1129,6 +1131,8 @@ code .
 En moins de 2 minutes, votre collègue a : - Votre code exact - Votre environnement exact - L'historique exact des changements - VSCode configuré correctement
 
 **Ceci est impossible avec seulement Conda**, seulement **VSCode**, ou seulement **Git** isolément. C'est la **combinaison** qui crée la magie.
+
+**Exemple pratique complet** : Pour suivre une pratique guidée de bout en bout (30 minutes), consultez [02-pratique-projet-complet.md](../exemples/02-pratique-projet-complet.md).
 
 ------------------------------------------------------------------------
 
