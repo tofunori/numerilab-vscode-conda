@@ -1,14 +1,25 @@
 {
   "permissions": {
     "allow": [
+      "Bash(cp:*)",
+      "SlashCommand(/commit-commands:commit-push-pr)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh run list:*)",
+      "Bash(git pull:*)",
+      "Bash(timeout 10 mkdocs serve:*)",
+      "Bash(cat:*)",
+      "Bash(git log:*)",
+      "Bash(gh api:*)",
+      "Bash(git branch:*)",
+      "Bash(gh run view:*)",
+      "Bash(git config:*)",
+      "Bash(git filter-branch:*)",
       "Skill(numerilab-formation-builder)",
-      "Read(//c/Users/thier/AppData/**)",
-      "Read(//c/Users/thier/.claude/**)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(test:*)",
-      "Bash(python:*)"
+      "Bash(mkdocs build:*)"
     ],
     "deny": [],
     "ask": []
