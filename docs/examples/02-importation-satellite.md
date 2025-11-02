@@ -155,6 +155,10 @@ plt.axis('off')
 plt.show()
 ```
 
+**Résultat attendu** :
+- Une image couleur affichée (composition RGB de la région satellite)
+- Les pixels lumineux correspondent aux zones sans nuages
+
 ## 6. Distribution des bandes
 
 Histogramme lissé montrant la répartition des valeurs de réflectance pour chacune des bandes.
@@ -188,3 +192,7 @@ plt.legend()
 plt.tight_layout()
 plt.show()
 ```
+
+**Résultat attendu** :
+- Un graphique KDE (noyau de densité) montrant 4 courbes lissées (Bleu, Vert, Rouge, NIR)
+- Le NIR (courbe rouge foncée) montre généralement des valeurs plus élevées que les bandes visibles

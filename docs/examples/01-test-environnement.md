@@ -64,6 +64,14 @@ print(f"numpy: {np.__version__}")
 print("\nLes librairies géospatiales sont installées")
 ```
 
+**Résultat attendu** :
+```
+rasterio: 1.3.8
+numpy: 1.24.3
+
+Les librairies géospatiales sont installées
+```
+
 ## Lecture et visualisation
 
 ```python
@@ -124,6 +132,10 @@ plt.show()
 print("Validation réussie")
 ```
 
+**Résultat attendu** :
+- Une image couleur affichée (composition RGB de la région Saskatchewan-Athabasca)
+- Message de confirmation : `Validation réussie`
+
 ## Distribution spectrale RGB + NIR
 
 ```python
@@ -147,6 +159,10 @@ plt.show()
 
 print("Distribution spectrale affichée")
 ```
+
+**Résultat attendu** :
+- Un histogramme multicolore avec 4 courbes (Rouge, Vert, Bleu, NIR)
+- Message : `Distribution spectrale affichée`
 
 ## Calcul et visualisation NDSI
 
@@ -175,3 +191,7 @@ plt.show()
 # Statistiques
 print(f"NDSI calculé - Moyenne: {np.nanmean(ndsi):.3f}")
 ```
+
+**Résultat attendu** :
+- Une carte NDSI affichée (gradient bleu montrant les zones enneigées)
+- Message : `NDSI calculé - Moyenne: 0.XXX` (valeur entre 0 et 1)
