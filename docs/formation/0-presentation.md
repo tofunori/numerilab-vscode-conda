@@ -27,8 +27,6 @@ Cette formation vous guide à travers la configuration complète d'un environnem
 
 ### Structure
 
-[Consultez la formation complète](../formation-vscode-conda.md)
-
 La formation est organisée en 4 sections :
 
 1. **Introduction** - Contexte et motivation

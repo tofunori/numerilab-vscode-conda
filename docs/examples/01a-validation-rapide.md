@@ -99,7 +99,7 @@ Si toutes les cellules s'exécutent sans erreur, votre environnement est **100% 
 2. Relancer VSCode ou Jupyter
 3. Réinstaller la librairie : `conda install geopandas`
 
-Pour plus de débogage, voir section [4. Ressources et annexes](../formation/4-ressources.md#problèmes-courants-et-solutions).
+Pour plus de débogage, voir section [4. Ressources et annexes](../formation/4-ressources.md).
 
 ---
 
@@ -113,4 +113,4 @@ Après validation réussie :
 
 ✅ **Validation réussie?** Vous êtes prêt pour la géomatique! Passez à [3.5 Démarche complète](../formation/3.5-demarche-complete.md).
 
-❌ **Erreur?** Consultez [4. Ressources et annexes - Problèmes courants](../formation/4-ressources.md#problèmes-courants-et-solutions).
+❌ **Erreur?** Consultez [4. Ressources et annexes - Problèmes courants](../formation/4-ressources.md).
