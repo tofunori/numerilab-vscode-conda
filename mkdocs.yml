@@ -87,7 +87,6 @@ nav:
       - Accueil: examples/index.md
       - Validation rapide: examples/01a-validation-rapide.md
       - Sentinel-2 avancé: examples/01b-exemple-sentinel2.md
-      - Projet complet: examples/02-pratique-projet.md
   - Ressources:
       - Accueil: resources/index.md
       - Extensions recommandées: resources/extensions-recommandees.md
