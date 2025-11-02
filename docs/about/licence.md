@@ -31,10 +31,10 @@ SOFTWARE.
 ## En français
 
 En résumé, vous pouvez :
-- ✅ Utiliser ce code pour tout projet (commercial ou non)
-- ✅ Modifier le code librement
-- ✅ Distribuer le code modifié
-- ✅ Utiliser privément
+- Utiliser ce code pour tout projet (commercial ou non)
+- Modifier le code librement
+- Distribuer le code modifié
+- Utiliser privément
 
 Condition : vous devez inclure la licence MIT et le copyright dans toute copie.
 

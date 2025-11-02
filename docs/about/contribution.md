@@ -61,24 +61,24 @@ Pour que votre contribution soit acceptée, veuillez respecter :
 
 ### Documentation
 
-- ✅ Français québécois académique
-- ✅ Explications claires avant code
-- ✅ Exemples pratiques concrets
-- ✅ Tableaux de comparaison quand approprié
-- ✅ Liens vers ressources officielles
+- Français québécois académique
+- Explications claires avant code
+- Exemples pratiques concrets
+- Tableaux de comparaison quand approprié
+- Liens vers ressources officielles
 
 ### Code
 
-- ✅ Commentaires clairs en français
-- ✅ Docstrings pour fonctions
-- ✅ Tests pour nouvelles fonctionnalités
-- ✅ Respect des conventions du projet
+- Commentaires clairs en français
+- Docstrings pour fonctions
+- Tests pour nouvelles fonctionnalités
+- Respect des conventions du projet
 
 ### Commits
 
-- ✅ Messages explicites en français
-- ✅ Une feature/fix par commit
-- ✅ Lier à un issue (ex: "fix #42")
+- Messages explicites en français
+- Une feature/fix par commit
+- Lier à un issue (ex: "fix #42")
 
 ---
 
