@@ -1,0 +1,33 @@
+# 1. Introduction
+
+Consultez le [document principal de formation](../formation-vscode-conda.md#1-introduction) pour la section complète d'introduction.
+
+## Vue d'ensemble rapide
+
+### Contexte
+Vous travaillez en géomatique et avez besoin de :
+- Installer des librairies complexes (GDAL, GeoPandas, Rasterio)
+- Maintenir plusieurs projets avec des dépendances différentes
+- Collaborer efficacement avec d'autres chercheurs
+- Documenter et reproduire vos analyses
+
+### Pourquoi Conda ?
+Python natif ne gère pas bien les dépendances C comme GDAL et PROJ.
+**Conda** résout ce problème en téléchargeant des versions pré-compilées.
+
+### Pourquoi VSCode ?
+- Léger et gratuit
+- Extensions puissantes pour géomatique
+- Terminal intégré détecte Conda automatiquement
+- Git intégré
+- Support Jupyter natif
+
+### Pourquoi Git/GitHub ?
+- Traçabilité des changements
+- Collaboration efficace
+- Reproductibilité garantie
+- Sauvegarde cloud
+
+---
+
+**[Lire la formation complète →](../formation-vscode-conda.md)**

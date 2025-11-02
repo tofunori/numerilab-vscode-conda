@@ -1,0 +1,96 @@
+site_name: Numérilab - VSCode & Conda
+site_description: "Atelier complet : Installation et intégration de Conda et VSCode pour la géomatique"
+site_author: "Thierry Laurent St-Pierre"
+site_url: https://tofunori.github.io/numerilab-vscode-conda/
+repo_url: https://github.com/tofunori/numerilab-vscode-conda
+repo_name: numerilab-vscode-conda
+edit_uri: edit/develop/docs/
+
+theme:
+  name: material
+  language: fr
+  logo: docs/images/logo.png
+  favicon: docs/images/favicon.ico
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Mode clair
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Mode sombre
+
+plugins:
+  - search:
+      lang: fr
+
+markdown_extensions:
+  - toc:
+      toc_depth: "2-4"
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - attr_list
+  - md_in_html
+
+nav:
+  - Accueil: index.md
+  - Formation Complète:
+      - Présentation: formation/0-presentation.md
+      - 1. Introduction: formation/1-introduction.md
+      - 2. Conda:
+          - 2.1 Théorie: formation/2.1-conda-theorie.md
+          - 2.2 Installation: formation/2.2-conda-installation.md
+          - 2.3 Environnements: formation/2.3-conda-environnements.md
+          - 2.4 Librairies géospatiales: formation/2.4-conda-librairies.md
+          - 2.5 Commandes essentielles: formation/2.5-conda-commandes.md
+      - 3. VSCode:
+          - 3.1 Interface: formation/3.1-vscode-interface.md
+          - 3.2 Extensions: formation/3.2-vscode-extensions.md
+          - 3.3 Terminal & Conda: formation/3.3-vscode-terminal.md
+          - 3.4 Git & GitHub: formation/3.4-git-github.md
+          - 3.5 Démarche complète: formation/3.5-demarche-complete.md
+      - 4. Ressources: formation/4-ressources.md
+  - Exemples Pratiques:
+      - Validation rapide: examples/01a-validation-rapide.md
+      - Sentinel-2 avancé: examples/01b-exemple-sentinel2.md
+      - Projet complet: examples/02-pratique-projet.md
+  - Ressources:
+      - environment.yml: resources/environment.yml
+      - settings.json: resources/settings.json
+      - Extensions recommandées: resources/extensions-recommandees.md
+  - À propos:
+      - Licence: about/licence.md
+      - Contribution: about/contribution.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/tofunori/numerilab-vscode-conda
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com
+  version:
+    provider: mike
+    default: latest
+
+copyright: "© 2025 Thierry Laurent St-Pierre - Licence MIT"
