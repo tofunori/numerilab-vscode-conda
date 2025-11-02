@@ -35,6 +35,9 @@ theme:
         icon: material/brightness-4
         name: Mode sombre
 
+extra_css:
+  - css/extra.css
+
 plugins:
   - search:
       lang: fr

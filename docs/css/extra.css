@@ -1,0 +1,11 @@
+/* Agrandir le logo */
+.md-header__button.md-logo img {
+  max-height: 50px !important;
+  height: 50px !important;
+  width: auto !important;
+}
+
+.md-logo {
+  display: flex;
+  align-items: center;
+}
