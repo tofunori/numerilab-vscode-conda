@@ -667,6 +667,33 @@ Avec Git, vous travaillez sur la même branche (version) du code. Les changement
 
 **Reproductibilité** : Un chercheur externe lit votre publication et veut reproduire vos résultats. Git + environment.yml garantit qu'il peut recréer EXACTEMENT votre environnement et exécuter EXACTEMENT le code que vous aviez.
 
+#### Installer Git
+
+Avant d'utiliser Git, vous devez d'abord l'installer sur votre ordinateur.
+
+**Vérifier si Git est déjà installé :**
+
+Ouvrir un terminal et taper :
+
+```bash
+git --version
+```
+
+**Résultat attendu :**
+- ✅ Si installé : `git version 2.x.x`
+- ❌ Si pas installé : `'git' n'est pas reconnu en tant que commande...`
+
+**Installation de Git (si nécessaire) :**
+
+1. Visiter [git-scm.com/downloads](https://git-scm.com/downloads)
+2. Télécharger l'installateur pour Windows
+3. Exécuter l'installateur avec les options par défaut
+4. **Important** : Lors de l'installation, cocher "Git Bash" et "Git from the command line"
+5. Redémarrer VSCode après l'installation
+6. Vérifier l'installation : `git --version`
+
+**Note** : Si vous avez installé GitHub Desktop, Git est déjà inclus automatiquement.
+
 #### Initialiser Git dans votre projet
 
 Dans le terminal VSCode (avec `geo-env` actif) :

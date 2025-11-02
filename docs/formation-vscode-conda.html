@@ -1209,16 +1209,39 @@ Request).</p>
 publication et veut reproduire vos résultats. Git + environment.yml
 garantit qu’il peut recréer EXACTEMENT votre environnement et exécuter
 EXACTEMENT le code que vous aviez.</p>
+<h4 id="installer-git">Installer Git</h4>
+<p>Avant d’utiliser Git, vous devez d’abord l’installer sur votre
+ordinateur.</p>
+<p><strong>Vérifier si Git est déjà installé :</strong></p>
+<p>Ouvrir un terminal et taper :</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code></pre></div>
+<p><strong>Résultat attendu :</strong> - ✅ Si installé :
+<code>git version 2.x.x</code> - ❌ Si pas installé :
+<code>'git' n'est pas reconnu en tant que commande...</code></p>
+<p><strong>Installation de Git (si nécessaire) :</strong></p>
+<ol type="1">
+<li>Visiter <a
+href="https://git-scm.com/downloads">git-scm.com/downloads</a></li>
+<li>Télécharger l’installateur pour Windows</li>
+<li>Exécuter l’installateur avec les options par défaut</li>
+<li><strong>Important</strong> : Lors de l’installation, cocher “Git
+Bash” et “Git from the command line”</li>
+<li>Redémarrer VSCode après l’installation</li>
+<li>Vérifier l’installation : <code>git --version</code></li>
+</ol>
+<p><strong>Note</strong> : Si vous avez installé GitHub Desktop, Git est
+déjà inclus automatiquement.</p>
 <h4 id="initialiser-git-dans-votre-projet">Initialiser Git dans votre
 projet</h4>
 <p>Dans le terminal VSCode (avec <code>geo-env</code> actif) :</p>
-<div class="sourceCode" id="cb32"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialiser repository Git</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurer votre identité (une seule fois)</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Votre Nom Complet&quot;</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;votre.email@uqtr.ca&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialiser repository Git</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Configurer votre identité (une seule fois)</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Votre Nom Complet&quot;</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;votre.email@uqtr.ca&quot;</span></span></code></pre></div>
 <p>Ces commandes créent un dossier <code>.git</code> caché qui track
 tous les changements.</p>
 <h4 id="ajouter-et-committer-vos-fichiers">Ajouter et committer vos
@@ -1235,31 +1258,31 @@ analyse NDVI avec calcul de statistiques”)</li>
 <li>Cliquer le bouton de commit pour créer le commit</li>
 </ol>
 <p><strong>Via terminal</strong> (plus contrôle) :</p>
-<div class="sourceCode" id="cb33"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir état du repo</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter tous les fichiers modifiés</span></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un commit avec message explicite</span></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Ajouter analyse NDVI avec calcul de statistiques&quot;</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir historique des commits</span></span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir état du repo</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> status</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter tous les fichiers modifiés</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer un commit avec message explicite</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Ajouter analyse NDVI avec calcul de statistiques&quot;</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Voir historique des commits</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div>
 <h4 id="messages-de-commit-clairs-une-bonne-pratique">Messages de commit
 clairs : une bonne pratique</h4>
 <p>Un bon message de commit explique le <strong>POURQUOI</strong>, pas
 le quoi :</p>
-<div class="sourceCode" id="cb34"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mauvais</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;modif&quot;</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;fix bug&quot;</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bon</span></span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Implémenter calcul NDVI pour images Sentinel-2&quot;</span></span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Corriger reprojection WGS84 (issue #12)&quot;</span></span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Ajouter visualisation Folium pour résultats cartographiques&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mauvais</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;modif&quot;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;fix bug&quot;</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bon</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Implémenter calcul NDVI pour images Sentinel-2&quot;</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Corriger reprojection WGS84 (issue #12)&quot;</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Ajouter visualisation Folium pour résultats cartographiques&quot;</span></span></code></pre></div>
 <h4
 id="connecter-votre-repo-local-à-github-sauvegarde-collaboration">Connecter
 votre repo local à GitHub (sauvegarde + collaboration)</h4>
@@ -1284,15 +1307,15 @@ reproductible) ou <strong>Private</strong> (pour données sensibles)</li>
 <p><strong>Étape 2</strong> : Connecter votre repo local à GitHub</p>
 <p>GitHub vous affichera les commandes. Copiez-les dans VSCode terminal
 :</p>
-<div class="sourceCode" id="cb35"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter GitHub comme &quot;remote&quot;</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/votrecompte/mon-projet-geo.git</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Renommer branche par défaut en &quot;main&quot;</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pousser votre code vers GitHub</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter GitHub comme &quot;remote&quot;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/votrecompte/mon-projet-geo.git</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Renommer branche par défaut en &quot;main&quot;</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Pousser votre code vers GitHub</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
 <p>Votre code est maintenant sauvegardé et visible sur GitHub.</p>
 <h4 id="séquence-git-résumée">Séquence Git résumée</h4>
 <pre><code>Code modifié → git add . → git commit -m &quot;message&quot; → git push
@@ -1337,22 +1360,22 @@ projet (estimé 45 minutes).</p>
 <h5 id="étape-1-préparer-lenvironnement-isolé-conda"><strong>Étape 1 :
 Préparer l’environnement isolé (Conda)</strong></h5>
 <p>Vous créez un dossier projet avec structure claire :</p>
-<div class="sourceCode" id="cb37"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal Windows ou PowerShell</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure minimale</span></span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> donnees scripts resultats</span></code></pre></div>
-<p>Créer l’environnement Conda spécifique au projet :</p>
 <div class="sourceCode" id="cb38"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> ndvi-project python=3.11 <span class="at">-y</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-project</span></code></pre></div>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminal Windows ou PowerShell</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> D:<span class="dt">\P</span>rojets<span class="dt">\n</span>dvi-region-test</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Structure minimale</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> donnees scripts resultats</span></code></pre></div>
+<p>Créer l’environnement Conda spécifique au projet :</p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> ndvi-project python=3.11 <span class="at">-y</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-project</span></code></pre></div>
 <p>Vous devriez voir <code>(ndvi-project)</code> au début de votre
 invite.</p>
 <p>Installer les librairies géospatiales depuis conda-forge :</p>
-<div class="sourceCode" id="cb39"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge geopandas rasterio gdal numpy pandas scipy jupyter <span class="at">-y</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge geopandas rasterio gdal numpy pandas scipy jupyter <span class="at">-y</span></span></code></pre></div>
 <p><strong>Rappel</strong> : Avec Miniforge, le
 <code>-c conda-forge</code> est optionnel (voir section 2.4). Nous le
 gardons ici pour clarté.</p>
@@ -1360,8 +1383,8 @@ gardons ici pour clarté.</p>
 s’installent sans erreur. Vous voyez
 <code>Preparing transaction: done</code>.</p>
 <p>Geler l’environnement pour reproductibilité :</p>
-<div class="sourceCode" id="cb40"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> environment.yml</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env export <span class="op">&gt;</span> environment.yml</span></code></pre></div>
 <p>Ceci crée un fichier <code>environment.yml</code> qui capture
 <strong>exactement</strong> les versions. Ce fichier sera sauvegardé sur
 GitHub.</p>
@@ -1369,9 +1392,9 @@ GitHub.</p>
 <h5 id="étape-2-ouvrir-le-projet-dans-vscode"><strong>Étape 2 : Ouvrir
 le projet dans VSCode</strong></h5>
 <p>Depuis le terminal activé, lancez VSCode :</p>
-<div class="sourceCode" id="cb41"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toujours dans le dossier ndvi-region-test avec (ndvi-project) actif</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Toujours dans le dossier ndvi-region-test avec (ndvi-project) actif</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span></code></pre></div>
 <p>VSCode ouvre et scanne le dossier. Configurez l’interprète Python
 :</p>
 <ol type="1">
@@ -1393,98 +1416,98 @@ détecte l’environnement.</p>
 <p>Créer un fichier <code>scripts/analyse_ndvi.py</code> dans
 l’explorateur VSCode.</p>
 <p>Copier ce code d’analyse complet :</p>
-<div class="sourceCode" id="cb43"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analyse NDVI pour région test</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">Charge un raster NDVI et calcule statistiques + couverture</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.transform <span class="im">import</span> from_bounds</span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuration chemins</span></span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> Path(<span class="st">&quot;donnees&quot;</span>)</span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> Path(<span class="st">&quot;resultats&quot;</span>)</span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer dossiers s&#39;ils n&#39;existent pas</span></span>
-<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>data_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>output_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fichier exemple</span></span>
-<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> data_dir <span class="op">/</span> <span class="st">&quot;ndvi_test.tif&quot;</span></span>
-<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer raster fictif pour démo (remplacer par vraies données)</span></span>
-<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> ndvi_file.exists():</span>
-<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Fichier ndvi_test.tif non trouvé. Créons un raster de démo...&quot;</span>)</span>
-<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Données NDVI fictives</span></span>
-<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a>    ndvi_data <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.8</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>)).astype(np.float32)</span>
-<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métadonnées exemple (région Montréal)</span></span>
-<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> (<span class="op">-</span><span class="fl">73.5</span>, <span class="fl">45.0</span>, <span class="op">-</span><span class="fl">72.5</span>, <span class="fl">46.0</span>)</span>
-<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>    transform <span class="op">=</span> from_bounds(<span class="op">*</span>bounds, <span class="dv">512</span>, <span class="dv">512</span>)</span>
-<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-33"><a href="#cb43-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Écrire raster</span></span>
-<span id="cb43-34"><a href="#cb43-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(</span>
-<span id="cb43-35"><a href="#cb43-35" aria-hidden="true" tabindex="-1"></a>        ndvi_file, <span class="st">&#39;w&#39;</span>,</span>
-<span id="cb43-36"><a href="#cb43-36" aria-hidden="true" tabindex="-1"></a>        driver<span class="op">=</span><span class="st">&#39;GTiff&#39;</span>,</span>
-<span id="cb43-37"><a href="#cb43-37" aria-hidden="true" tabindex="-1"></a>        height<span class="op">=</span><span class="dv">512</span>, width<span class="op">=</span><span class="dv">512</span>,</span>
-<span id="cb43-38"><a href="#cb43-38" aria-hidden="true" tabindex="-1"></a>        count<span class="op">=</span><span class="dv">1</span>, dtype<span class="op">=</span>ndvi_data.dtype,</span>
-<span id="cb43-39"><a href="#cb43-39" aria-hidden="true" tabindex="-1"></a>        crs<span class="op">=</span><span class="st">&#39;EPSG:4326&#39;</span>,</span>
-<span id="cb43-40"><a href="#cb43-40" aria-hidden="true" tabindex="-1"></a>        transform<span class="op">=</span>transform</span>
-<span id="cb43-41"><a href="#cb43-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="im">as</span> dst:</span>
-<span id="cb43-42"><a href="#cb43-42" aria-hidden="true" tabindex="-1"></a>        dst.write(ndvi_data, <span class="dv">1</span>)</span>
-<span id="cb43-43"><a href="#cb43-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-44"><a href="#cb43-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Raster créé: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-45"><a href="#cb43-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-46"><a href="#cb43-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger et analyser</span></span>
-<span id="cb43-47"><a href="#cb43-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">=== ANALYSE NDVI RÉGION TEST ===&quot;</span>)</span>
-<span id="cb43-48"><a href="#cb43-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
-<span id="cb43-49"><a href="#cb43-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-50"><a href="#cb43-50" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
-<span id="cb43-51"><a href="#cb43-51" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
-<span id="cb43-52"><a href="#cb43-52" aria-hidden="true" tabindex="-1"></a>    profile <span class="op">=</span> src.profile</span>
-<span id="cb43-53"><a href="#cb43-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-54"><a href="#cb43-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Statistiques de base</span></span>
-<span id="cb43-55"><a href="#cb43-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">STATISTIQUES&quot;</span>)</span>
-<span id="cb43-56"><a href="#cb43-56" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Dimensions: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> pixels&quot;</span>)</span>
-<span id="cb43-57"><a href="#cb43-57" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Min NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-58"><a href="#cb43-58" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Max NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-59"><a href="#cb43-59" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Moyenne NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-60"><a href="#cb43-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Écart-type: </span><span class="sc">{</span>ndvi<span class="sc">.</span>std()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-61"><a href="#cb43-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-62"><a href="#cb43-62" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classification couverture</span></span>
-<span id="cb43-63"><a href="#cb43-63" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">CLASSIFICATION COUVERTURE&quot;</span>)</span>
-<span id="cb43-64"><a href="#cb43-64" aria-hidden="true" tabindex="-1"></a>    eau <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&lt;</span> <span class="op">-</span><span class="fl">0.1</span>)</span>
-<span id="cb43-65"><a href="#cb43-65" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> np.<span class="bu">sum</span>((ndvi <span class="op">&gt;=</span> <span class="op">-</span><span class="fl">0.1</span>) <span class="op">&amp;</span> (ndvi <span class="op">&lt;</span> <span class="fl">0.2</span>))</span>
-<span id="cb43-66"><a href="#cb43-66" aria-hidden="true" tabindex="-1"></a>    vegetation <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&gt;=</span> <span class="fl">0.2</span>)</span>
-<span id="cb43-67"><a href="#cb43-67" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> ndvi.size</span>
-<span id="cb43-68"><a href="#cb43-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-69"><a href="#cb43-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)&quot;</span>)</span>
-<span id="cb43-70"><a href="#cb43-70" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Sol nu: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)&quot;</span>)</span>
-<span id="cb43-71"><a href="#cb43-71" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)&quot;</span>)</span>
-<span id="cb43-72"><a href="#cb43-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-73"><a href="#cb43-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sauvegarder rapport</span></span>
-<span id="cb43-74"><a href="#cb43-74" aria-hidden="true" tabindex="-1"></a>    report_file <span class="op">=</span> output_dir <span class="op">/</span> <span class="st">&quot;rapport_ndvi.txt&quot;</span></span>
-<span id="cb43-75"><a href="#cb43-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(report_file, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
-<span id="cb43-76"><a href="#cb43-76" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;RAPPORT ANALYSE NDVI - RÉGION TEST</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb43-77"><a href="#cb43-77" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span>)</span>
-<span id="cb43-78"><a href="#cb43-78" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;Date analyse: 2025-09-30</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-79"><a href="#cb43-79" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;Fichier source: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-80"><a href="#cb43-80" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;STATISTIQUES</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-81"><a href="#cb43-81" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Min: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-82"><a href="#cb43-82" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Max: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-83"><a href="#cb43-83" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Moyenne: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ch">\n\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-84"><a href="#cb43-84" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;COUVERTURE</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-85"><a href="#cb43-85" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-86"><a href="#cb43-86" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Sol: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-87"><a href="#cb43-87" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-88"><a href="#cb43-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-89"><a href="#cb43-89" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Rapport sauvegardé: </span><span class="sc">{</span>report_file<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb43-90"><a href="#cb43-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-91"><a href="#cb43-91" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Analyse terminée !&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co">Analyse NDVI pour région test</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co">Charge un raster NDVI et calcule statistiques + couverture</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rasterio.transform <span class="im">import</span> from_bounds</span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuration chemins</span></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>data_dir <span class="op">=</span> Path(<span class="st">&quot;donnees&quot;</span>)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> Path(<span class="st">&quot;resultats&quot;</span>)</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer dossiers s&#39;ils n&#39;existent pas</span></span>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a>data_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb44-17"><a href="#cb44-17" aria-hidden="true" tabindex="-1"></a>output_dir.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb44-18"><a href="#cb44-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fichier exemple</span></span>
+<span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> data_dir <span class="op">/</span> <span class="st">&quot;ndvi_test.tif&quot;</span></span>
+<span id="cb44-21"><a href="#cb44-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-22"><a href="#cb44-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer raster fictif pour démo (remplacer par vraies données)</span></span>
+<span id="cb44-23"><a href="#cb44-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> ndvi_file.exists():</span>
+<span id="cb44-24"><a href="#cb44-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Fichier ndvi_test.tif non trouvé. Créons un raster de démo...&quot;</span>)</span>
+<span id="cb44-25"><a href="#cb44-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-26"><a href="#cb44-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Données NDVI fictives</span></span>
+<span id="cb44-27"><a href="#cb44-27" aria-hidden="true" tabindex="-1"></a>    ndvi_data <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="fl">0.3</span>, <span class="fl">0.8</span>, size<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>)).astype(np.float32)</span>
+<span id="cb44-28"><a href="#cb44-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-29"><a href="#cb44-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Métadonnées exemple (région Montréal)</span></span>
+<span id="cb44-30"><a href="#cb44-30" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> (<span class="op">-</span><span class="fl">73.5</span>, <span class="fl">45.0</span>, <span class="op">-</span><span class="fl">72.5</span>, <span class="fl">46.0</span>)</span>
+<span id="cb44-31"><a href="#cb44-31" aria-hidden="true" tabindex="-1"></a>    transform <span class="op">=</span> from_bounds(<span class="op">*</span>bounds, <span class="dv">512</span>, <span class="dv">512</span>)</span>
+<span id="cb44-32"><a href="#cb44-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-33"><a href="#cb44-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Écrire raster</span></span>
+<span id="cb44-34"><a href="#cb44-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> rasterio.<span class="bu">open</span>(</span>
+<span id="cb44-35"><a href="#cb44-35" aria-hidden="true" tabindex="-1"></a>        ndvi_file, <span class="st">&#39;w&#39;</span>,</span>
+<span id="cb44-36"><a href="#cb44-36" aria-hidden="true" tabindex="-1"></a>        driver<span class="op">=</span><span class="st">&#39;GTiff&#39;</span>,</span>
+<span id="cb44-37"><a href="#cb44-37" aria-hidden="true" tabindex="-1"></a>        height<span class="op">=</span><span class="dv">512</span>, width<span class="op">=</span><span class="dv">512</span>,</span>
+<span id="cb44-38"><a href="#cb44-38" aria-hidden="true" tabindex="-1"></a>        count<span class="op">=</span><span class="dv">1</span>, dtype<span class="op">=</span>ndvi_data.dtype,</span>
+<span id="cb44-39"><a href="#cb44-39" aria-hidden="true" tabindex="-1"></a>        crs<span class="op">=</span><span class="st">&#39;EPSG:4326&#39;</span>,</span>
+<span id="cb44-40"><a href="#cb44-40" aria-hidden="true" tabindex="-1"></a>        transform<span class="op">=</span>transform</span>
+<span id="cb44-41"><a href="#cb44-41" aria-hidden="true" tabindex="-1"></a>    ) <span class="im">as</span> dst:</span>
+<span id="cb44-42"><a href="#cb44-42" aria-hidden="true" tabindex="-1"></a>        dst.write(ndvi_data, <span class="dv">1</span>)</span>
+<span id="cb44-43"><a href="#cb44-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-44"><a href="#cb44-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Raster créé: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-45"><a href="#cb44-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-46"><a href="#cb44-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger et analyser</span></span>
+<span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">=== ANALYSE NDVI RÉGION TEST ===&quot;</span>)</span>
+<span id="cb44-48"><a href="#cb44-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span>)</span>
+<span id="cb44-49"><a href="#cb44-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-50"><a href="#cb44-50" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
+<span id="cb44-51"><a href="#cb44-51" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
+<span id="cb44-52"><a href="#cb44-52" aria-hidden="true" tabindex="-1"></a>    profile <span class="op">=</span> src.profile</span>
+<span id="cb44-53"><a href="#cb44-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-54"><a href="#cb44-54" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Statistiques de base</span></span>
+<span id="cb44-55"><a href="#cb44-55" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">STATISTIQUES&quot;</span>)</span>
+<span id="cb44-56"><a href="#cb44-56" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Dimensions: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> × </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape[<span class="dv">1</span>]<span class="sc">}</span><span class="ss"> pixels&quot;</span>)</span>
+<span id="cb44-57"><a href="#cb44-57" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Min NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-58"><a href="#cb44-58" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Max NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-59"><a href="#cb44-59" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Moyenne NDVI: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-60"><a href="#cb44-60" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Écart-type: </span><span class="sc">{</span>ndvi<span class="sc">.</span>std()<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-61"><a href="#cb44-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-62"><a href="#cb44-62" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Classification couverture</span></span>
+<span id="cb44-63"><a href="#cb44-63" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">CLASSIFICATION COUVERTURE&quot;</span>)</span>
+<span id="cb44-64"><a href="#cb44-64" aria-hidden="true" tabindex="-1"></a>    eau <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&lt;</span> <span class="op">-</span><span class="fl">0.1</span>)</span>
+<span id="cb44-65"><a href="#cb44-65" aria-hidden="true" tabindex="-1"></a>    sol <span class="op">=</span> np.<span class="bu">sum</span>((ndvi <span class="op">&gt;=</span> <span class="op">-</span><span class="fl">0.1</span>) <span class="op">&amp;</span> (ndvi <span class="op">&lt;</span> <span class="fl">0.2</span>))</span>
+<span id="cb44-66"><a href="#cb44-66" aria-hidden="true" tabindex="-1"></a>    vegetation <span class="op">=</span> np.<span class="bu">sum</span>(ndvi <span class="op">&gt;=</span> <span class="fl">0.2</span>)</span>
+<span id="cb44-67"><a href="#cb44-67" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> ndvi.size</span>
+<span id="cb44-68"><a href="#cb44-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-69"><a href="#cb44-69" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)&quot;</span>)</span>
+<span id="cb44-70"><a href="#cb44-70" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Sol nu: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)&quot;</span>)</span>
+<span id="cb44-71"><a href="#cb44-71" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> pixels (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)&quot;</span>)</span>
+<span id="cb44-72"><a href="#cb44-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-73"><a href="#cb44-73" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sauvegarder rapport</span></span>
+<span id="cb44-74"><a href="#cb44-74" aria-hidden="true" tabindex="-1"></a>    report_file <span class="op">=</span> output_dir <span class="op">/</span> <span class="st">&quot;rapport_ndvi.txt&quot;</span></span>
+<span id="cb44-75"><a href="#cb44-75" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(report_file, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> f:</span>
+<span id="cb44-76"><a href="#cb44-76" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;RAPPORT ANALYSE NDVI - RÉGION TEST</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb44-77"><a href="#cb44-77" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="st">&quot;=&quot;</span> <span class="op">*</span> <span class="dv">50</span> <span class="op">+</span> <span class="st">&quot;</span><span class="ch">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb44-78"><a href="#cb44-78" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;Date analyse: 2025-09-30</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-79"><a href="#cb44-79" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;Fichier source: </span><span class="sc">{</span>ndvi_file<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-80"><a href="#cb44-80" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;STATISTIQUES</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-81"><a href="#cb44-81" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Min: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-82"><a href="#cb44-82" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Max: </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-83"><a href="#cb44-83" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Moyenne: </span><span class="sc">{</span>ndvi<span class="sc">.</span>mean()<span class="sc">:.4f}</span><span class="ch">\n\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-84"><a href="#cb44-84" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;COUVERTURE</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-85"><a href="#cb44-85" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Eau: </span><span class="sc">{</span>eau<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>eau<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-86"><a href="#cb44-86" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Sol: </span><span class="sc">{</span>sol<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>sol<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-87"><a href="#cb44-87" aria-hidden="true" tabindex="-1"></a>        f.write(<span class="ss">f&quot;  Végétation: </span><span class="sc">{</span>vegetation<span class="sc">:,}</span><span class="ss"> (</span><span class="sc">{</span><span class="dv">100</span><span class="op">*</span>vegetation<span class="op">/</span>total<span class="sc">:.1f}</span><span class="ss">%)</span><span class="ch">\n</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-88"><a href="#cb44-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-89"><a href="#cb44-89" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="ss">Rapport sauvegardé: </span><span class="sc">{</span>report_file<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb44-90"><a href="#cb44-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-91"><a href="#cb44-91" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Analyse terminée !&quot;</span>)</span></code></pre></div>
 <p>Exécuter le script : <strong>F5</strong> ou Terminal
 <code>python scripts/analyse_ndvi.py</code></p>
 <p><strong>Point de validation</strong> : Vous voyez en output :</p>
@@ -1516,39 +1539,39 @@ Explorer et visualiser (VSCode + Jupyter)</strong></h5>
 racine (VSCode détecte l’extension <code>.ipynb</code> et active
 Jupyter).</p>
 <p>Cellule 1 (import et chargement) :</p>
-<div class="sourceCode" id="cb45"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> Path(<span class="st">&quot;donnees/ndvi_test.tif&quot;</span>)</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> src.bounds</span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;NDVI shape: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Valeurs: [</span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.2f}</span><span class="ss">, </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2f}</span><span class="ss">]&quot;</span>)</span></code></pre></div>
-<p>Cellule 2 (visualiser distribution) :</p>
 <div class="sourceCode" id="cb46"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>plt.hist(ndvi.flatten(), bins<span class="op">=</span><span class="dv">50</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, color<span class="op">=</span><span class="st">&#39;steelblue&#39;</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Valeur NDVI&quot;</span>)</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Fréquence (pixels)&quot;</span>)</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Distribution NDVI - Région test&quot;</span>)</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p>Cellule 3 (visualiser carte) :</p>
+class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rasterio</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>ndvi_file <span class="op">=</span> Path(<span class="st">&quot;donnees/ndvi_test.tif&quot;</span>)</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> rasterio.<span class="bu">open</span>(ndvi_file) <span class="im">as</span> src:</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    ndvi <span class="op">=</span> src.read(<span class="dv">1</span>)</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>    bounds <span class="op">=</span> src.bounds</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;NDVI shape: </span><span class="sc">{</span>ndvi<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Valeurs: [</span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.2f}</span><span class="ss">, </span><span class="sc">{</span>ndvi<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2f}</span><span class="ss">]&quot;</span>)</span></code></pre></div>
+<p>Cellule 2 (visualiser distribution) :</p>
 <div class="sourceCode" id="cb47"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> ax.imshow(ndvi, cmap<span class="op">=</span><span class="st">&#39;RdYlGn&#39;</span>, vmin<span class="op">=-</span><span class="fl">0.3</span>, vmax<span class="op">=</span><span class="fl">0.8</span>, extent<span class="op">=</span>[bounds.left, bounds.right, bounds.bottom, bounds.top])</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(im, ax<span class="op">=</span>ax, label<span class="op">=</span><span class="st">&#39;NDVI&#39;</span>)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&quot;Carte NDVI - Région test (Mercator)&quot;</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&quot;Longitude&quot;</span>)</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&quot;Latitude&quot;</span>)</span>
+class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>plt.hist(ndvi.flatten(), bins<span class="op">=</span><span class="dv">50</span>, edgecolor<span class="op">=</span><span class="st">&#39;black&#39;</span>, color<span class="op">=</span><span class="st">&#39;steelblue&#39;</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Valeur NDVI&quot;</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Fréquence (pixels)&quot;</span>)</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&quot;Distribution NDVI - Région test&quot;</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
 <span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p>Cellule 3 (visualiser carte) :</p>
+<div class="sourceCode" id="cb48"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> ax.imshow(ndvi, cmap<span class="op">=</span><span class="st">&#39;RdYlGn&#39;</span>, vmin<span class="op">=-</span><span class="fl">0.3</span>, vmax<span class="op">=</span><span class="fl">0.8</span>, extent<span class="op">=</span>[bounds.left, bounds.right, bounds.bottom, bounds.top])</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>cbar <span class="op">=</span> plt.colorbar(im, ax<span class="op">=</span>ax, label<span class="op">=</span><span class="st">&#39;NDVI&#39;</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">&quot;Carte NDVI - Région test (Mercator)&quot;</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">&quot;Longitude&quot;</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">&quot;Latitude&quot;</span>)</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <p>Exécuter chaque cellule avec <strong>Shift+Enter</strong>.</p>
 <p><strong>Point de validation</strong> : - Cellule 1 affiche dimensions
 (512, 512) et gamme NDVI - Cellule 2 montre histogramme avec
@@ -1563,10 +1586,10 @@ sauvegardé (<code>resultats/rapport_ndvi.txt</code>)</p>
 changements (Git)</strong></h5>
 <p>À ce stade, vous avez des fichiers à sauvegarder et tracer.</p>
 <p>Initialiser Git <strong>une fois par projet</strong> :</p>
-<div class="sourceCode" id="cb48"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.name <span class="st">&quot;Votre Nom&quot;</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.email <span class="st">&quot;votre.email@uqtr.ca&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.name <span class="st">&quot;Votre Nom&quot;</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config user.email <span class="st">&quot;votre.email@uqtr.ca&quot;</span></span></code></pre></div>
 <p>Créer <code>.gitignore</code> pour exclure fichiers inutiles (créer à
 la racine) :</p>
 <pre><code># Python
@@ -1585,19 +1608,19 @@ resultats/*.tif
 .vscode/
 .idea/</code></pre>
 <p>Ajouter tous les fichiers importants et committer :</p>
-<div class="sourceCode" id="cb50"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add scripts/ exploration.ipynb environment.yml .gitignore README.md</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Implémenter analyse NDVI avec classification couverture</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="st">- Créer script analyse_ndvi.py pour calcul stats et couverture végétale</span></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="st">- Ajouter notebook d&#39;exploration avec visualisations matplotlib</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="st">- Geler environment.yml pour reproductibilité (GDAL 3.8, Rasterio 1.3)</span></span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="st">- Documenter structure projet dans README&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add scripts/ exploration.ipynb environment.yml .gitignore README.md</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Implémenter analyse NDVI avec classification couverture</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="st">- Créer script analyse_ndvi.py pour calcul stats et couverture végétale</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="st">- Ajouter notebook d&#39;exploration avec visualisations matplotlib</span></span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a><span class="st">- Geler environment.yml pour reproductibilité (GDAL 3.8, Rasterio 1.3)</span></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="st">- Documenter structure projet dans README&quot;</span></span></code></pre></div>
 <p><strong>Point de validation</strong> : Vous voyez :</p>
 <pre><code>4 files changed, 287 insertions(+)</code></pre>
 <p>Vérifier l’historique :</p>
-<div class="sourceCode" id="cb52"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code></pre></div>
 <p>Vous devez voir votre commit :</p>
 <pre><code>a3f7d8e Implémenter analyse NDVI avec classification couverture</code></pre>
 <hr />
@@ -1618,10 +1641,10 @@ couverture (GDAL, Rasterio)”</li>
 <li><strong>Connecter repo local à GitHub</strong></li>
 </ol>
 <p>Copier les commandes que GitHub affiche. Dans VSCode terminal :</p>
-<div class="sourceCode" id="cb54"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
 <p><strong>Point de validation</strong> : - GitHub affiche votre repo
 avec tous les fichiers - Vous voyez le commit et le message complet -
 <code>environment.yml</code> est visible et lisible -
@@ -1676,13 +1699,13 @@ action</h4>
 <p><strong>L’intégration</strong> : Ces quatre éléments (environment.yml
 + VSCode + Git + GitHub) forment un <strong>système cohérent</strong>.
 Quand un collègue clone votre repo :</p>
-<div class="sourceCode" id="cb55"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ndvi-region-test</span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-region-test</span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="co"># VSCode ouvre et détecte automatiquement l&#39;environnement</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/VOTRE_COMPTE/ndvi-region-test.git</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ndvi-region-test</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ndvi-region-test</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> .</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co"># VSCode ouvre et détecte automatiquement l&#39;environnement</span></span></code></pre></div>
 <p>En moins de 2 minutes, votre collègue a : - Votre code exact - Votre
 environnement exact - L’historique exact des changements - VSCode
 configuré correctement</p>
