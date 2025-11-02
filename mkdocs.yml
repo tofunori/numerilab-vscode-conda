@@ -7,6 +7,12 @@ repo_url: https://github.com/tofunori/numerilab-vscode-conda
 repo_name: numerilab-vscode-conda
 edit_uri: edit/develop/docs/
 use_directory_urls: true
+docs_dir: docs
+site_dir: site
+exclude_docs: |
+  *.py
+  *.json
+  .DS_Store
 
 theme:
   name: material
