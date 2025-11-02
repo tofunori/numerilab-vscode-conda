@@ -909,7 +909,13 @@ geo-env                  C:\Users\YourName\miniforge3\envs\geo-env</code></pre>
 </section>
 <section id="au-delà-de-la-traçabilité-collaboration-et-reproductibilité" class="level4">
 <h4 class="anchored" data-anchor-id="au-delà-de-la-traçabilité-collaboration-et-reproductibilité">Au-delà de la traçabilité : collaboration et reproductibilité</h4>
-<p><strong>Collaboration</strong> : Vous travaillez avec deux collègues sur le même projet. Sans Git : - Vous envoyez <code>analyse_v1.py</code> par email - Collègue A le modifie → <code>analyse_v1_aaa.py</code> - Collègue B le modifie aussi → <code>analyse_v1_bbb.py</code> - Vous recevez deux versions différentes… comment les fusionner ?</p>
+<p><strong>Collaboration</strong> : Vous travaillez avec deux collègues sur le même projet. Sans Git :</p>
+<ul>
+<li>Vous envoyez <code>analyse_v1.py</code> par email</li>
+<li>Collègue A le modifie → <code>analyse_v1_aaa.py</code></li>
+<li>Collègue B le modifie aussi → <code>analyse_v1_bbb.py</code></li>
+<li>Vous recevez deux versions différentes… comment les fusionner ?</li>
+</ul>
 <p>Avec Git, vous travaillez sur la même branche (version) du code. Les changements se fusionnent automatiquement ou demandent révision (Pull Request).</p>
 <p><strong>Reproductibilité</strong> : Un chercheur externe lit votre publication et veut reproduire vos résultats. Git + environment.yml garantit qu’il peut recréer EXACTEMENT votre environnement et exécuter EXACTEMENT le code que vous aviez.</p>
 </section>
