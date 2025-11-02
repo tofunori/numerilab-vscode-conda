@@ -4,7 +4,7 @@
 
 #### Octobre 2025
 
-**Dépôt GitHub** : [https://github.com/tofunori/numerilab-vscode-conda](https://github.com/tofunori/numerilab-vscode-conda)
+**Dépôt GitHub** : <https://github.com/tofunori/numerilab-vscode-conda>
 
 ------------------------------------------------------------------------
 
@@ -638,6 +638,26 @@ Vous avez finalisé une analyse de classification d'images satellites il y a tro
 Vous trouvez votre code, mais vous n'êtes plus certain : - Quel était votre environment.yml exact ? (librairies et versions) - Avez-vous modifié l'algorithme après la publication ? (quelle version final ?) - Qui a fait quel changement au code ? (traçabilité) - Pouvez-vous revenir à une version antérieure rapidement ?
 
 **Git résout tous ces problèmes.** C'est un **système de contrôle des versions** qui enregistre chaque changement apporté à votre code, avec qui a fait le changement, quand, et pourquoi.
+
+#### Git vs GitHub : Quelle différence ?
+
+**Git** et **GitHub** sont deux outils distincts qui travaillent ensemble :
+
+| Outil | Type | Rôle | Exemple |
+|-------|------|------|---------|
+| **Git** | Logiciel local | Système de contrôle de versions installé sur votre ordinateur | Enregistre l'historique de vos fichiers localement |
+| **GitHub** | Plateforme web | Service cloud pour héberger et partager vos dépôts Git | Sauvegarde votre code en ligne et permet la collaboration |
+
+**Analogie simple :**
+- **Git** = votre journal personnel (vous écrivez localement)
+- **GitHub** = votre blogue public (vous publiez en ligne pour que d'autres le lisent)
+
+**En pratique :**
+1. Vous utilisez **Git** pour versionner votre code localement (`git commit`)
+2. Vous utilisez **GitHub** pour sauvegarder/partager votre code en ligne (`git push`)
+3. Vos collaborateurs utilisent **GitHub** pour télécharger votre code (`git clone`)
+
+**Vous pouvez utiliser Git sans GitHub** (versioning local seulement), mais GitHub nécessite Git pour fonctionner.
 
 #### Au-delà de la traçabilité : collaboration et reproductibilité
 
