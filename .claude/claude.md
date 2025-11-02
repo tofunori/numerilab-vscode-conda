@@ -85,7 +85,7 @@ numerilab-*/
 ## Émojis et symboles
 
 **Symboles AUTORISÉS uniquement** :
-- ★ ☞ ➜ ♦︎ ✸ ✤ ✓ ✦ 𖦹 ✎ ⃠ ●
+- ★ ☞ ➜ ♦︎ ✸ ✤ ✓ ✦ 𖦹 ✎ ⃠ ● ⌨︎ ⚠︎
 
 **AUCUN autre emoji** n'est autorisé dans la documentation, les notebooks, le code ou les commentaires.
 
