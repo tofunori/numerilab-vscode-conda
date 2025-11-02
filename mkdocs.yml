@@ -17,8 +17,6 @@ exclude_docs: |
 theme:
   name: material
   language: fr
-  logo: images/icon-v2.png
-  favicon: images/favicon.ico
   features:
     - navigation.tabs
     - navigation.tabs.sticky

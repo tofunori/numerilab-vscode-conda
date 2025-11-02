@@ -95,7 +95,7 @@ Pour que votre contribution soit acceptée, veuillez respecter :
 ## Questions ?
 
 - **Problèmes avec Git** : Voir la section [3.4 Git et GitHub](../formation/3.4-git-github.md)
-- **Structure du projet** : Voir [README.md](https://github.com/tofunori/numerilab-vscode-conda/blob/main/README.md)
+- **Structure du projet** : Voir la [page d'accueil](../index.md)
 - **Discussion** : Ouvrir une [Discussion](https://github.com/tofunori/numerilab-vscode-conda/discussions)
 
 ---
