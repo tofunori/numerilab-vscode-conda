@@ -661,7 +661,12 @@ Vous trouvez votre code, mais vous n'êtes plus certain : - Quel était votre en
 
 #### Au-delà de la traçabilité : collaboration et reproductibilité
 
-**Collaboration** : Vous travaillez avec deux collègues sur le même projet. Sans Git : - Vous envoyez `analyse_v1.py` par email - Collègue A le modifie → `analyse_v1_aaa.py` - Collègue B le modifie aussi → `analyse_v1_bbb.py` - Vous recevez deux versions différentes... comment les fusionner ?
+**Collaboration** : Vous travaillez avec deux collègues sur le même projet. Sans Git :
+
+- Vous envoyez `analyse_v1.py` par email
+- Collègue A le modifie → `analyse_v1_aaa.py`
+- Collègue B le modifie aussi → `analyse_v1_bbb.py`
+- Vous recevez deux versions différentes... comment les fusionner ?
 
 Avec Git, vous travaillez sur la même branche (version) du code. Les changements se fusionnent automatiquement ou demandent révision (Pull Request).
 
