@@ -1,0 +1,35 @@
+# Environnement minimal pour validation de l'installation conda
+# Utilisé avec le notebook: exercices/validation-environnement.ipynb
+#
+# Installation: conda env create -f environment-validation.yml
+# Activation: conda activate geo-validation
+
+name: geo-validation
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Core Python
+  - python=3.11
+  - pip
+
+  # Géospatial
+  - rasterio=1.3.*
+
+  # Data analysis
+  - numpy=1.24.*
+  - pandas=2.1.*
+
+  # Visualization
+  - matplotlib=3.8.*
+  - seaborn=0.13.*
+
+  # Interactive notebooks
+  - jupyter=1.0.*
+  - jupyterlab=4.0.*
+  - ipython=8.17.*
+
+  # Satellite imagery & STAC
+  - planetary-computer=1.0.*
+  - pystac-client=0.7.*

@@ -53,7 +53,16 @@ dependencies:
   - requests=2.31.*
   - urllib3=2.0.*
 
+  # Satellite imagery & STAC
+  - planetary-computer=1.0.*
+  - pystac-client=0.7.*
+
   # Utilities
   - tqdm=4.66.*
   - pyyaml=6.0.*
   - dotenv=1.0.*
+
+  # Installation via pip (non disponibles sur conda)
+  - pip:
+    - leafmap>=0.30.0
+    - anymap>=0.1.0
