@@ -5,9 +5,9 @@
 Cette formation vous guide à travers la configuration complète d'un environnement de développement professionnel pour la géomatique.
 
 ### Durée estimée
-- **Théorie** : 1h30
-- **Exemples pratiques** : 30 min
-- **Total** : 2h
+- **Théorie** : 60 mins
+- **Exemples pratiques** : 30 mins
+- **Total** : 90 mins
 
 ### Pré-requis
 - Aucune connaissance préalable

@@ -16,12 +16,12 @@ Designed pour **participants intermédiaires** avec une approche pédagogique in
 
 À la fin de cet atelier, vous serez capable de :
 
-Comprendre la différence entre Miniforge et Anaconda
-Créer et gérer des environnements conda isolés
-Installer des packages essentiels en géomatique (GDAL, GeoPandas, Rasterio)
-Naviguer et configurer VSCode
-Intégrer Git/GitHub dans votre workflow
-Utiliser les extensions VSCode pour améliorer la productivité
+- Comprendre la différence entre Miniforge et Anaconda.
+- Créer et gérer des environnements conda isolés.
+- Installer les libraries essentielles essentiels en géomatique (GDAL, GeoPandas, Rasterio).
+- Naviguer et configurer VSCode.
+- Intégrer Git/GitHub dans votre workflow.
+- Utiliser les extensions VSCode pour améliorer la productivité.
 
 ---
 
@@ -171,7 +171,7 @@ Les exercices pratiques utilisent des images satellite Sentinel-2 hébergées su
 
 ## Auteur
 
-**Présenté par** : Numérilab UQTR
+**Présenté par** :Thierry Laurent St-Pierre, UQTR
 **Dernière mise à jour** : 2025-10-29
 **Durée** : 90 minutes
 
