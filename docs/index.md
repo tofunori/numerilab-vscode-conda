@@ -18,7 +18,7 @@ Cet atelier vous apprend à configurer et utiliser **Conda** et **VSCode** pour 
 ### Structure de l'atelier
 
 ```
-├── Formation (1h30)
+├── Formation (60 mins)
 │   ├── Conda - Gestion des environnements
 │   ├── VSCode - Éditeur pour géomatique
 │   ├── Git & GitHub - Traçabilité et collaboration
