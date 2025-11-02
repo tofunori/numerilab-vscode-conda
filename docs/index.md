@@ -4,7 +4,7 @@
 
 Cet atelier vous apprend à configurer et utiliser **Conda** et **VSCode** pour développer des projets de **géomatique** reproductibles et professionnels.
 
-### 🎯 Objectifs
+### Objectifs
 
 À la fin de cet atelier, vous serez capable de :
 
@@ -15,7 +15,7 @@ Cet atelier vous apprend à configurer et utiliser **Conda** et **VSCode** pour 
 - **Utiliser Git et GitHub** pour versionner et collaborer
 - **Rendre vos projets reproductibles** via `environment.yml`
 
-### 📚 Structure de l'atelier
+### Structure de l'atelier
 
 ```
 ├── Formation (1h30)
@@ -29,7 +29,7 @@ Cet atelier vous apprend à configurer et utiliser **Conda** et **VSCode** pour 
 │   └── Projet complet du début à la fin
 ```
 
-### ⚡ Démarrage rapide
+### Démarrage rapide
 
 #### Option 1 : Lire la formation complète
 Consultez la [formation complète](formation/0-presentation.md) pour une explication détaillée de chaque concept.
@@ -40,20 +40,20 @@ Avez-vous déjà Conda et VSCode? Lancez directement le [notebook de validation 
 #### Option 3 : Suivre un projet de bout en bout
 Travaillez à travers le [projet complet guidé](examples/02-pratique-projet.md) (45 min) qui intègre Conda + VSCode + Git.
 
-### 🛠️ Prérequis
+### Prérequis
 
 - **Windows 10/11**, macOS, ou Linux
 - **Connexion internet** (pour les téléchargements)
 - ~2 GB d'espace disque libre
 - **Aucune connaissance préalable requise** - nous commençons de zéro!
 
-### 📖 Lectures recommandées
+### Lectures recommandées
 
 1. **Débutant complet** : Commencez par [1. Introduction](formation/1-introduction.md)
 2. **Expérience Python** : Allez directement à [2. Conda](formation/2.1-conda-theorie.md)
 3. **VSCode déjà utilisé** : Sautez à [3.4 Git & GitHub](formation/3.4-git-github.md)
 
-### 🎓 Qu'est-ce que vous apprendrez?
+### Qu'est-ce que vous apprendrez?
 
 **Conda** - Pourquoi c'est indispensable pour la géomatique
 
@@ -73,7 +73,7 @@ Travaillez à travers le [projet complet guidé](examples/02-pratique-projet.md)
 - Commits avec messages explicites
 - Workflow git simplifié
 
-### 📋 Ressources fournies
+### Ressources fournies
 
 | Ressource | Description |
 |-----------|-------------|
@@ -82,7 +82,7 @@ Travaillez à travers le [projet complet guidé](examples/02-pratique-projet.md)
 | **Notebooks** | Exemples exécutables avec données réelles (Sentinel-2) |
 | **Guides PDF** | Documentation téléchargeable offline |
 
-### 🚀 Déploiement du projet
+### Déploiement du projet
 
 Ce projet est hébergé sur [GitHub](https://github.com/tofunori/numerilab-vscode-conda) et accessible en ligne via cette documentation.
 
@@ -96,11 +96,11 @@ conda activate numerilab
 code .
 ```
 
-### 🤝 Contribution
+### Contribution
 
 Trouvez une erreur? Une suggestion? [Contribuez sur GitHub](https://github.com/tofunori/numerilab-vscode-conda/issues)!
 
-### 📞 Support
+### Support
 
 - **Questions sur le contenu** : Ouvrez une [discussion GitHub](https://github.com/tofunori/numerilab-vscode-conda/discussions)
 - **Bug/erreur** : [Issues GitHub](https://github.com/tofunori/numerilab-vscode-conda/issues)
@@ -108,4 +108,4 @@ Trouvez une erreur? Une suggestion? [Contribuez sur GitHub](https://github.com/t
 
 ---
 
-**Prêt à commencer?** → [Lancer la formation](formation/1-introduction.md) 🚀
+**Prêt à commencer?** → [Lancer la formation](formation/1-introduction.md)
