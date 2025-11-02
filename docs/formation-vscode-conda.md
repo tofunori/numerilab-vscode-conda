@@ -633,7 +633,7 @@ Ou dans VSCode directement : 1. Créer fichier `analyse.ipynb` 2. Cliquer **Sele
 
 #### Pourquoi Git est indispensable pour la science des données
 
-Vous avez finalisé une analyse de classification d'images satellites il y a trois mois. Aujourd'hui, votre directeur vous demande : "Pouvez-vous refaire cette analyse avec les données mises à jour de décembre ?"
+Vous avez terminé un projet de classification d'images satellites il y a trois mois. Aujourd'hui, votre directeur vous demande : "Pouvez-vous refaire cette analyse avec les données mises à jour de décembre ?"
 
 Vous trouvez votre code, mais vous n'êtes plus certain : - Quel était votre environment.yml exact ? (librairies et versions) - Avez-vous modifié l'algorithme après la publication ? (quelle version final ?) - Qui a fait quel changement au code ? (traçabilité) - Pouvez-vous revenir à une version antérieure rapidement ?
 
