@@ -24,9 +24,8 @@ Cet atelier vous apprend à configurer et utiliser **Conda** et **VSCode** pour 
 │   ├── Git & GitHub - Traçabilité et collaboration
 │
 ├── Exemples Pratiques (30 min)
-│   ├── Validation rapide avec données Sentinel-2
-│   ├── Exemple avancé : indice NDSI
-│   └── Projet complet du début à la fin
+│   ├── Test de l'environnement
+│   └── Importation d'images satellitaires
 ```
 
 ### Démarrage rapide
@@ -35,10 +34,10 @@ Cet atelier vous apprend à configurer et utiliser **Conda** et **VSCode** pour 
 Consultez la [formation complète](formation/0-presentation.md) pour une explication détaillée de chaque concept.
 
 #### Option 2 : Valider votre environnement rapidement
-Avez-vous déjà Conda et VSCode? Lancez directement le [notebook de validation rapide](examples/01a-validation-rapide.md) (2-3 min).
+Avez-vous déjà Conda et VSCode? Lancez directement le [test de l'environnement](examples/01-test-environnement.md) (2-3 min).
 
-#### Option 3 : Suivre un projet de bout en bout
-Travaillez à travers le [projet complet guidé](examples/02-pratique-projet.md) (45 min) qui intègre Conda + VSCode + Git.
+#### Option 3 : Exercices pratiques
+Explorez les [exemples pratiques](examples/index.md) avec des données Sentinel-2 réelles (10-15 min).
 
 ### Prérequis
 
