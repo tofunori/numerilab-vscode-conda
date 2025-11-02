@@ -11,7 +11,7 @@ use_directory_urls: true
 theme:
   name: material
   language: fr
-  logo: images/icon.png
+  logo: images/icon-v2.png
   favicon: images/favicon.ico
   features:
     - navigation.tabs
