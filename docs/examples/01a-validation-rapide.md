@@ -6,7 +6,7 @@
 
 ---
 
-## 📦 Téléchargement des données
+## Téléchargement des données
 
 Ce notebook nécessite l'image Sentinel-2 de Saskatchewan-Athabasca.
 
@@ -35,7 +35,7 @@ DATA_DIR.mkdir(exist_ok=True)
 
 # Télécharger si fichier absent
 if not FILE_PATH.exists():
-    print("📥 Téléchargement de l'image Saskatchewan-Athabasca depuis Google Drive...")
+    print("Téléchargement de l'image Saskatchewan-Athabasca depuis Google Drive...")
     url = f"https://drive.google.com/uc?export=download&id={FILE_ID}"
 
     response = requests.get(url, allow_redirects=True)
@@ -45,10 +45,10 @@ if not FILE_PATH.exists():
         f.write(response.content)
 
     file_size_mb = FILE_PATH.stat().st_size / 1024 / 1024
-    print(f"✅ Téléchargement terminé : {FILE_PATH}")
+    print(f"Téléchargement terminé : {FILE_PATH}")
     print(f"   Taille : {file_size_mb:.1f} MB")
 else:
-    print(f"✅ Données déjà présentes : {FILE_PATH}")
+    print(f"Données déjà présentes : {FILE_PATH}")
 ```
 
 ## Imports et versions
