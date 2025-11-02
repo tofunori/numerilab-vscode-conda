@@ -56,7 +56,7 @@
 
 **Formation complétée !**
 
-Pour questions : consultez les [ressources](../resources/) ou la [documentation officielle](https://docs.conda.io).
+Pour questions : consultez les [ressources](../resources/index.md) ou la [documentation officielle](https://docs.conda.io).
 
 ---
 
