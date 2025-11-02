@@ -1,11 +1,16 @@
 /* Agrandir le logo */
-.md-header__button.md-logo img {
+.md-logo {
+  display: flex;
+  align-items: center;
+}
+
+.md-logo img {
   max-height: 50px !important;
   height: 50px !important;
   width: auto !important;
 }
 
-.md-logo {
-  display: flex;
-  align-items: center;
+/* Forcer le logo à s'afficher sur tous les niveaux de pages */
+.md-header__button.md-logo {
+  display: block;
 }
