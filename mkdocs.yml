@@ -1,4 +1,5 @@
 site_name: Numérilab - VSCode & Conda
+# Updated: 2025-11-02
 site_description: "Atelier complet : Installation et intégration de Conda et VSCode pour la géomatique"
 site_author: "Thierry Laurent St-Pierre"
 site_url: https://tofunori.github.io/numerilab-vscode-conda/
