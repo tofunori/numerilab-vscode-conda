@@ -27,16 +27,23 @@ Designed pour **participants intermédiaires** avec une approche pédagogique in
 
 ## 📚 Contenu
 
-### 1. **Formation principale**
-- [`docs/formation-vscode-conda.md`](docs/formation-vscode-conda.md) - Document complet (90 min)
+### 1. **Site web de formation**
+- [`https://tofunori.github.io/numerilab-vscode-conda/`](https://tofunori.github.io/numerilab-vscode-conda/) - Formation en ligne interactive
+- Navigation modulaire par sections (Conda, VSCode, Git)
+- Exemples et exercices en format web
 
-### 2. **Ressources téléchargeables**
+### 2. **Matériel d'atelier** (dossier [`atelier/`](atelier/))
+- [`atelier/formation-vscode-conda.md`](atelier/formation-vscode-conda.md) - Document complet (90 min)
+- [`atelier/notebooks/`](atelier/notebooks/) - Notebooks Jupyter exécutables
+  - `01a-validation-rapide.ipynb` - Validation de l'environnement (2-3 min)
+  - `01b-exemple-sentinel2-avance.ipynb` - Analyse Sentinel-2 (10-15 min)
+- [`atelier/exercices/`](atelier/exercices/) - Exercices pratiques
+  - `02-pratique-projet-complet.md` - Projet complet intégré (45 min)
+
+### 3. **Ressources téléchargeables**
 - [`resources/environment.yml`](resources/environment.yml) - Stack géospatial pré-configurée
 - [`resources/settings.json`](resources/settings.json) - Configuration VSCode optimale
 - [`resources/extensions-recommandees.md`](resources/extensions-recommandees.md) - Extensions essentielles
-
-### 3. **Exemples pratiques**
-- [`examples/demo-workflow.md`](examples/demo-workflow.md) - Workflow complet étape par étape
 
 ---
 
@@ -78,19 +85,29 @@ Designed pour **participants intermédiaires** avec une approche pédagogique in
 
 ```
 numerilab-vscode-conda/
-├── README.md                           # Ce fichier
-├── .gitignore                          # Fichiers à exclure de Git
-├── docs/
-│   └── formation-vscode-conda.md      # Document de formation complet
-├── resources/
-│   ├── environment.yml                 # Stack Python géospatial
-│   ├── settings.json                   # Config VSCode recommandée
-│   └── extensions-recommandees.md      # Liste extensions
-├── assets/
-│   ├── images/                         # Logos, diagrammes
-│   └── screenshots/                    # Captures d'écran annotées
-└── examples/
-    └── demo-workflow.md                # Exercices pratiques
+├── README.md                          # Ce fichier
+├── .gitignore                         # Fichiers à exclure de Git
+├── mkdocs.yml                         # Configuration du site web MkDocs
+│
+├── docs/                              # 🌐 SITE WEB (MkDocs)
+│   ├── formation/                     # Sections modulaires de la formation
+│   ├── examples/                      # Exemples en format web (.md)
+│   ├── resources/                     # Ressources documentées
+│   └── about/                         # À propos et contribution
+│
+├── atelier/                           # 🎓 MATÉRIEL D'ATELIER
+│   ├── README.md                      # Guide pour participants
+│   ├── formation-vscode-conda.md      # Document complet (90 min)
+│   ├── notebooks/                     # Notebooks Jupyter exécutables
+│   │   ├── 01a-validation-rapide.ipynb
+│   │   └── 01b-exemple-sentinel2-avance.ipynb
+│   └── exercices/                     # Exercices pratiques
+│       └── 02-pratique-projet-complet.md
+│
+└── resources/                         # 📦 RESSOURCES PARTAGÉES
+    ├── environment.yml                # Stack Python géospatial
+    ├── settings.json                  # Config VSCode recommandée
+    └── extensions-recommandees.md     # Liste extensions
 ```
 
 ---
