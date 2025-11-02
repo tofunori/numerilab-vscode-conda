@@ -23,7 +23,7 @@ Vérifier que votre environnement Conda avec librairies géospatiales est correc
 
 ### Option A : Depuis VSCode
 
-1. Ouvrir le fichier [`01a-validation-rapide.ipynb`](../../exemples/01a-validation-rapide.ipynb) depuis VSCode
+1. Ouvrir le fichier [`01a-validation-rapide.ipynb`](https://github.com/tofunori/numerilab-vscode-conda/blob/main/atelier/notebooks/01a-validation-rapide.ipynb) depuis VSCode
 2. VSCode détecte l'extension `.ipynb` et active le support Jupyter
 3. Cliquer **Select Kernel** en haut à droite
 4. Choisir `geo-env` (ou l'environnement que vous avez créé)
@@ -35,7 +35,7 @@ Vérifier que votre environnement Conda avec librairies géospatiales est correc
 conda activate geo-env
 
 # Lancer Jupyter
-jupyter notebook exemples/01a-validation-rapide.ipynb
+jupyter notebook ../atelier/notebooks/01a-validation-rapide.ipynb
 ```
 
 ---

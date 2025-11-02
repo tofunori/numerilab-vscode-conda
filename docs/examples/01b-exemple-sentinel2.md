@@ -47,7 +47,7 @@ NDVI = (NIR - Red) / (NIR + Red)
 
 ## Étape 1 : Lancer le notebook
 
-Ouvrir [`01b-exemple-sentinel2-avance.ipynb`](../../exemples/01b-exemple-sentinel2-avance.ipynb) dans VSCode ou terminal Jupyter.
+Ouvrir [`01b-exemple-sentinel2-avance.ipynb`](https://github.com/tofunori/numerilab-vscode-conda/blob/main/atelier/notebooks/01b-exemple-sentinel2-avance.ipynb) dans VSCode ou terminal Jupyter.
 
 ---
 

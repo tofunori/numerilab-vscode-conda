@@ -74,6 +74,10 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb_checkpoints/
+atelier/notebooks/.ipynb_checkpoints/
+# Fichiers HTML générés par notebooks
+atelier/notebooks/**/*.html
 
 # IPython
 profile_default/
