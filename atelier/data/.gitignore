@@ -1,0 +1,9 @@
+# Ignorer fichiers raster volumineux
+*.tif
+*.tiff
+*.img
+*.hdf
+*.vrt
+
+# Conserver ce fichier .gitignore
+!.gitignore

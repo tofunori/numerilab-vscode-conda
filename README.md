@@ -157,6 +157,18 @@ Ce projet est sous licence **CC BY-NC-SA 4.0** (Creative Commons)
 
 ---
 
+---
+
+## 📦 Données
+
+Les exercices pratiques utilisent des images satellite Sentinel-2 hébergées sur Google Drive.
+
+**Téléchargement automatique** : Les notebooks téléchargent automatiquement les données lors de la première exécution.
+
+**Téléchargement manuel** (optionnel) :
+- [saskatchewan_athabasca_clip.tif](https://drive.google.com/file/d/1ssjG8ZO4jP8U0bZ78jkDuotafv-Py3yH/view) - Image Sentinel-2 Saskatchewan
+- Placer dans `atelier/data/`
+
 ## ✍️ Auteur
 
 **Présenté par** : Numérilab UQTR
