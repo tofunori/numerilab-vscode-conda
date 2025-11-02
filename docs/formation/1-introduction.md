@@ -21,10 +21,10 @@ Vous travaillez sur un projet avec des données géospatiales et avez besoin de 
 - ✓ Support Jupyter natif
 
 ### ♦︎ Pourquoi Git/GitHub ?
-- ✓ Traçabilité des changements
-- ✓ Collaboration efficace
+- ✓ Traçabilité des modifications apportées
+- ✓ Collaboration facile entre personnes
 - ✓ Reproductibilité garantie
-- ✓ Sauvegarde cloud
+- ✓ Sauvegarde sur cloud via GitHub
 
 ---
 
