@@ -2,7 +2,7 @@
 
 **Formation de 90 minutes** | *Numérilab UQTR*
 
-## 📋 Présentation
+## Présentation
 
 Cet atelier vous guide à travers les outils essentiels pour démarrer un projet de géomatique :
 - **Conda** : gestion des environnements Python isolés et reproductibles
@@ -12,20 +12,20 @@ Designed pour **participants intermédiaires** avec une approche pédagogique in
 
 ---
 
-## 🎯 Objectifs d'apprentissage
+## Objectifs d'apprentissage
 
 À la fin de cet atelier, vous serez capable de :
 
-✅ Comprendre la différence entre Miniforge et Anaconda
-✅ Créer et gérer des environnements conda isolés
-✅ Installer des packages essentiels en géomatique (GDAL, GeoPandas, Rasterio)
-✅ Naviguer et configurer VSCode
-✅ Intégrer Git/GitHub dans votre workflow
-✅ Utiliser les extensions VSCode pour améliorer la productivité
+Comprendre la différence entre Miniforge et Anaconda
+Créer et gérer des environnements conda isolés
+Installer des packages essentiels en géomatique (GDAL, GeoPandas, Rasterio)
+Naviguer et configurer VSCode
+Intégrer Git/GitHub dans votre workflow
+Utiliser les extensions VSCode pour améliorer la productivité
 
 ---
 
-## 📚 Contenu
+## Contenu
 
 ### 1. **Site web de formation**
 - [`https://tofunori.github.io/numerilab-vscode-conda/`](https://tofunori.github.io/numerilab-vscode-conda/) - Formation en ligne interactive
@@ -47,7 +47,7 @@ Designed pour **participants intermédiaires** avec une approche pédagogique in
 
 ---
 
-## 🚀 Avant de commencer
+## Avant de commencer
 
 ### Prérequis
 - Windows 10+, macOS 10.15+, ou Linux
@@ -81,7 +81,7 @@ Designed pour **participants intermédiaires** avec une approche pédagogique in
 
 ---
 
-## 📖 Structure du projet
+## Structure du projet
 
 ```
 numerilab-vscode-conda/
@@ -89,13 +89,13 @@ numerilab-vscode-conda/
 ├── .gitignore                         # Fichiers à exclure de Git
 ├── mkdocs.yml                         # Configuration du site web MkDocs
 │
-├── docs/                              # 🌐 SITE WEB (MkDocs)
+├── docs/                              # SITE WEB (MkDocs)
 │   ├── formation/                     # Sections modulaires de la formation
 │   ├── examples/                      # Exemples en format web (.md)
 │   ├── resources/                     # Ressources documentées
 │   └── about/                         # À propos et contribution
 │
-├── atelier/                           # 🎓 MATÉRIEL D'ATELIER
+├── atelier/                           # MATÉRIEL D'ATELIER
 │   ├── README.md                      # Guide pour participants
 │   ├── formation-vscode-conda.md      # Document complet (90 min)
 │   ├── notebooks/                     # Notebooks Jupyter exécutables
@@ -104,7 +104,7 @@ numerilab-vscode-conda/
 │   └── exercices/                     # Exercices pratiques
 │       └── 02-pratique-projet-complet.md
 │
-└── resources/                         # 📦 RESSOURCES PARTAGÉES
+└── resources/                         # RESSOURCES PARTAGÉES
     ├── environment.yml                # Stack Python géospatial
     ├── settings.json                  # Config VSCode recommandée
     └── extensions-recommandees.md     # Liste extensions
@@ -112,7 +112,7 @@ numerilab-vscode-conda/
 
 ---
 
-## 💡 Points clés à retenir
+## Points clés à retenir
 
 ### Conda
 - Chaque projet doit avoir son propre environnement isolé
@@ -131,7 +131,7 @@ numerilab-vscode-conda/
 
 ---
 
-## ❓ Dépannage rapide
+## Dépannage rapide
 
 | Problème | Solution |
 |----------|----------|
@@ -142,7 +142,7 @@ numerilab-vscode-conda/
 
 ---
 
-## 📞 Support et questions
+## Support et questions
 
 - **Issues du projet** : Ouvrir une issue GitHub pour signaler un bug
 - **Documentation Conda** : https://docs.conda.io
@@ -151,7 +151,7 @@ numerilab-vscode-conda/
 
 ---
 
-## 📄 Licence
+## Licence
 
 Ce projet est sous licence **CC BY-NC-SA 4.0** (Creative Commons)
 
@@ -159,7 +159,7 @@ Ce projet est sous licence **CC BY-NC-SA 4.0** (Creative Commons)
 
 ---
 
-## 📦 Données
+## Données
 
 Les exercices pratiques utilisent des images satellite Sentinel-2 hébergées sur Google Drive.
 
@@ -169,7 +169,7 @@ Les exercices pratiques utilisent des images satellite Sentinel-2 hébergées su
 - [saskatchewan_athabasca_clip.tif](https://drive.google.com/file/d/1ssjG8ZO4jP8U0bZ78jkDuotafv-Py3yH/view) - Image Sentinel-2 Saskatchewan
 - Placer dans `atelier/data/`
 
-## ✍️ Auteur
+## Auteur
 
 **Présenté par** : Numérilab UQTR
 **Dernière mise à jour** : 2025-10-29
@@ -177,7 +177,7 @@ Les exercices pratiques utilisent des images satellite Sentinel-2 hébergées su
 
 ---
 
-## 🔗 Ressources externes
+## Ressources externes
 
 - [Conda Documentation](https://docs.conda.io)
 - [VSCode Documentation](https://code.visualstudio.com/docs)
