@@ -10,19 +10,19 @@
 
 ## Table des matières
 
--   [1. Introduction](#1-introduction)
--   [2. Conda - Gestion des environnements](#2-conda---gestion-des-environnements)
-    -   [2.1 Théorie et contexte](#21-théorie-et-contexte)
-    -   [2.2 Installation guidée](#22-installation-guidée)
-    -   [2.3 Création d'environnements](#23-création-denvironnements)
-    -   [2.4 Librairies géospatiales essentielles](#24-librairies-géospatiales-essentielles)
--   [3. VSCode - Éditeur pour géomatique](#3-vscode---éditeur-pour-géomatique)
-    -   [3.1 Prise en main de l'interface](#31-prise-en-main-de-linterface)
-    -   [3.2 Extensions essentielles](#32-extensions-essentielles)
-    -   [3.3 Terminal intégré et Conda](#33-terminal-intégré-et-conda)
-    -   [3.4 Git et GitHub](#34-git-et-github)
-    -   [3.5 Démarche complète](#35-démarche-complète)
--   [4. Ressources et annexes](#4-ressources-et-annexes)
+- [1. Introduction](#1-introduction)
+- [2. Conda - Gestion des environnements](#2-conda---gestion-des-environnements)
+    - [2.1 Théorie et contexte](#21-théorie-et-contexte)
+    - [2.2 Installation guidée](#22-installation-guidée)
+    - [2.3 Création d'environnements](#23-création-denvironnements)
+    - [2.4 Librairies géospatiales essentielles](#24-librairies-géospatiales-essentielles)
+- [3. VSCode - Éditeur pour géomatique](#3-vscode---éditeur-pour-géomatique)
+    - [3.1 Prise en main de l'interface](#31-prise-en-main-de-linterface)
+    - [3.2 Extensions essentielles](#32-extensions-essentielles)
+    - [3.3 Terminal intégré et Conda](#33-terminal-intégré-et-conda)
+    - [3.4 Git et GitHub](#34-git-et-github)
+    - [3.5 Démarche complète](#35-démarche-complète)
+- [4. Ressources et annexes](#4-ressources-et-annexes)
 
 ------------------------------------------------------------------------
 
@@ -158,10 +158,10 @@ conda deactivate              # Revenir à l'environnement base
 
 #### Étape 2 : Installer
 
--   Double-cliquer l'exécutable
--   Accepter la license
--   Laisser chemin par défaut (ex: `C:\Users\YourName\miniforge3`)
--   **IMPORTANT** : Cocher "Register Miniforge3 as my default Python"
+- Double-cliquer l'exécutable
+- Accepter la license
+- Laisser chemin par défaut (ex: `C:\Users\YourName\miniforge3`)
+- **IMPORTANT** : Cocher "Register Miniforge3 as my default Python"
 
 ![Options d'installation Miniforge3](images/miniforge-install-options.png) *Figure 1 : Options d'installation - Cochez "Register Miniforge3 as the system Python 3.12" pour permettre à VSCode et autres programmes de détecter automatiquement Miniforge*
 
@@ -763,9 +763,9 @@ Jusqu'à présent, votre repo existe seulement sur votre ordinateur. GitHub perm
 
 1.  Aller sur [github.com/new](https://github.com/new)
 2.  Remplir :
-    -   Repository name : `mon-projet-geo`
-    -   Description : "Analyse d'images satellites Sentinel-2 pour cartographie de zones protégées"
-    -   Visibility : **Public** (bon pour science reproductible) ou **Private** (pour données sensibles)
+    - Repository name : `mon-projet-geo`
+    - Description : "Analyse d'images satellites Sentinel-2 pour cartographie de zones protégées"
+    - Visibility : **Public** (bon pour science reproductible) ou **Private** (pour données sensibles)
 3.  Ne pas cocher "Initialize with README" (vous en avez déjà un)
 4.  Créer repository
 
@@ -1141,11 +1141,11 @@ a3f7d8e Implémenter analyse NDVI avec classification couverture
 À ce point, votre projet local est tracé. Pour collaborer ou le rendre public :
 
 1.  **Créer repo sur GitHub**
-    -   Visiter https://github.com/new
-    -   Nom : `ndvi-region-test`
-    -   Description : "Analyse NDVI de la région test avec classification couverture (GDAL, Rasterio)"
-    -   Visibilité : Public
-    -   Créer repo
+    - Visiter https://github.com/new
+    - Nom : `ndvi-region-test`
+    - Description : "Analyse NDVI de la région test avec classification couverture (GDAL, Rasterio)"
+    - Visibilité : Public
+    - Créer repo
 2.  **Connecter repo local à GitHub**
 
 Copier les commandes que GitHub affiche. Dans VSCode terminal :
@@ -1192,17 +1192,17 @@ En moins de 2 minutes, votre collègue a : - Votre code exact - Votre environnem
 
 ### Fichiers ressources
 
--   [**environment.yml**](../resources/environment.yml) - Librairies géospatiales pré-configurées
--   [**settings.json**](../resources/settings.json) - Configuration VSCode optimale
--   [**extensions-recommandees.md**](../resources/extensions-recommandees.md) - Extensions détaillées
+- [**environment.yml**](../resources/environment.yml) - Librairies géospatiales pré-configurées
+- [**settings.json**](../resources/settings.json) - Configuration VSCode optimale
+- [**extensions-recommandees.md**](../resources/extensions-recommandees.md) - Extensions détaillées
 
 ### Documentation officielle
 
--   [Conda docs](https://docs.conda.io)
--   [VSCode docs](https://code.visualstudio.com/docs)
--   [GeoPandas](https://geopandas.org)
--   [GDAL/OGR](https://gdal.org)
--   [Rasterio](https://rasterio.readthedocs.io)
+- [Conda docs](https://docs.conda.io)
+- [VSCode docs](https://code.visualstudio.com/docs)
+- [GeoPandas](https://geopandas.org)
+- [GDAL/OGR](https://gdal.org)
+- [Rasterio](https://rasterio.readthedocs.io)
 
 ### Problèmes courants et solutions
 
@@ -1215,11 +1215,11 @@ En moins de 2 minutes, votre collègue a : - Votre code exact - Votre environnem
 
 ### Points clés à retenir
 
--   **Conda** isole chaque projet → pas de conflits de versions
--   **environment.yml** rend projets **reproductibles**
--   **VSCode** détecte automatiquement environnement Conda
--   **Git/GitHub** permettent collaboration efficace
--   **Extensions** VSCode augmentent productivité
+- **Conda** isole chaque projet → pas de conflits de versions
+- **environment.yml** rend projets **reproductibles**
+- **VSCode** détecte automatiquement environnement Conda
+- **Git/GitHub** permettent collaboration efficace
+- **Extensions** VSCode augmentent productivité
 
 ### Prochaines étapes
 
