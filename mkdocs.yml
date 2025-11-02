@@ -5,6 +5,7 @@ site_url: https://tofunori.github.io/numerilab-vscode-conda/
 repo_url: https://github.com/tofunori/numerilab-vscode-conda
 repo_name: numerilab-vscode-conda
 edit_uri: edit/develop/docs/
+use_directory_urls: true
 
 theme:
   name: material
@@ -56,6 +57,7 @@ markdown_extensions:
 nav:
   - Accueil: index.md
   - Formation Complète:
+      - Accueil: formation/index.md
       - Présentation: formation/0-presentation.md
       - 1. Introduction: formation/1-introduction.md
       - 2. Conda:
@@ -72,14 +74,15 @@ nav:
           - 3.5 Démarche complète: formation/3.5-demarche-complete.md
       - 4. Ressources: formation/4-ressources.md
   - Exemples Pratiques:
+      - Accueil: examples/index.md
       - Validation rapide: examples/01a-validation-rapide.md
       - Sentinel-2 avancé: examples/01b-exemple-sentinel2.md
       - Projet complet: examples/02-pratique-projet.md
   - Ressources:
-      - environment.yml: resources/environment.yml
-      - settings.json: resources/settings.json
+      - Accueil: resources/index.md
       - Extensions recommandées: resources/extensions-recommandees.md
   - À propos:
+      - Accueil: about/index.md
       - Licence: about/licence.md
       - Contribution: about/contribution.md
 
