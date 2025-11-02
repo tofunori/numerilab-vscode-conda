@@ -85,8 +85,8 @@ nav:
       - 4. Ressources: formation/4-ressources.md
   - Exemples Pratiques:
       - Accueil: examples/index.md
-      - Validation rapide: examples/01a-validation-rapide.md
-      - Sentinel-2 avancé: examples/01b-exemple-sentinel2.md
+      - Exercice 1 - Test: examples/01-test-environnement.md
+      - Exercice 2 - Importation satellite: examples/02-importation-satellite.md
   - Ressources:
       - Accueil: resources/index.md
       - Extensions recommandées: resources/extensions-recommandees.md

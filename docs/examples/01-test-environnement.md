@@ -1,4 +1,4 @@
-# Validation de l'environnement
+# Exercice 1 : Test de l'environnement
 
 **Durée estimée** : 1-2 minutes
 **Prérequis** : Section 3.3 de la formation

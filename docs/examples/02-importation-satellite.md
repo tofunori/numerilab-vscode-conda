@@ -1,4 +1,4 @@
-# Exemple avancé : Données Sentinel-2 réelles
+# Exercice 2 : Importation d'images satellitaires
 
 Ce notebook illustre l'utilisation de données satellite réelles Sentinel-2 depuis le **Microsoft Planetary Computer**.
 
