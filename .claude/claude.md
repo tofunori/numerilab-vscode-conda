@@ -82,6 +82,13 @@ numerilab-*/
 - ❌ Ne pas créer de formations sans valider avec le skill
 - ❌ Ne pas committer sans tester les commandes
 
+## Émojis et symboles
+
+**Symboles AUTORISÉS uniquement** :
+- ★ ☞ ➜ ♦︎ ✸ ✤ ✓ ✦ 𖦹 ✎ ⃠ ●
+
+**AUCUN autre emoji** n'est autorisé dans la documentation, les notebooks, le code ou les commentaires.
+
 ## 🔗 Référence rapide
 
 - Skill principal : `numerilab-formation-builder`
