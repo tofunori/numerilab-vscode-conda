@@ -12,10 +12,10 @@ Vérifier que votre environnement Conda avec librairies géospatiales est correc
 
 ## Prérequis
 
-- ✅ Miniforge/Conda installé (section [2.2](../formation/2.2-conda-installation.md))
-- ✅ Environnement `geo-env` créé (section [2.3](../formation/2.3-conda-environnements.md))
-- ✅ Librairies géospatiales installées (section [2.4](../formation/2.4-conda-librairies.md))
-- ✅ VSCode ouvert avec terminal intégré
+- Miniforge/Conda installé (section [2.2](../formation/2.2-conda-installation.md))
+- Environnement `geo-env` créé (section [2.3](../formation/2.3-conda-environnements.md))
+- Librairies géospatiales installées (section [2.4](../formation/2.4-conda-librairies.md))
+- VSCode ouvert avec terminal intégré
 
 ---
 
@@ -111,6 +111,6 @@ Après validation réussie :
 
 ---
 
-✅ **Validation réussie?** Vous êtes prêt pour la géomatique! Passez à [3.5 Démarche complète](../formation/3.5-demarche-complete.md).
+**Validation réussie?** Vous êtes prêt pour la géomatique! Passez à [3.5 Démarche complète](../formation/3.5-demarche-complete.md).
 
-❌ **Erreur?** Consultez [4. Ressources et annexes - Problèmes courants](../formation/4-ressources.md).
+**Erreur?** Consultez [4. Ressources et annexes - Problèmes courants](../formation/4-ressources.md).

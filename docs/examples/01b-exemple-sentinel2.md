@@ -12,9 +12,9 @@ Analyser une image Sentinel-2 réelle, calculer l'indice NDVI (Normalized Differ
 
 ## Prérequis
 
-- ✅ Environnement validé avec [01a-validation-rapide.md](01a-validation-rapide.md)
-- ✅ Jupyter en cours d'exécution
-- ✅ Connexion internet (pour télécharger les données de démonstration)
+- Environnement validé avec [01a-validation-rapide.md](01a-validation-rapide.md)
+- Jupyter en cours d'exécution
+- Connexion internet (pour télécharger les données de démonstration)
 
 ---
 
@@ -61,7 +61,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 from rasterio.plot import show
 
-print("✓ Librairies chargées avec succès")
+print("Librairies chargées avec succès")
 ```
 
 ---
@@ -205,7 +205,7 @@ print(report)
 with open('resultats/rapport_sentinel2.txt', 'w') as f:
     f.write(report)
 
-print("\n✓ Rapport sauvegardé: resultats/rapport_sentinel2.txt")
+print("\nRapport sauvegardé: resultats/rapport_sentinel2.txt")
 ```
 
 ---
@@ -222,10 +222,10 @@ print("\n✓ Rapport sauvegardé: resultats/rapport_sentinel2.txt")
 ## Résultat attendu
 
 À la fin du notebook, vous devriez avoir :
-- ✅ Carte NDVI colorée (rouge = faible, vert = fort)
-- ✅ Histogramme montrant distribution NDVI
-- ✅ Classification thématique en 3 classes
-- ✅ Rapport texte avec statistiques
+- Carte NDVI colorée (rouge = faible, vert = fort)
+- Histogramme montrant distribution NDVI
+- Classification thématique en 3 classes
+- Rapport texte avec statistiques
 
 ---
 
@@ -247,6 +247,6 @@ print("\n✓ Rapport sauvegardé: resultats/rapport_sentinel2.txt")
 
 ---
 
-✅ **Analyse réussie?** Continuez avec [3.5 Démarche complète](../formation/3.5-demarche-complete.md) pour intégrer tout dans un projet GitHub.
+**Analyse réussie?** Continuez avec [3.5 Démarche complète](../formation/3.5-demarche-complete.md) pour intégrer tout dans un projet GitHub.
 
-❓ **Questions?** Consultez [4. Ressources et annexes](../formation/4-ressources.md).
+**Questions?** Consultez [4. Ressources et annexes](../formation/4-ressources.md).

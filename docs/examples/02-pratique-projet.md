@@ -12,10 +12,10 @@ Appliquer l'ensemble des concepts appris (Conda, VSCode, Git) pour créer un pro
 
 ## Prérequis
 
-- ✅ Environnement Conda configuré (section [2.4](../formation/2.4-conda-librairies.md))
-- ✅ VSCode installé et configuré (section [3.2](../formation/3.2-vscode-extensions.md))
-- ✅ Git installé (section [3.4](../formation/3.4-git-github.md))
-- ✅ Avoir complété les exemples [01a](01a-validation-rapide.md) et [01b](01b-exemple-sentinel2.md)
+- Environnement Conda configuré (section [2.4](../formation/2.4-conda-librairies.md))
+- VSCode installé et configuré (section [3.2](../formation/3.2-vscode-extensions.md))
+- Git installé (section [3.4](../formation/3.4-git-github.md))
+- Avoir complété les exemples [01a](01a-validation-rapide.md) et [01b](01b-exemple-sentinel2.md)
 
 ---
 
@@ -139,10 +139,10 @@ def create_demo_data():
     data_path.mkdir(exist_ok=True)
 
     if DATA_PATH.exists():
-        print(f"✓ Données trouvées: {DATA_PATH}")
+        print(f"Données trouvées: {DATA_PATH}")
         return
 
-    print("⚠ Création de données de démonstration...")
+    print("Création de données de démonstration...")
 
     # Créer raster fictif
     np.random.seed(42)
@@ -163,7 +163,7 @@ def create_demo_data():
         dst.write(red, 1)  # Bande 1 : rouge
         dst.write(nir, 2)  # Bande 2 : NIR
 
-    print(f"✓ Données créées: {DATA_PATH}")
+    print(f"Données créées: {DATA_PATH}")
 
 def load_bands():
     """Charger bandes rouge et NIR"""
@@ -216,29 +216,29 @@ INTERPRÉTATION
 
 def main():
     """Workflow complet"""
-    print("\n📊 ANALYSE NDVI - Démarrage")
+    print("\nANALYSE NDVI - Démarrage")
     print("-" * 60)
 
     # 1. Créer/charger données
     create_demo_data()
 
     # 2. Charger bandes
-    print("\n📡 Chargement des bandes...")
+    print("\nChargement des bandes...")
     red, nir = load_bands()
-    print(f"✓ Dimensions: {red.shape[0]} × {red.shape[1]} pixels")
+    print(f"Dimensions: {red.shape[0]} × {red.shape[1]} pixels")
 
     # 3. Calculer NDVI
-    print("\n🌱 Calcul NDVI...")
+    print("\nCalcul NDVI...")
     ndvi = calculate_ndvi(red, nir)
-    print(f"✓ NDVI calculé ({ndvi.min():.3f} à {ndvi.max():.3f})")
+    print(f"NDVI calculé ({ndvi.min():.3f} à {ndvi.max():.3f})")
 
     # 4. Classifier
-    print("\n📊 Classification...")
+    print("\nClassification...")
     classification = classify_ndvi(ndvi)
-    print("✓ Classification en 3 catégories")
+    print("Classification en 3 catégories")
 
     # 5. Générer rapport
-    print("\n📝 Génération du rapport...")
+    print("\nGénération du rapport...")
     report = generate_report(ndvi, classification)
 
     # 6. Sauvegarder rapport
@@ -248,8 +248,8 @@ def main():
 
     # 7. Afficher rapport
     print("\n" + report)
-    print(f"\n✓ Rapport sauvegardé: {report_path}")
-    print("\n✅ Analyse terminée!")
+    print(f"\nRapport sauvegardé: {report_path}")
+    print("\nAnalyse terminée!")
 
 if __name__ == "__main__":
     main()
@@ -266,26 +266,26 @@ python scripts/analyse_ndvi.py
 **Résultat attendu** :
 
 ```
-📊 ANALYSE NDVI - Démarrage
+ANALYSE NDVI - Démarrage
 ------------------------------------------------------------
 
-⚠ Création de données de démonstration...
-✓ Données créées: data/sentinel2_demo.tif
+Création de données de démonstration...
+Données créées: data/sentinel2_demo.tif
 
-📡 Chargement des bandes...
-✓ Dimensions: 100 × 100 pixels
+Chargement des bandes...
+Dimensions: 100 × 100 pixels
 
-🌱 Calcul NDVI...
-✓ NDVI calculé (-0.733 à 0.833)
+Calcul NDVI...
+NDVI calculé (-0.733 à 0.833)
 
-📊 Classification...
-✓ Classification en 3 catégories
+Classification...
+Classification en 3 catégories
 
-📝 Génération du rapport...
+Génération du rapport...
 ...
-✓ Rapport sauvegardé: resultats/rapport_ndvi.txt
+Rapport sauvegardé: resultats/rapport_ndvi.txt
 
-✅ Analyse terminée!
+Analyse terminée!
 ```
 
 ---
@@ -478,12 +478,12 @@ Aller à `https://github.com/VOTRE_USERNAME/mon-projet-ndvi`
 
 À la fin, vous avez :
 
-✅ **Structure complète** : dossiers data, scripts, notebooks organisés
-✅ **Environnement reproductible** : `environment.yml` pour cloner le projet
-✅ **Analyse fonctionnelle** : script Python qui calcule NDVI
-✅ **Exploration interactive** : Notebook Jupyter avec visualisations
-✅ **Versionné** : Git + GitHub pour collaborer
-✅ **Documenté** : README clair et instructions d'installation
+**Structure complète** : dossiers data, scripts, notebooks organisés
+**Environnement reproductible** : `environment.yml` pour cloner le projet
+**Analyse fonctionnelle** : script Python qui calcule NDVI
+**Exploration interactive** : Notebook Jupyter avec visualisations
+**Versionné** : Git + GitHub pour collaborer
+**Documenté** : README clair et instructions d'installation
 
 ---
 
@@ -496,6 +496,6 @@ Aller à `https://github.com/VOTRE_USERNAME/mon-projet-ndvi`
 
 ---
 
-✅ **Projet terminé?** Vous maîtrisez maintenant Conda, VSCode, Git et GitHub pour des projets de géomatique professionnels!
+**Projet terminé?** Vous maîtrisez maintenant Conda, VSCode, Git et GitHub pour des projets de géomatique professionnels!
 
-❓ **Questions?** Consultez [4. Ressources et annexes](../formation/4-ressources.md).
+**Questions?** Consultez [4. Ressources et annexes](../formation/4-ressources.md).
