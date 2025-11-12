@@ -24,7 +24,13 @@
       "Bash(python:*)",
       "Bash(git rm:*)",
       "Bash(git mv:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(conda list)",
+      "Bash(dir data)",
+      "mcp__ide__executeCode",
+      "Bash(conda install -c conda-forge planetary-computer pystac-client -y)",
+      "Bash(dir .claudeskills)",
+      "Bash(dir .claude)"
     ],
     "deny": [],
     "ask": []
