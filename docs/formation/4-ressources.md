@@ -12,6 +12,13 @@
 
 ---
 
+## Exercices pratiques
+
+- [**01-test-environnement.ipynb**](../../atelier/notebooks/01-test-environnement.ipynb) - Exercice de test de l'environnement
+- [**02-importation-satellite.ipynb**](../../atelier/notebooks/02-importation-satellite.ipynb) - Importation d'images satellitaires
+
+---
+
 ## Documentation officielle
 
 - [Conda docs](https://docs.conda.io)
