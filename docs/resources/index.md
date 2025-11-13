@@ -12,18 +12,18 @@ Fichiers de configuration et assets pour configurer votre environnement Conda et
 
 <div style="margin: 20px 0;">
   <p><strong>01-test-environnement.ipynb</strong> - Exercice de test de l'environnement</p>
-  <a href="https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/01-test-environnement.ipynb"
-     style="display: inline-block; padding: 10px 20px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 4px; margin: 5px 0;">
+  <button onclick="downloadNotebook('https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/01-test-environnement.ipynb', '01-test-environnement.ipynb')"
+     style="padding: 10px 20px; background-color: #2196F3; color: white; border: none; border-radius: 4px; margin: 5px 0; cursor: pointer; font-size: 14px;">
     ⬇ Télécharger
-  </a>
+  </button>
 </div>
 
 <div style="margin: 20px 0;">
   <p><strong>02-importation-satellite.ipynb</strong> - Importation d'images satellitaires</p>
-  <a href="https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/02-importation-satellite.ipynb"
-     style="display: inline-block; padding: 10px 20px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 4px; margin: 5px 0;">
+  <button onclick="downloadNotebook('https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/02-importation-satellite.ipynb', '02-importation-satellite.ipynb')"
+     style="padding: 10px 20px; background-color: #2196F3; color: white; border: none; border-radius: 4px; margin: 5px 0; cursor: pointer; font-size: 14px;">
     ⬇ Télécharger
-  </a>
+  </button>
 </div>
 
 ## Utilisation

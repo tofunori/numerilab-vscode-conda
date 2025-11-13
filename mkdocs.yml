@@ -43,6 +43,9 @@ theme:
 extra_css:
   - css/extra.css
 
+extra_javascript:
+  - js/download.js
+
 plugins:
   - search:
       lang: fr
