@@ -2,7 +2,7 @@
 
 ## Bienvenue dans cet atelier complet!
 
-Cet atelier vous apprend à configurer et utiliser **Conda** et **VSCode** pour développer des projets de **géomatique** reproductibles et professionnels.
+Cet atelier vous apprend à configurer et utiliser **Conda**, **VSCode** et **Git** pour développer des projets de **géomatique** reproductibles et professionnels, même si vous êtes débutant.
 
 ### Objectifs
 
