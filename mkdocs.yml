@@ -82,7 +82,6 @@ nav:
           - 3.2 Extensions: formation/3.2-vscode-extensions.md
           - 3.3 Terminal & Conda: formation/3.3-vscode-terminal.md
           - 3.4 Git & GitHub: formation/3.4-git-github.md
-          - 3.5 Démarche complète: formation/3.5-demarche-complete.md
       - 4. Ressources: formation/4-ressources.md
   - Exemples Pratiques:
       - Accueil: examples/index.md

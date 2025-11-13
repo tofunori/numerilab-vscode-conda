@@ -22,7 +22,6 @@ Configurez VSCode pour le développement Python en géomatique et utilisez effic
 - ➜ **[3.2 Extensions](3.2-vscode-extensions.md)** : Extensions essentielles pour la géomatique
 - ➜ **[3.3 Terminal & Conda](3.3-vscode-terminal.md)** : Intégrer Conda dans le terminal VSCode
 - ➜ **[3.4 Git & GitHub](3.4-git-github.md)** : Contrôle de version et collaboration
-- ➜ **[3.5 Démarche complète](3.5-demarche-complete.md)** : Intégration complète de l'écosystème
 
 ### ★ 3. Ressources et guides
 - ➜ **[Présentation](0-presentation.md)** : Vue d'ensemble du projet

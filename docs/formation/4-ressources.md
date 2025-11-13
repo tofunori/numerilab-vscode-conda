@@ -1,6 +1,6 @@
 # 4. Ressources et annexes
 
-← [Section précédente](3.5-demarche-complete.md)
+← [Section précédente](3.4-git-github.md)
 
 ---
 
@@ -80,4 +80,4 @@ Pour questions : consultez les [ressources](../resources/index.md) ou la [docume
 
 ---
 
-← [Section précédente](3.5-demarche-complete.md)
+← [Section précédente](3.4-git-github.md)
