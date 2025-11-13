@@ -14,8 +14,8 @@
 
 ## Exercices pratiques
 
-- [**01-test-environnement.ipynb**](https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/01-test-environnement.ipynb) - Exercice de test de l'environnement (cliquez pour télécharger)
-- [**02-importation-satellite.ipynb**](https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/02-importation-satellite.ipynb) - Importation d'images satellitaires (cliquez pour télécharger)
+- <a href="https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/01-test-environnement.ipynb" download="01-test-environnement.ipynb">**01-test-environnement.ipynb**</a> - Exercice de test de l'environnement (cliquez pour télécharger)
+- <a href="https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/02-importation-satellite.ipynb" download="02-importation-satellite.ipynb">**02-importation-satellite.ipynb**</a> - Importation d'images satellitaires (cliquez pour télécharger)
 
 ---
 
