@@ -14,8 +14,8 @@
 
 ## Exercices pratiques
 
-- [**01-test-environnement.ipynb**](../../atelier/notebooks/01-test-environnement.ipynb) - Exercice de test de l'environnement
-- [**02-importation-satellite.ipynb**](../../atelier/notebooks/02-importation-satellite.ipynb) - Importation d'images satellitaires
+- [**01-test-environnement.ipynb**](../atelier/notebooks/01-test-environnement.ipynb) - Exercice de test de l'environnement (cliquez pour télécharger)
+- [**02-importation-satellite.ipynb**](../atelier/notebooks/02-importation-satellite.ipynb) - Importation d'images satellitaires (cliquez pour télécharger)
 
 ---
 
