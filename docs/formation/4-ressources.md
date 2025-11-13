@@ -14,11 +14,21 @@
 
 ## Exercices pratiques
 
-!!! info "Téléchargement des notebooks"
-    Clic droit sur les liens → "Enregistrer le lien sous..." pour télécharger les fichiers
+<div style="margin: 20px 0;">
+  <p><strong>01-test-environnement.ipynb</strong> - Exercice de test de l'environnement</p>
+  <a href="https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/01-test-environnement.ipynb"
+     style="display: inline-block; padding: 10px 20px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 4px; margin: 5px 0;">
+    ⬇ Télécharger
+  </a>
+</div>
 
-- **[01-test-environnement.ipynb](https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/01-test-environnement.ipynb)** - Exercice de test de l'environnement
-- **[02-importation-satellite.ipynb](https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/02-importation-satellite.ipynb)** - Importation d'images satellitaires
+<div style="margin: 20px 0;">
+  <p><strong>02-importation-satellite.ipynb</strong> - Importation d'images satellitaires</p>
+  <a href="https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/02-importation-satellite.ipynb"
+     style="display: inline-block; padding: 10px 20px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 4px; margin: 5px 0;">
+    ⬇ Télécharger
+  </a>
+</div>
 
 ---
 
