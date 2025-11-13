@@ -10,8 +10,11 @@ Fichiers de configuration et assets pour configurer votre environnement Conda et
 
 ## Exercices pratiques
 
-- <a href="https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/01-test-environnement.ipynb" download="01-test-environnement.ipynb">**01-test-environnement.ipynb**</a> : Exercice de test de l'environnement (cliquez pour télécharger)
-- <a href="https://raw.githubusercontent.com/tofunori/numerilab-vscode-conda/master/atelier/notebooks/02-importation-satellite.ipynb" download="02-importation-satellite.ipynb">**02-importation-satellite.ipynb**</a> : Importation d'images satellitaires (cliquez pour télécharger)
+!!! info "Téléchargement des notebooks"
+    Clic droit sur les liens → "Enregistrer le lien sous..." pour télécharger les fichiers
+
+- **[01-test-environnement.ipynb](https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/01-test-environnement.ipynb)** : Exercice de test de l'environnement
+- **[02-importation-satellite.ipynb](https://github.com/tofunori/numerilab-vscode-conda/raw/master/atelier/notebooks/02-importation-satellite.ipynb)** : Importation d'images satellitaires
 
 ## Utilisation
 
