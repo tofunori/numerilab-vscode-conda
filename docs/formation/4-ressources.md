@@ -7,7 +7,7 @@
 ## Fichiers ressources
 
 - [**environment.yml**](../resources/environment.yml) - Librairies géospatiales pré-configurées
-- [**settings.json**](../resources/settings.json) - Configuration VSCode optimale
+- [**settings.json**](../resources/settings-json.md) - Configuration VSCode optimale
 - [**extensions-recommandees.md**](../resources/extensions-recommandees.md) - Extensions détaillées
 
 ---

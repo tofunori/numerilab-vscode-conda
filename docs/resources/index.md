@@ -6,7 +6,7 @@ Fichiers de configuration et assets pour configurer votre environnement Conda et
 
 - **[environment.yml](environment.yml)** : Fichier de configuration Conda avec toutes les librairies géospatiales
 - **[extensions-recommandees.md](extensions-recommandees.md)** : Liste des extensions VSCode essentielles
-- **[settings.json](settings.json)** : Configuration VSCode optimisée pour la géomatique
+- **[settings.json](settings-json.md)** : Configuration VSCode optimisée pour la géomatique
 
 ## Exercices pratiques
 

@@ -90,6 +90,7 @@ nav:
   - Ressources:
       - Accueil: resources/index.md
       - Extensions recommandées: resources/extensions-recommandees.md
+      - Configuration VSCode: resources/settings-json.md
   - À propos:
       - Accueil: about/index.md
       - Licence: about/licence.md
